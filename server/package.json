@@ -1,0 +1,16 @@
+{
+  "name": "server-hapi",
+  "version": "1.0.0",
+  "description": "back-end data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Rayan Bassetti",
+  "dependencies": {
+    "@hapi/hapi": "^19.0.5",
+    "@hapi/joi": "^17.0.2",
+    "nodemon": "~2.0.2"
+  }
+}
