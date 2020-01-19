@@ -7,9 +7,10 @@ class Home extends React.Component {
             username: "Rayan",
             password: "test",
             inputName: "",
-            inputPwd: ""
+            inputPwd: "",
+            loggenIn: false
         }
-        this.HandleSearch = this.HandleSearch.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.HandleLogin = this.HandleLogin.bind(this);
         // this.handleChange = this.handleChange.bind(this);
     }
@@ -20,7 +21,8 @@ class Home extends React.Component {
         password === inputPwd ? console.log("yay = password") : console.log("null");
     }
 
-    HandleSearch(event) { // gets all the text input made by the user
+
+    handleChange(event) { 
         const {name, value} = event.target
         // const {username, password} = this.state
         this.setState({
@@ -31,12 +33,12 @@ class Home extends React.Component {
     
 
     render() {
-        const {HandleSearch, HandleLogin} = this;
+        const {handleChange, HandleLogin} = this;
         return(
             <div>
                 <form>
-                    <input name="inputName" type="text" placeholder="username" onChange={HandleSearch}></input>
-                    <input name="inputPwd" type="text" placeholder="password" onChange={HandleSearch}></input>
+                    <input name="inputName" type="text" placeholder="username" onChange={handleChange}></input>
+                    <input name="inputPwd" type="text" placeholder="password" onChange={handleChange}></input>
                 </form>
                 <button onClick={HandleLogin}>Login</button>
 
