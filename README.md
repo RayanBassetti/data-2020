@@ -1,6 +1,11 @@
 # Projet Data 2020-2021 - P2021
 
-## Stack : MERN.
+## Stack :
+
+- React.js
+- Hapi
+- Joi
+- PostGreSQL
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH
 
