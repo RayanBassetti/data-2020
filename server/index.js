@@ -24,6 +24,7 @@ const init = async () => {
 
     server.route([
         require('./routes/panels').GetPanelById,
+        require('./routes/GetAll')
         // require('./routes/panels').CreatePanel
     ])
 
