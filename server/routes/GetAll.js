@@ -10,7 +10,8 @@ module.exports = {
                 limit: joi.number().integer().min(1).max(200).default(20),
                 offset: joi.number().integer().min(0).default(0)
             })
-        }
+        },
+        cors: true
     },
     handler: async (req, toolkit) => {
         return db.select().from('history_panels').limit(req.query.limit).offset(req.query.offset)
