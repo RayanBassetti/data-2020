@@ -14,7 +14,7 @@ module.exports = {
         cors: true
     },
     handler: async (req, toolkit) => {
-        return db.select().from('history_panels').limit(req.query.limit).offset(req.query.offset)
+        return db.select().from('history_daily').limit(req.query.limit).offset(req.query.offset)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,
