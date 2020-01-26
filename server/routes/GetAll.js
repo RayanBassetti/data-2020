@@ -30,7 +30,6 @@ module.exports = {
             .catch(err => {
                 return toolkit.response({
                     statusCode: 500,
-                    errors: null,
                     message: 'Internal Server Error',
                     errors: [
                         {

@@ -23,10 +23,24 @@ class Home extends React.Component {
     
 
     render() {
+        const {data} = this.state;
         console.log(this.state)
         return(
             <div>
-                <h1>Home</h1>
+                {data !== [] &&
+                <div>
+                    {data.statusCode === 200 && 
+                    <div>
+                        <h2>Status Code : 200. Data received !</h2>
+                    </div>
+                    }
+                    {data.statusCode !== 200 &&
+                    <div>
+                        <h2>Loading... (if nothing appears, check logs, statusCode did not return 200.)</h2>
+                    </div>
+                    }
+                </div>
+                }
             </div>
         )
     }
