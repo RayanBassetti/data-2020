@@ -26,9 +26,8 @@ B) Back-end :
 - npm i /npm install
 
 5) Add the credidentials you want to use to connect to the database neeeded
-- cd config
-- touch app-env
-- Variables needed : DB_HOST, DB_USER, DB_MDP
+- touch .env
+- Variables needed : DB_H, DB_USER, DB_PASS
 
 6) Once everything is installed and properly setup, start the back-end
 - (Inside the server folder) npm start 
