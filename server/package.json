@@ -9,8 +9,9 @@
   },
   "author": "Rayan Bassetti",
   "dependencies": {
-    "@hapi/hapi": "^19.0.5",
+    "@hapi/hapi": "^19.1.1",
     "@hapi/joi": "^17.0.2",
+    "dotenv": "^8.2.0",
     "knex": "^0.20.8",
     "nodemon": "~2.0.2",
     "pg": "^7.17.1"

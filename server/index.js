@@ -1,12 +1,16 @@
 'use strict';
 
 const Hapi = require('@hapi/hapi');
-const joi = require('@hapi/joi');
 
 const init = async () => {
 
+    require('dotenv').config()
+
     const server = Hapi.server({
         port: 4000,
+        routes: {
+            cors: true
+        },
         host: 'localhost'
     });
 
@@ -23,9 +27,8 @@ const init = async () => {
     })
 
     server.route([
-        require('./routes/panels').GetPanelById,
-        require('./routes/GetAll')
-        // require('./routes/panels').CreatePanel
+        require('./routes/GetAll'),
+        require('./routes/singlePelo')
     ])
 
     await server.start();

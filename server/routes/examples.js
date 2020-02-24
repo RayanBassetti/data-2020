@@ -51,11 +51,11 @@ exports.GetUsers = {
             .catch(err => {
                 return toolkit.response({
                     statusCode: 500,
-                    errors: null,
                     message: 'Internal Server Error',
                     errors: [
                         {
-                            message: 'Failed to connect to database'
+                            message: 'Failed to connect to database',
+                            err: err
                         }
                     ],
                     meta: {
