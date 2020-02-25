@@ -1,10 +1,9 @@
-# BRANCH TESTING - LIBRARY : RECHARTS
+# PROJET DATA - P2021 - ENGIE
 
 ## Stack :
 
 A) Front-end : 
 - React.js
-- Recharts
 
 B) Back-end : 
 - Hapi
