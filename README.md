@@ -1,9 +1,10 @@
-# Projet Data 2020-2021 - P2021
+# BRANCH TESTING - LIBRARY : RECHARTS
 
 ## Stack :
 
 A) Front-end : 
 - React.js
+- Recharts
 
 B) Back-end : 
 - Hapi
