@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-    BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
-  } from 'recharts';
-
+import Chart from "react-apexcharts";
 import ClipLoader from "react-spinners/ClipLoader";
 
 class Home extends React.Component {
@@ -12,10 +9,11 @@ class Home extends React.Component {
             data: [],
             loading: true,
         }
-        // this.handleChange = this.handleChange.bind(this);
+        this.handleDataChart = this.handleDataChart.bind(this);
     }
 
     componentDidMount() {
+        const {handleDataChart} = this;
         fetch('http://localhost:4000/api/single')
             .then(results => {
                 return results.json()
@@ -24,35 +22,64 @@ class Home extends React.Component {
                     data: res.data,
                     loading: false
                 })
+                handleDataChart()
             })
+        
     }
 
+    handleDataChart() {
+        const {data} = this.state
+        let arrayDates = []
+        let arrayConso = []
+
+        if(data.length > 0) {
+            data.forEach((item) => {
+                for (const [key, value] of Object.entries(item)) {
+                    if(key === "date") {
+                        arrayDates.push(value)
+                    }
+                    if(key === "from_gen_to_consumer") {
+                        arrayConso.push(value)
+                    }
+                  }
+            })
+            this.setState({
+                options: {
+                    chart: {
+                        id: "basic-bar"
+                    },
+                    xaxis: {
+                        categories: arrayDates
+                    }
+                },
+                series: {
+                    name: 'From Gen To Consumer',
+                    data: arrayConso
+                }
+            })
+        
+            
+
+        }
+
+
+    }
     
 
     render() {
-        const {data, loading} = this.state;
-        console.log(data)
+        const {loading, options, series} = this.state;
+        console.log(this.state)
         return(
                 <div>
                     {loading === false && 
                     <div>
                         <h2>Status Code : 200. Data received !</h2>
-
-                        <BarChart
-                            width={1000}
-                            height={500}
-                            data={data}
-                            margin={{
-                            top: 5, right: 30, left: 20, bottom: 5,
-                            }}
-                        >
-                            <CartesianGrid strokeDasharray="1 1" />
-                            <XAxis dataKey="date" />
-                            <YAxis />
-                            <Tooltip />
-                            {/* <Legend /> */}
-                            <Bar dataKey="from_gen_to_consumer" fill="#00AAFF" />
-                        </BarChart>
+                        <Chart
+                            options={options}
+                            series={series}
+                            type="bar"
+                            width="500"
+                        />
 
                     </div>
                     }
