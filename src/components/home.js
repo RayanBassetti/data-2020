@@ -19,8 +19,7 @@ class Home extends React.Component {
                 return results.json()
             }).then(res => {
                 this.setState({
-                    data: res.data,
-                    loading: false
+                    data: res.data
                 })
                 handleDataChart()
             })
@@ -52,14 +51,15 @@ class Home extends React.Component {
                         categories: arrayDates
                     }
                 },
-                series: {
-                    name: 'From Gen To Consumer',
-                    data: arrayConso
-                }
-            })
-        
-            
+                series: [
+                    {
+                        name: 'From Gen To Consumer',
+                        data: arrayConso
 
+                    }
+                ],
+                loading: false
+            })
         }
 
 
@@ -68,7 +68,6 @@ class Home extends React.Component {
 
     render() {
         const {loading, options, series} = this.state;
-        console.log(this.state)
         return(
                 <div>
                     {loading === false && 
@@ -78,7 +77,7 @@ class Home extends React.Component {
                             options={options}
                             series={series}
                             type="bar"
-                            width="500"
+                            width="1000"
                         />
 
                     </div>
