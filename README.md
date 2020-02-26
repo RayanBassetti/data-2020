@@ -1,9 +1,10 @@
-# PROJET DATA - P2021 - ENGIE
+# BRANCH TESTING - LIBRARY : APEX.JS
 
 ## Stack :
 
 A) Front-end : 
 - React.js
+- Apex.js
 
 B) Back-end : 
 - Hapi
