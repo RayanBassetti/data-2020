@@ -19,9 +19,9 @@ class Home extends React.Component {
         fetch('http://localhost:4000/api/single')
             .then(results => {
                 return results.json()
-            }).then(data => {
+            }).then(res => {
                 this.setState({
-                    data: data.data,
+                    data: res.data,
                     loading: false
                 })
             })
