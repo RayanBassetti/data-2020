@@ -70,7 +70,7 @@ class Home extends React.Component {
         const {loading, options, series} = this.state;
         return(
                 <div>
-                    {loading === false && 
+                    {!loading && 
                     <div>
                         <h2>Status Code : 200. Data received !</h2>
                         <Chart
@@ -79,7 +79,6 @@ class Home extends React.Component {
                             type="bar"
                             width="1000"
                         />
-
                     </div>
                     }
                     {loading &&
