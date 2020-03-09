@@ -4,6 +4,7 @@
 
 A) Front-end : 
 - React.js
+- Apex.js
 
 B) Back-end : 
 - Hapi
@@ -25,7 +26,7 @@ B) Back-end :
 - cd server/
 - npm i /npm install
 
-5) Add the credidentials you want to use to connect to the database neeeded
+5) Add the credidentials you want to use to connect to the database neeeded at the root of the server folder
 - touch .env
 - Variables needed : DB_H, DB_USER, DB_PASS
 
