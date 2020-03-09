@@ -28,7 +28,7 @@ B) Back-end :
 
 5) Add the credidentials you want to use to connect to the database neeeded at the root of the server folder
 - touch .env
-- Variables needed : DB_H, DB_USER, DB_PASS
+- Variables needed : DB_H (host), DB_USER (username), DB_PASS (password)
 
 6) Once everything is installed and properly setup, start the back-end
 - (Inside the server folder) npm start 

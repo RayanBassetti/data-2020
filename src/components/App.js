@@ -3,7 +3,7 @@ import React from 'react';
 import '../css/App.css';
 
 
-import Home from './home'
+import Home from './Home'
 import Footer from './Footer'
 import Header from './Header'
 
