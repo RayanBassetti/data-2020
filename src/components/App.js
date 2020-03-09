@@ -1,11 +1,11 @@
 import React from 'react';
 // import logo from './logo.svg';
-import './App.css';
+import '../css/App.css';
 
 
-import Home from './components/home'
-import Footer from './components/Footer'
-import Header from './components/Header'
+import Home from './home'
+import Footer from './Footer'
+import Header from './Header'
 
 function App() {
   return (

@@ -88,7 +88,7 @@ class Home extends React.Component {
                             <ClipLoader
                             size={150}
                             //size={"150px"} this also works
-                            color={"#123abc"}
+                            color={"#00AAFF"}
                             loading={this.state.loading}
                             />
                         </div>
