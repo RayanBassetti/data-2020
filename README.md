@@ -5,6 +5,7 @@
 A) Front-end : 
 - React.js
 - Apex.js
+- Sass
 
 B) Back-end : 
 - Hapi

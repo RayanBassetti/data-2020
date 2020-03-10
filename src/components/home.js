@@ -69,7 +69,7 @@ class Home extends React.Component {
     render() {
         const {loading, options, series} = this.state;
         return(
-                <div>
+                <div className="home">
                     {!loading && 
                     <div>
                         <h2>Status Code : 200. Data received !</h2>

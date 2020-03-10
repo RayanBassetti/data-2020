@@ -1,13 +1,40 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+body, html {
+  width: 100%;
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto";
+  color: white;
+  background-color: #121212;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root, .app_parent, .app, .home {
+  height: 100%;
 }
+
+h1 {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.home {
+  width: 100%;
+  border-left: 1px solid red;
+}
+
+.navMain {
+  border-right: 1px solid blue;
+  width: 200px;
+  height: 100%;
+}
+.navMain .navMain_header h1 {
+  font-size: 0.9em;
+  text-align: center;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,18 +1,19 @@
 import React from 'react';
-// import logo from './logo.svg';
-import '../css/App.css';
 
+import '../css/index.css';
 
 import Home from './Home'
-import Footer from './Footer'
-import Header from './Header'
+// import Footer from './Footer'
+import NavMenu from './NavMenu';
 
 function App() {
   return (
-    <div className="App">
-        <Header />
-        <Home />
-        <Footer />
+    <div className="app_parent">
+        <div className="app">
+          <NavMenu />
+          <Home />
+        </div>
+        {/* <Footer /> */}
     </div>
   );
 }
