@@ -3,7 +3,6 @@ import React from 'react';
 import '../css/index.css';
 
 import Home from './Home'
-// import Footer from './Footer'
 import NavMenu from './NavMenu';
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
           <NavMenu />
           <Home />
         </div>
-        {/* <Footer /> */}
     </div>
   );
 }
