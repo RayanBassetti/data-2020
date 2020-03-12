@@ -7,12 +7,10 @@ import NavMenu from './NavMenu';
 
 function App() {
   return (
-    <div className="app_parent">
-        <div className="app">
-          <NavMenu />
-          <Home />
-        </div>
-    </div>
+      <div className="app">
+        <NavMenu />
+        <Home />
+      </div>
   );
 }
 

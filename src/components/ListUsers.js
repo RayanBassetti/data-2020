@@ -28,10 +28,10 @@ class ListUsers extends React.Component {
 
     render() {
         return(
-            <div>
+            <>
                 <h1>List Users</h1>
                 {this.state.users}
-            </div>
+            </>
         )
     }
 }
