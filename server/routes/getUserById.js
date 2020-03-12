@@ -12,10 +12,8 @@ module.exports = {
         }
     },
     handler: async (req, toolkit) => {
-        // trouver le paramètre nécessaire pour chercher l'utilisateur dans la bdd
-        return db('common_users').where('id', '98cc8279-3655-4e29-a93e-2943541148bc') // exemple fonctionnel ici, à voir comment passer la req.params et rendre le tout fonctionnel
+        return db('common_users').where('id', req.params.user_id)
             .then(result => {
-                console.log(result)
                 return toolkit.response({
                     statusCode: 200,
                     errors: null,
