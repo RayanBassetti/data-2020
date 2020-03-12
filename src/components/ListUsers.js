@@ -10,7 +10,7 @@ class ListUsers extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:4000/api/users')
+        fetch('http://localhost:4000/users')
             .then(results => {
                 return results.json()
             }).then(res => {

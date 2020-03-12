@@ -15,7 +15,7 @@ class ChartSingleUser extends React.Component {
 
     componentDidMount() {
         const {handleDataChart} = this;
-        fetch('http://localhost:4000/api/single')
+        fetch('http://localhost:4000/users/single')
             .then(results => {
                 return results.json()
             }).then(res => {
@@ -24,7 +24,6 @@ class ChartSingleUser extends React.Component {
                 })
                 handleDataChart()
             })
-        
     }
 
     handleDataChart() {
