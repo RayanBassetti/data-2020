@@ -3,7 +3,7 @@ const db = require('../config/database')
 
 module.exports = {
     method: 'GET',
-    path: '/api/users',
+    path: '/users',
     options: {
         validate: {
             query: joi.object().keys({
