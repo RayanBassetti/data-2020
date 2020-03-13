@@ -2,13 +2,11 @@ import React from 'react';
 
 import '../css/index.css';
 
-import Home from './Home'
-import NavMenu from './NavMenu';
+import Home from './home/Home'
 
 function App() {
   return (
       <div className="app">
-        <NavMenu />
         <Home />
       </div>
   );
