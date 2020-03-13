@@ -13,7 +13,7 @@ function SingleUser(props) {
     }
 
     function handleId(idClient) {
-        window.open('http://localhost:3000/users/' + idClient)
+        props.history.push('http://localhost:4000/users/' + idClient)
     }
 
     return (

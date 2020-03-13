@@ -69,7 +69,7 @@ class ChartSingleUser extends React.Component {
     render() {
         const {loading, options, series} = this.state;
         return(
-                <div className="home">
+                <>
                     {!loading && 
                     <div>
                         <h2>Status Code : 200. Data received !</h2>
@@ -94,7 +94,7 @@ class ChartSingleUser extends React.Component {
                         </div>
                     </div>
                     }
-                </div>
+                </>
         )
     }
 }
