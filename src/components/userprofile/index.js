@@ -5,10 +5,10 @@ import UserInfo from './UserInfo';
 
 function UserProfile() {
     return(
-        <>
+        <div className="app">
             <NavMenu />
             <UserInfo />
-        </>
+        </div>
     )
 
 }

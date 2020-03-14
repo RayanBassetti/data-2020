@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ListUsers from './ListUsers'
-import ChartSingleUser from './ChartSingleUser'
+// import ChartSingleUser from './ChartSingleUser'
 import NavMenu from '../common/NavMenu';
 
 
@@ -12,7 +12,7 @@ function Home() {
                 <NavMenu />
                 <div className="content">
                     <ListUsers />
-                    <ChartSingleUser />
+                    {/* <ChartSingleUser /> */}
                 </div>
             </div>
         </>
