@@ -3,17 +3,16 @@ const db = require('../config/database')
 
 module.exports = {
     method: 'GET',
-    path: '/api/all',
+    path: '/users/{user_id}',
     options: {
         validate: {
-            query: joi.object().keys({
-                limit: joi.number().integer().min(1).max(200).default(50),
-                offset: joi.number().integer().min(0).default(0)
+            params: joi.object().keys({
+                user_id: joi.string()
             })
         }
     },
     handler: async (req, toolkit) => {
-        return db.distinct("name").from('history_daily').limit(req.query.limit).offset(req.query.offset)
+        return db('common_users').where('id', req.params.user_id)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,
@@ -32,7 +31,7 @@ module.exports = {
                     message: 'Internal Server Error',
                     errors: [
                         {
-                            message: 'Failed to connect to database',
+                            message: 'Failed to connect to database - Needed : UUID',
                             error: err
                         }
                     ],

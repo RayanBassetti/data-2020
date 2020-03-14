@@ -1,8 +1,9 @@
-import React from 'react';
+import React from 'react'
+
 import Chart from "react-apexcharts";
 import ClipLoader from "react-spinners/ClipLoader";
 
-class Home extends React.Component {
+class ChartSingleUser extends React.Component {
     constructor() {
         super();
         this.state =  {
@@ -14,7 +15,7 @@ class Home extends React.Component {
 
     componentDidMount() {
         const {handleDataChart} = this;
-        fetch('http://localhost:4000/api/single')
+        fetch('http://localhost:4000/users/single')
             .then(results => {
                 return results.json()
             }).then(res => {
@@ -23,7 +24,6 @@ class Home extends React.Component {
                 })
                 handleDataChart()
             })
-        
     }
 
     handleDataChart() {
@@ -69,9 +69,9 @@ class Home extends React.Component {
     render() {
         const {loading, options, series} = this.state;
         return(
-                <div className="home">
+                <>
                     {!loading && 
-                    <div>
+                    <div className="chart_single">
                         <h2>Status Code : 200. Data received !</h2>
                         <Chart
                             options={options}
@@ -82,7 +82,7 @@ class Home extends React.Component {
                     </div>
                     }
                     {loading &&
-                    <div>
+                    <div className="chart_single">
                         <h2>Loading... (if nothing appears, check logs, statusCode did not return 200.)</h2>
                         <div className="sweet-loading">
                             <ClipLoader
@@ -94,9 +94,9 @@ class Home extends React.Component {
                         </div>
                     </div>
                     }
-                </div>
+                </>
         )
     }
 }
 
-export default Home
+export default ChartSingleUser

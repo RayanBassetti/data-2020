@@ -5,15 +5,11 @@ body, html {
   margin: 0;
   font-family: "Roboto";
   color: white;
-  background-color: #121212;
+  background-color: #3a3939;
 }
 
-#root, .app_parent, .app, .home {
+#root, .app, .home {
   height: 100%;
-}
-
-h1 {
-  margin: 0;
 }
 
 .app {
@@ -25,16 +21,29 @@ h1 {
 .home {
   width: 100%;
   border-left: 1px solid red;
+  background-color: red;
 }
 
 .navMain {
   border-right: 1px solid blue;
-  width: 200px;
+  width: 15%;
   height: 100%;
 }
 .navMain .navMain_header h1 {
   font-size: 0.9em;
   text-align: center;
+}
+
+.list_users {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.list_users .single_user {
+  border: 1px solid white;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,8 +1,5 @@
-// misc
-@import 'fonts';
-
-// components
-@import 'overall';
-@import 'home';
-@import 'navmenu';
-// @import 'clients';
+@import 'fonts.scss';
+@import 'overall.scss';
+@import 'home.scss';
+@import 'navmenu.scss';
+@import 'list_users.scss';

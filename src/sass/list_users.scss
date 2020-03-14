@@ -1,0 +1,11 @@
+.list_users {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .single_user {
+        border: 1px solid white;
+        margin: 10px;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
