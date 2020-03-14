@@ -71,7 +71,7 @@ class ChartSingleUser extends React.Component {
         return(
                 <>
                     {!loading && 
-                    <div>
+                    <div className="chart_single">
                         <h2>Status Code : 200. Data received !</h2>
                         <Chart
                             options={options}
@@ -82,7 +82,7 @@ class ChartSingleUser extends React.Component {
                     </div>
                     }
                     {loading &&
-                    <div>
+                    <div className="chart_single">
                         <h2>Loading... (if nothing appears, check logs, statusCode did not return 200.)</h2>
                         <div className="sweet-loading">
                             <ClipLoader

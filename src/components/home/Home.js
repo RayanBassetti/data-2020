@@ -10,9 +10,11 @@ function Home() {
         <>
             <div className="app">
                 <NavMenu />
-                <ListUsers />
+                <div className="content">
+                    <ListUsers />
+                    <ChartSingleUser />
+                </div>
             </div>
-            <ChartSingleUser />
         </>
     )
 }

@@ -27,10 +27,13 @@ class ListUsers extends React.Component {
     }
 
     render() {
+        const {users} = this.state;
         return(
             <>
                 <h1>List Users</h1>
-                {this.state.users}
+                <div className="list_users">
+                    {users}
+                </div>
             </>
         )
     }

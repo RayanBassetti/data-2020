@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { withRouter } from 'react-router-dom';
 
 function SingleUser(props) {
     const {data} = props
@@ -13,12 +14,11 @@ function SingleUser(props) {
     }
 
     function handleId(idClient) {
-        props.history.push('http://localhost:4000/users/' + idClient)
+        props.history.push('/users/' + idClient)
     }
 
     return (
-        <div className="singleUser">
-            <h1>Single User</h1>
+        <div className="single_user">
             <p>Id :{data.id}</p>
             <p>Name :{handleNames()}</p>
             <p>Espace: {data.square_meters}m²</p>
@@ -28,4 +28,4 @@ function SingleUser(props) {
     
 }
 
-export default SingleUser
+export default withRouter(SingleUser)

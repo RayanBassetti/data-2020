@@ -1,43 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-body, html {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  font-family: "Roboto";
-  color: white;
-  background-color: #3a3939;
-}
-
-#root, .app_parent, .app, .home {
-  height: 100%;
-}
-
-h1 {
-  margin: 0;
-}
-
-.app {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-}
-
-.home {
-  width: 100%;
-  border-left: 1px solid red;
-}
-
-.navMain {
-  border-right: 1px solid blue;
-  width: 200px;
-  height: 100%;
-}
-
-.navMain .navMain_header h1 {
-  font-size: 0.9em;
-  text-align: center;
-}
-
-/*# sourceMappingURL=index.css.map */
-
-/*# sourceMappingURL=index.scss.map */
+@import 'fonts.scss';
+@import 'overall.scss';
+@import 'home.scss';
+@import 'navmenu.scss';
+@import 'list_users.scss';
