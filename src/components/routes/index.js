@@ -9,12 +9,14 @@ function RoutingSwitch() {
     return(
         <Router>
             <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route path="/users/:user_id">
-                    <UserProfile />
-                </Route>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route 
+                        path="/users/:user_id"
+                        render={(props) => <UserProfile {...props} />}
+                    >
+                    </Route>
             </Switch>
         </Router>
     )

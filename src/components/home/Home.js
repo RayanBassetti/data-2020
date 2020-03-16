@@ -8,12 +8,10 @@ import NavMenu from '../common/NavMenu';
 function Home() {
     return(
         <>
-            <div className="app">
-                <NavMenu />
-                <div className="content">
-                    <ListUsers />
-                    {/* <ChartSingleUser /> */}
-                </div>
+            <NavMenu />
+            <div className="content">
+                <ListUsers />
+                {/* <ChartSingleUser /> */}
             </div>
         </>
     )

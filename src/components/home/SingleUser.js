@@ -6,20 +6,9 @@ class SingleUser extends React.Component {
     constructor(props) {
         super(props);
         
-        this.handleNames = this.handleNames.bind(this);
         this.handleId = this.handleId.bind(this);
     }
     
-
-    handleNames() {
-        const {data} = this.props;
-        if (data && data.name !== undefined) {
-            return data.name.replace(/\d+/g,'')
-        } else {
-            console.log("error")
-        }
-    }
-
     handleId(idClient) {
         this.props.history.push('/users/' + idClient, this.props.data)
     }
