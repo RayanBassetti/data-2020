@@ -3,11 +3,12 @@ import React from 'react';
 import NavMenu from '../common/NavMenu'
 import UserInfo from './UserInfo';
 
-function UserProfile() {
+function UserProfile(props) {
+    const {state} = props.location
     return(
         <>
             <NavMenu />
-            <UserInfo />
+            <UserInfo data={state}/>
         </>
     )
 
