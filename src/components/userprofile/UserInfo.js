@@ -5,7 +5,8 @@ function UserProfile(props) {
     return(
         <>
             <div className="user_profile">
-                <h1>Name: {data.name}</h1>
+                <h1>Client profile</h1>
+                <p>{data.id}</p>
             </div>
         </>
     )

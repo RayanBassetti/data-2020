@@ -30,7 +30,7 @@ class ListUsers extends React.Component {
         const {users} = this.state;
         return(
             <>
-                <h1>List Users</h1>
+                <h1>List Clients</h1>
                 <div className="list_users">
                     {users}
                 </div>
