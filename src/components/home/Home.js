@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ListUsers from './ListUsers'
-// import ChartSingleUser from './ChartSingleUser'
+import ListClients from './ListClients'
+// import ChartSingleClient from './ChartSingleClient'
 import NavMenu from '../common/NavMenu';
 
 
@@ -10,8 +10,8 @@ function Home() {
         <>
             <NavMenu />
             <div className="content">
-                <ListUsers />
-                {/* <ChartSingleUser /> */}
+                <ListClients />
+                {/* <ChartSingleClient /> */}
             </div>
         </>
     )

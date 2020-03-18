@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ChartSingleUser from './ChartSingleUser';
+import ChartSingleClient from './ChartSingleClient';
 
 import {
     Button,
@@ -12,7 +12,7 @@ import {
 
 import { withRouter } from 'react-router-dom';
 
-function SingleUser(props) {
+function SingleClient(props) {
 
     function handleId(idClient) {
         props.history.push('/users/' + idClient, props.data)
@@ -29,7 +29,7 @@ function SingleUser(props) {
             <Button flat onClick={() => handleId(data.id)}>Go to profil</Button>
             </CardActions>
             <CardText expandable>
-                <ChartSingleUser />
+                <ChartSingleClient />
             </CardText>
         </Card>
     )
@@ -37,4 +37,4 @@ function SingleUser(props) {
     
 }
 
-export default withRouter(SingleUser)
+export default withRouter(SingleClient)

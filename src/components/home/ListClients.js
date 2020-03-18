@@ -1,8 +1,8 @@
 import React from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
 
-import SingleUser from './SingleUser'
-class ListUsers extends React.Component {
+import SingleClient from './SingleClient'
+class ListClients extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -18,11 +18,12 @@ class ListUsers extends React.Component {
                 let foreignUsers = res.data
                 let allUsers = []
                 foreignUsers.forEach((item, index) => {
-                    const user = <SingleUser data={item} key={index} />
+                    const user = <SingleClient data={item} key={index} />
                     allUsers.push(user)
                 })
                 this.setState({
-                    users: allUsers
+                    users: allUsers,
+                    loading: false
                 })
             })
     }
@@ -58,4 +59,4 @@ class ListUsers extends React.Component {
     }
 }
 
-export default ListUsers
+export default ListClients

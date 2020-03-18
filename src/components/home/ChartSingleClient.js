@@ -3,7 +3,7 @@ import React from 'react'
 import Chart from "react-apexcharts";
 import ClipLoader from "react-spinners/ClipLoader";
 
-class ChartSingleUser extends React.Component {
+class ChartSingleClient extends React.Component {
     constructor() {
         super();
         this.state =  {
@@ -99,4 +99,4 @@ class ChartSingleUser extends React.Component {
     }
 }
 
-export default ChartSingleUser
+export default ChartSingleClient

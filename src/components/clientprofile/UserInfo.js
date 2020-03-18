@@ -1,6 +1,6 @@
 import React from 'react';
 
-function UserProfile(props) {
+function ClientProfile(props) {
     const {data} = props
     return(
         <>
@@ -12,4 +12,4 @@ function UserProfile(props) {
     )
 }
  
-export default UserProfile
+export default ClientProfile
