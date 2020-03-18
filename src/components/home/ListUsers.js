@@ -1,4 +1,5 @@
 import React from 'react'
+import ClipLoader from "react-spinners/ClipLoader";
 
 import SingleUser from './SingleUser'
 class ListUsers extends React.Component {
@@ -27,13 +28,31 @@ class ListUsers extends React.Component {
     }
 
     render() {
-        const {users} = this.state;
+        const {users, loading} = this.state;
         return(
             <>
+                {! loading &&
+                <>
                 <h1>List Clients</h1>
                 <div className="list_users">
                     {users}
                 </div>
+                </>
+                }
+                {loading &&
+                <>
+                <h1>List Clients</h1>
+                <h2>Loading... (if nothing appears, check logs, statusCode did not return 200.)</h2>
+                        <div className="sweet-loading">
+                            <ClipLoader
+                            size={150}
+                            //size={"150px"} this also works
+                            color={"#00AAFF"}
+                            loading={this.state.loading}
+                            />
+                        </div>
+                </>
+                }
             </>
         )
     }
