@@ -12,6 +12,18 @@ body, html {
   height: 100%;
 }
 
+.light {
+  background-color: white;
+  color: black;
+  transition: ease-in-out 1s;
+}
+
+.black {
+  background-color: #3a3939;
+  color: white;
+  transition: ease-in-out 1s;
+}
+
 .app {
   display: flex;
   flex-direction: row;
