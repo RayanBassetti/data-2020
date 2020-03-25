@@ -1,16 +1,14 @@
 import React from 'react';
 
 import ListClients from './ListClients'
-// import ChartSingleClient from './ChartSingleClient'
-// import NavMenu from '../common/NavMenu';
 
 
-function Home() {
+function Home(props) {
+    const {darkMode} = props.props
     return(
         <>
-            <div className="content">
+            <div className={`content ${darkMode}`}>
                 <ListClients />
-                {/* <ChartSingleClient /> */}
             </div>
         </>
     )

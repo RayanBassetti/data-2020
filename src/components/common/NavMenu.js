@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import Switch from '@material-ui/core/Switch';
+import RoutingSwitch from '../routes'
+
 
 function NavMenu()  {
     const [darkMode, setDarkMode] = useState("light");
@@ -11,6 +13,7 @@ function NavMenu()  {
     }
 
     return(
+        <>
         <div className={`navMain ${darkMode}`}>
             <div className="navMain_header">
                 <img src="" alt="logo engie"></img>
@@ -25,6 +28,9 @@ function NavMenu()  {
                 />
             </div>
         </div>
+        <RoutingSwitch darkMode={darkMode}/>
+
+        </>
     )
 }
 
