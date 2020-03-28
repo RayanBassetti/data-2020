@@ -3,12 +3,23 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: 'Roboto';
-    color: white;
-    background-color: #3a3939;
 }
 
 #root, .app, .home {
     height: 100%;
+}
+
+.light {
+    background-color: white;
+    color: black;
+    transition: ease-in-out 1s;
+
+}
+
+.dark {
+    background-color: #3a3939;
+    color: white;
+    transition: ease-in-out 1s;
 }
 
 .app {
@@ -22,3 +33,13 @@ body, html {
         width: 15%;
     }
 }
+
+// .darkmode {
+//     background-color: #3a3939 !important;
+//     color: white !important;
+//     .MuiTypography-colorTextSecondary {
+//         background-color: #3a3939 !important;
+//         color: white !important;
+
+//     }
+// }
