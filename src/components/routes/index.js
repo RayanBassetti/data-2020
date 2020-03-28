@@ -5,14 +5,14 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from '../home/Home'
 import ClientProfile from '../clientprofile'
 
-function RoutingSwitch(props) {
+function RoutingSwitch() {
     return(
         <Router>
             <Switch>
                     <Route 
                         exact 
                         path="/"
-                        render={() => <Home props={props} />}>
+                        render={() => <Home />}>
                     </Route>
                     <Route 
                         path="/users/:user_id"

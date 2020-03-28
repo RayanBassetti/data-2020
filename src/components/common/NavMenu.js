@@ -1,36 +1,23 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import Switch from '@material-ui/core/Switch';
-import RoutingSwitch from '../routes'
+import {ThemeContext} from '../contexts/ThemeContext'
 
 
 function NavMenu()  {
-    const [darkMode, setDarkMode] = useState("light");
-    const [switcher, setSwitcher] = useState(false)
-
-    function toggleState() {
-        darkMode === "light" ? setDarkMode("black") : setDarkMode("light");
-        switcher === false ? setSwitcher(true) : setSwitcher(false)
-    }
-
+    const {theme, toggleTheme} = useContext(ThemeContext)
     return(
-        <>
-        <div className={`navMain ${darkMode}`}>
+        <div className={`navMain ${theme}`}>
             <div className="navMain_header">
                 <img src="" alt="logo engie"></img>
                 <h1 className="mainTitle">Dashboard Engie</h1>
-                {/* <button onClick={() => toggleState()}>{buttonText}</button> */}
-                <p>{darkMode}</p>
                 <Switch
-                    value={switcher}
-                    onChange={() => toggleState()}
+                    onChange={toggleTheme}
+                    value="switcher"
                     color="default"
                     inputProps={{ 'aria-label': 'checkbox with default color' }}
                 />
             </div>
         </div>
-        <RoutingSwitch darkMode={darkMode}/>
-
-        </>
     )
 }
 

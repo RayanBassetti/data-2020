@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import ListClients from './ListClients'
+import {ThemeContext} from '../contexts/ThemeContext'
 
 
-function Home(props) {
-    const {darkMode} = props.props
+function Home() {
+    const {theme} = useContext(ThemeContext)
     return(
         <>
-            <div className={`content ${darkMode}`}>
+            <div className={`content ${theme}`}>
                 <ListClients />
             </div>
         </>
