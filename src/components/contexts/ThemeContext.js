@@ -31,7 +31,6 @@ class ThemeContextProvider extends React.Component {
         } else {
             this.applyTheme(true, "light")
         }
-        console.log(localStorage.getItem("params"))
     }
 
 

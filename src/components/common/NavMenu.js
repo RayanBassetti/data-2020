@@ -5,7 +5,6 @@ import {ThemeContext} from '../contexts/ThemeContext'
 
 function NavMenu()  {
     const {isLightTheme, theme, toggleTheme} = useContext(ThemeContext)
-    console.log(isLightTheme, theme)
     return(
         <div className={`navMain ${theme}`}>
             <div className="navMain_header">
