@@ -1,5 +1,6 @@
 import React from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
+import MaterialTable from 'material-table'
 
 import SingleClient from './SingleClient'
 class ListClients extends React.Component {
@@ -15,28 +16,43 @@ class ListClients extends React.Component {
             .then(results => {
                 return results.json()
             }).then(res => {
-                let foreignUsers = res.data
-                let allUsers = []
-                foreignUsers.forEach((item, index) => {
-                    const user = <SingleClient data={item} key={index} />
-                    allUsers.push(user)
-                })
                 this.setState({
-                    users: allUsers,
-                    loading: false
+                    loading: false,
+                    users: res.data
                 })
+                // let foreignUsers = res.data
+                // let allUsers = []
+                // foreignUsers.forEach((item, index) => {
+                //     const user = <SingleClient data={item} key={index} />
+                //     allUsers.push(user)
+                // })
+                // this.setState({
+                //     users: allUsers,
+                //     loading: false
+                // })
             })
     }
 
     render() {
         const {users, loading} = this.state;
+        console.log(users)
         return(
             <>
                 {! loading &&
                 <>
                 <h1>List Clients</h1>
                 <div className="list_users">
-                    {users}
+                    
+                    <div>
+                        <MaterialTable
+                            columns={[
+                                { title: 'Id', field: 'id' }
+                            ]}
+                            data={users}
+                            title="Demo Title"
+                        />
+                    </div>
+                    {/* {users} */}
                 </div>
                 </>
                 }
