@@ -1,8 +1,7 @@
 import React from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
-import MaterialTable from 'material-table'
+import TableListClients from './TableListClients'
 
-import SingleClient from './SingleClient'
 class ListClients extends React.Component {
     constructor() {
         super();
@@ -35,30 +34,19 @@ class ListClients extends React.Component {
 
     render() {
         const {users, loading} = this.state;
-        console.log(users)
         return(
             <>
+                <h1>Bonjour Rick</h1>
                 {! loading &&
                 <>
-                <h1>List Clients</h1>
                 <div className="list_users">
-                    
-                    <div>
-                        <MaterialTable
-                            columns={[
-                                { title: 'Id', field: 'id' }
-                            ]}
-                            data={users}
-                            title="Demo Title"
-                        />
-                    </div>
+                    <TableListClients users={users}/>
                     {/* {users} */}
                 </div>
                 </>
                 }
                 {loading &&
                 <>
-                <h1>List Clients</h1>
                 <h2>Loading... (if nothing appears, check logs, statusCode did not return 200.)</h2>
                         <div className="sweet-loading">
                             <ClipLoader
