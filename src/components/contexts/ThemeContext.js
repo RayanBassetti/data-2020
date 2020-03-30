@@ -6,7 +6,7 @@ class ThemeContextProvider extends React.Component {
 
     componentDidMount() {
         const params = JSON.parse(localStorage.getItem("params"))
-        if(this.emptyObject(params)) {
+        if(this.emptyObject(params) || !params) {
             this.setState({
                 isLightTheme: true,
                 theme: "light"
