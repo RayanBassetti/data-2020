@@ -60,4 +60,22 @@ body, html {
   padding: 10px;
 }
 
+.rowClientName {
+  display: flex;
+  flex-direction: row;
+}
+.rowClientName .rowClientNameDetails {
+  display: flex;
+  flex-direction: column;
+}
+.rowClientName .rowClientNameDetails p {
+  margin: 0;
+}
+.rowClientName .rowClientNameDetails .name {
+  color: black;
+}
+.rowClientName .rowClientNameDetails .scoring {
+  color: #888888;
+}
+
 /*# sourceMappingURL=index.css.map */

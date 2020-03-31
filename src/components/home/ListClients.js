@@ -17,30 +17,20 @@ class ListClients extends React.Component {
             }).then(res => {
                 this.setState({
                     loading: false,
-                    users: res.data
+                    data: res.data
                 })
-                // let foreignUsers = res.data
-                // let allUsers = []
-                // foreignUsers.forEach((item, index) => {
-                //     const user = <SingleClient data={item} key={index} />
-                //     allUsers.push(user)
-                // })
-                // this.setState({
-                //     users: allUsers,
-                //     loading: false
-                // })
             })
     }
 
     render() {
-        const {users, loading} = this.state;
+        const {data, loading} = this.state;
         return(
             <>
                 <h1>Bonjour Rick</h1>
                 {! loading &&
                 <>
                 <div className="list_users">
-                    <TableListClients users={users}/>
+                    <TableListClients users={data}/>
                     {/* {users} */}
                 </div>
                 </>
