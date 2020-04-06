@@ -11,7 +11,7 @@ function RoutingSwitch() {
             <Switch>
                     <Route 
                         exact 
-                        path="/"
+                        path="/users/"
                         render={() => <Home />}>
                     </Route>
                     <Route 

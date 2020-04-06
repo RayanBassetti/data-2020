@@ -7,19 +7,14 @@ import { withRouter } from 'react-router-dom';
 
 function RowClientDetail(props) {
 
-    const handleId = (idClient) => {
-        console.log(props)
-        // props.history.push('/users/' + idClient, props.users)
-    }
-
-    const {users} = props;
+    const {users, handleId} = props;
 
     return(
         <>
-            <Button size="small" color="primary" onClick={() => handleId(users.id)}>
+            <Button size="small" color="primary" onClick={() => handleId(users.id, users)}>
                 Aller sur le profil
             </Button>
-            {props.users.id}
+            {users.id}
         </>
     )
 }

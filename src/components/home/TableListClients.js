@@ -4,8 +4,18 @@ import MaterialTable from 'material-table'
 import RowClientDetail from './RowClientDetail'
 import RowClientName from './RowClientName'
 
+import { withRouter } from 'react-router-dom';
+
+
 function TableListClients(props) {
     const {users} = props
+    console.log(users)
+
+    const handleId = (idClient, user) => {
+        console.log(props.history)
+        props.history.push(`/users/${idClient}`, user)
+    }
+
     return(
         <MaterialTable
             title="Clients"
@@ -43,7 +53,7 @@ function TableListClients(props) {
                   tooltip: 'Détail du client',
                   render: users => {
                     return (
-                      <RowClientDetail users={users}/>
+                      <RowClientDetail users={users} handleId={handleId}/>
                     )
                   },
                 }
@@ -52,4 +62,4 @@ function TableListClients(props) {
     )
 }
 
-export default TableListClients
+export default withRouter(TableListClients)
