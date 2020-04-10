@@ -1,19 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
-import ListUsers from './ListUsers'
-// import ChartSingleUser from './ChartSingleUser'
-import NavMenu from '../common/NavMenu';
+import ListClients from './ListClients'
+import {ThemeContext} from '../contexts/ThemeContext'
 
 
 function Home() {
+    const {theme} = useContext(ThemeContext)
     return(
-        <>
-            <NavMenu />
-            <div className="content">
-                <ListUsers />
-                {/* <ChartSingleUser /> */}
-            </div>
-        </>
+        <div className={`content ${theme}`}>
+            <ListClients />
+        </div>
     )
 }
 

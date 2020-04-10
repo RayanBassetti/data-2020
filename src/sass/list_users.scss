@@ -6,6 +6,23 @@
         border: 1px solid white;
         margin: 10px;
         padding: 10px;
-        cursor: pointer;
+    }
+}
+
+.rowClientName {
+    display: flex;
+    flex-direction: row;
+    .rowClientNameDetails {
+        display: flex;
+        flex-direction: column;
+        p {
+            margin: 0;
+        }
+        .name {
+            color: black;
+        }
+        .scoring {
+            color: rgb(136, 136, 136);
+        }
     }
 }

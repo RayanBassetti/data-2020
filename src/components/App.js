@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import RoutingSwitch from './routes'
-
+import NavMenu from './common/NavMenu';
 import '../css/index.css';
+import {ThemeContext} from './contexts/ThemeContext';
+import RoutingSwitch from './routes';
 
 function App() {
+  const {theme} = useContext(ThemeContext)
   return (
-    <div className="app">
-      <RoutingSwitch />
+    <div className={`app ${theme}`}>
+        <NavMenu />
+        <RoutingSwitch />
     </div>
   );
 }

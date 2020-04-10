@@ -1,15 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 body, html {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family: "Roboto";
-  color: white;
-  background-color: #3a3939;
+  font-family: "Muli";
 }
 
 #root, .app, .home {
   height: 100%;
+}
+
+.light {
+  background-color: white;
+  color: black;
+  transition: ease-in-out 1s;
+}
+
+.dark {
+  background-color: #3a3939;
+  color: white;
+  transition: ease-in-out 1s;
 }
 
 .app {
@@ -47,7 +58,24 @@ body, html {
   border: 1px solid white;
   margin: 10px;
   padding: 10px;
-  cursor: pointer;
+}
+
+.rowClientName {
+  display: flex;
+  flex-direction: row;
+}
+.rowClientName .rowClientNameDetails {
+  display: flex;
+  flex-direction: column;
+}
+.rowClientName .rowClientNameDetails p {
+  margin: 0;
+}
+.rowClientName .rowClientNameDetails .name {
+  color: black;
+}
+.rowClientName .rowClientNameDetails .scoring {
+  color: #888888;
 }
 
 /*# sourceMappingURL=index.css.map */
