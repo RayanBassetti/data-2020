@@ -27,7 +27,7 @@ function SingleClient(props) {
 
     const {data} = props;
     return (
-        <Card className="single_user darkmode">
+        <Card className="single_user">
             <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                 {data.name}

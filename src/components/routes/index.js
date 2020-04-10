@@ -11,12 +11,12 @@ function RoutingSwitch() {
             <Switch>
                     <Route 
                         exact 
-                        path="/"
+                        path="/users/"
                         render={() => <Home />}>
                     </Route>
                     <Route 
                         path="/users/:user_id"
-                        render={(props) => <ClientProfile {...props} />} // allows to pass props from parent component to this one
+                        render={(props) => <ClientProfile {...props} />} // allows to pass props from component to this one
                     >
                     </Route>
             </Switch>

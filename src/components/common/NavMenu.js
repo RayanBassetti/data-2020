@@ -12,7 +12,8 @@ function NavMenu()  {
                 <h1 className="mainTitle">Dashboard Engie</h1>
                 <Switch
                     onChange={toggleTheme}
-                    value="switcher"
+                    checked={theme === "dark"}
+                    value={theme}
                     color="default"
                     inputProps={{ 'aria-label': 'checkbox with default color' }}
                 />

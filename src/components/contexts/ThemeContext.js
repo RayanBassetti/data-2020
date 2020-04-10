@@ -3,19 +3,30 @@ import React, {createContext} from 'react';
 export const ThemeContext = createContext();
 
 class ThemeContextProvider extends React.Component {
-    state = {
-        isLightTheme: true,
-        theme: "light"
+
+    componentDidMount() {
+        const params = JSON.parse(localStorage.getItem("params"))
+        if(Object.keys(params).length === 0 || !params) {
+            this.setState({
+                theme: "light"
+            })
+        } else {
+            this.setState(params)
+        }
     }
-    toggleTheme = () => {
-        this.state.isLightTheme ? this.setState({
-            isLightTheme: !this.state.isLightTheme,
-            theme: "dark"
-        }) : this.setState({
-            isLightTheme: !this.state.isLightTheme,
-            theme: "light"
+
+    applyTheme = (color) => {
+        localStorage.setItem("params", JSON.stringify({theme: color}))
+        return this.setState({
+            theme: color
         })
     }
+
+    toggleTheme = () => {
+        const {theme} = this.state
+        theme === "dark" ? this.applyTheme("light") : this.applyTheme("dark");
+    }
+
     render() {
         return(
             <ThemeContext.Provider value={{...this.state, toggleTheme: this.toggleTheme}}>
