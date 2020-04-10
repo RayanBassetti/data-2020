@@ -9,10 +9,8 @@ import { withRouter } from 'react-router-dom';
 
 function TableListClients(props) {
     const {users} = props
-    console.log(users)
-
     const handleId = (idClient, user) => {
-        console.log(props.history)
+        delete user.tableData
         props.history.push(`/users/${idClient}`, user)
     }
 
@@ -31,7 +29,7 @@ function TableListClients(props) {
                     field: 'name', 
                     render: users => {
                         return (
-                            <RowClientName users={users}/>
+                            <RowClientName user={users}/>
                         )
                     } 
                 },
@@ -53,7 +51,7 @@ function TableListClients(props) {
                   tooltip: 'Détail du client',
                   render: users => {
                     return (
-                      <RowClientDetail users={users} handleId={handleId}/>
+                      <RowClientDetail user={users} handleId={handleId}/>
                     )
                   },
                 }
