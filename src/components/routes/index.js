@@ -16,7 +16,7 @@ function RoutingSwitch() {
                     </Route>
                     <Route 
                         path="/users/:user_id"
-                        render={(props) => <ClientProfile {...props} />} // allows to pass props from parent component to this one
+                        render={(props) => <ClientProfile {...props} />} // allows to pass props from component to this one
                     >
                     </Route>
             </Switch>
