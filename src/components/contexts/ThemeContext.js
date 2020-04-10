@@ -6,9 +6,8 @@ class ThemeContextProvider extends React.Component {
 
     componentDidMount() {
         const params = JSON.parse(localStorage.getItem("params"))
-        if(this.emptyObject(params) || !params) {
+        if(Object.keys(params).length === 0 || !params) {
             this.setState({
-                isLightTheme: true,
                 theme: "light"
             })
         } else {
@@ -16,32 +15,17 @@ class ThemeContextProvider extends React.Component {
         }
     }
 
-    emptyObject = (object) => {
-        for(var value in object) {
-            if(object.hasOwnProperty(value)) {
-                return false
-            }
-        }
-        return true
-    }
-
-    applyTheme = (bool, color) => {
-        localStorage.setItem("params", JSON.stringify({isLightTheme: bool, theme: color}))
+    applyTheme = (color) => {
+        localStorage.setItem("params", JSON.stringify({theme: color}))
         return this.setState({
-            isLightTheme: bool,
             theme: color
         })
     }
 
     toggleTheme = () => {
-        const {isLightTheme} = this.state
-        if(isLightTheme) {
-            this.applyTheme(false, "dark")
-        } else {
-            this.applyTheme(true, "light")
-        }
+        const {theme} = this.state
+        theme === "dark" ? this.applyTheme("light") : this.applyTheme("dark");
     }
-
 
     render() {
         return(

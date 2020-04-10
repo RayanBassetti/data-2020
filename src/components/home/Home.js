@@ -7,11 +7,9 @@ import {ThemeContext} from '../contexts/ThemeContext'
 function Home() {
     const {theme} = useContext(ThemeContext)
     return(
-        <>
-            <div className={`content ${theme}`}>
-                <ListClients />
-            </div>
-        </>
+        <div className={`content ${theme}`}>
+            <ListClients />
+        </div>
     )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
+import TableListClients from './TableListClients'
 
-import SingleClient from './SingleClient'
 class ListClients extends React.Component {
     constructor() {
         super();
@@ -15,34 +15,28 @@ class ListClients extends React.Component {
             .then(results => {
                 return results.json()
             }).then(res => {
-                let foreignUsers = res.data
-                let allUsers = []
-                foreignUsers.forEach((item, index) => {
-                    const user = <SingleClient data={item} key={index} />
-                    allUsers.push(user)
-                })
                 this.setState({
-                    users: allUsers,
-                    loading: false
+                    loading: false,
+                    data: res.data
                 })
             })
     }
 
     render() {
-        const {users, loading} = this.state;
+        const {data, loading} = this.state;
         return(
             <>
+                <h1>Bonjour Rick</h1>
                 {! loading &&
                 <>
-                <h1>List Clients</h1>
                 <div className="list_users">
-                    {users}
+                    <TableListClients users={data}/>
+                    {/* {users} */}
                 </div>
                 </>
                 }
                 {loading &&
                 <>
-                <h1>List Clients</h1>
                 <h2>Loading... (if nothing appears, check logs, statusCode did not return 200.)</h2>
                         <div className="sweet-loading">
                             <ClipLoader
