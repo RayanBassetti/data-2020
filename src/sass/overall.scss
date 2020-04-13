@@ -2,7 +2,11 @@ body, html {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-family: 'Muli';
+    font-family: 'Inter' !important;
+}
+
+.MuiTypography-body1 {
+    font-family: 'Inter' !important;
 }
 
 #root, .app, .home {
