@@ -5,6 +5,8 @@ import {ThemeContext} from '../contexts/ThemeContext'
 
 function NavMenu()  {
     const {theme, toggleTheme} = useContext(ThemeContext)
+    const themeDark = theme === "dark" ? true : false
+    
     return(
         <div className={`navMain ${theme}`}>
             <div className="navMain_header">
@@ -12,7 +14,7 @@ function NavMenu()  {
                 <h1 className="mainTitle">Dashboard Engie</h1>
                 <Switch
                     onChange={toggleTheme}
-                    checked={theme === "dark"}
+                    checked={themeDark}
                     value={theme}
                     color="default"
                     inputProps={{ 'aria-label': 'checkbox with default color' }}
