@@ -5,7 +5,7 @@ export const NavContext = createContext();
 class NavContext extends React.Component {
 
     componentDidMount() {
-
+        console.log(this.props)
     }
 
 

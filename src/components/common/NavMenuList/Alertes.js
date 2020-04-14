@@ -20,7 +20,7 @@ function Alertes(props) {
     };
 
     return(
-        <List>
+        <>
             <ListItem
                 button
                 selected={selected}
@@ -36,13 +36,13 @@ function Alertes(props) {
                 <List component="div" disablePadding>
                 <ListItem button style={{paddingLeft: "50px"}}>
                     <ListItemIcon>
-                    <StarBorder />
+                        <StarBorder />
                     </ListItemIcon>
-                    <ListItemText primary="Starred" />
+                    <ListItemText primary="Sous-Menu" />
                 </ListItem>
                 </List>
             </Collapse>
-        </List>
+        </>
     )
 }
 
