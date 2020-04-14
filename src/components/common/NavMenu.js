@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import Switch from '@material-ui/core/Switch';
 // import {ThemeContext} from '../contexts/ThemeContext'
 import NavMenuList from './NavMenuList'
@@ -7,7 +7,6 @@ function NavMenu()  {
     // const {theme, toggleTheme} = useContext(ThemeContext)
     // const themeDark = theme === "dark" ? true : false
 
-    
     return(
         <div className={`navMain`}>
             <div className="navMain_header">
