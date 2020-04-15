@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 // import Switch from '@material-ui/core/Switch';
 // import {ThemeContext} from '../contexts/ThemeContext'
 import NavMenuList from './NavMenuList'
@@ -10,7 +10,8 @@ function NavMenu()  {
     return(
         <div className={`navMain`}>
             <div className="navMain_header">
-                <img src="https://cdn.1min30.com/wp-content/uploads/2018/02/Logo-Engie-1.jpg" width="100px" height="100px" alt="logo engie" margin-right="auto" margin-left="auto"></img>
+                <img src="https://cdn.1min30.com/wp-content/uploads/2018/02/Logo-Engie-1.jpg" alt="logo_engie"></img>
+            </div>
                 <NavMenuList />
                 {/* <Switch
                     onChange={toggleTheme}
@@ -19,7 +20,6 @@ function NavMenu()  {
                     color="default"
                     inputProps={{ 'aria-label': 'checkbox with default color' }}
                 /> */}
-            </div>
         </div>
     )
 }

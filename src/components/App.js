@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 
-import NavMenu from './common/NavMenu';
 import '../css/index.css';
 import {ThemeContext} from './contexts/ThemeContext';
 import RoutingSwitch from './routes';

@@ -4,10 +4,12 @@ import React, {useState} from 'react';
 
 // external components 
 import Alertes from './NavMenuList/Alertes'
-import ListItemLink from './ListItemLink'
+import ListItemLink from './NavMenuList/ListItemLink'
+import PathMethod from './PathMethod'
 
 // list components
 import List from '@material-ui/core/List';
+
 //icons
 import HomeIcon from '@material-ui/icons/Home';
 import GroupIcon from '@material-ui/icons/Group';
@@ -17,12 +19,10 @@ import Planning from './NavMenuList/Planning';
 
 function NavMenuList()  {
 
-    const [selectedIndex, setSelectedIndex] = useState(0);
-
+    const [selectedIndex, setSelectedIndex] = useState(PathMethod);
     const handleListItemClick = (event, index) => {
       setSelectedIndex(index);
     };
-
     
     return(
             <List component="nav" aria-label="main home clients">

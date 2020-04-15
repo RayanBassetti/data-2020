@@ -3,6 +3,7 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: 'Inter' !important;
+    background-color: #E5E5E5;
 }
 
 .MuiTypography-body1 {
@@ -11,19 +12,6 @@ body, html {
 
 #root, .app, .home {
     height: 100%;
-}
-
-.light {
-    background-color: white;
-    color: black;
-    transition: ease-in-out 1s;
-
-}
-
-.dark {
-    background-color: #3a3939;
-    color: white;
-    transition: ease-in-out 1s;
 }
 
 .app {
