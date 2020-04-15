@@ -2,6 +2,7 @@ import React from 'react';
 // import Switch from '@material-ui/core/Switch';
 // import {ThemeContext} from '../contexts/ThemeContext'
 import NavMenuList from './NavMenuList'
+import Shortcuts from './Shortcuts';
 
 function NavMenu()  {
     // const {theme, toggleTheme} = useContext(ThemeContext)
@@ -12,6 +13,7 @@ function NavMenu()  {
             <div className="navMain_content">
                 <img src="https://cdn.1min30.com/wp-content/uploads/2018/02/Logo-Engie-1.jpg" alt="logo_engie"></img>
                 <NavMenuList />
+                <Shortcuts />
             </div>
                 {/* <Switch
                     onChange={toggleTheme}

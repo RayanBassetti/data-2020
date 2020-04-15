@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Clients from '../clients/Clients'
 import ClientProfile from '../clientprofile'
-import NavMenu from '../common/NavMenu';
+import NavMenu from '../common/navigation/NavMenu';
 import Home from '../home/Home';
 
 function RoutingSwitch() {
@@ -21,6 +21,11 @@ function RoutingSwitch() {
                         exact 
                         path="/clients/"
                         render={() => <Clients />}>
+                    </Route>
+                    <Route 
+                        exact 
+                        path="/messagerie/"
+                        render={() => <Home />}>
                     </Route>
                     <Route 
                         exact 

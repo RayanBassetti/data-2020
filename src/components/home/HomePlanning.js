@@ -1,13 +1,12 @@
 import React from 'react'
-import { Card, CardContent, Typography } from '@material-ui/core'
+import { Card, CardContent } from '@material-ui/core'
+import EmojiMethod from '../common/methods/EmojiMethod'
 
 function HomePlanning() {
     return(
         <Card className="card_planning card_top">
             <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                Mes tâches
-                </Typography>
+                {EmojiMethod("memo")}<p>Mes tâches</p>
             </CardContent>
         </Card>
     )

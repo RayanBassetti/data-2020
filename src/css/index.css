@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 body, html {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family: "Inter" !important;
+  font-family: "Montserrat" !important;
   background-color: #E5E5E5;
 }
 
 .MuiTypography-body1 {
-  font-family: "Inter" !important;
+  font-family: "Montserrat" !important;
 }
 
 #root, .app, .home {
@@ -28,67 +29,39 @@ body, html {
 }
 .app .navMain {
   height: 100%;
-  width: 15%;
+  width: 20%;
 }
 
 .MuiTypography-root {
-  font-family: "Inter" !important;
+  font-family: "Montserrat" !important;
 }
 
-.Home .header {
-  padding-bottom: 70px;
+.header {
   height: 60px;
 }
-.Home .header .text {
+.header .text {
   width: 30%;
 }
-.Home .header .text h1 {
+.header .text h1 {
+  font-style: normal;
+  font-weight: 600;
   font-size: 1.5em;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  color: #2A3B5D;
 }
-.Home .header .text .emoji {
-  width: 50px;
-  height: 50px;
+.header .badges {
+  width: 30%;
 }
-.Home .header .badges {
-  width: 20%;
-}
-.Home .header .badges .badge {
+.header .badges .badge {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 15px;
   background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-.Home .cards {
-  height: 80%;
-}
-.Home .cards .card_planning {
-  width: 25%;
-  height: 658px;
-  border-top: 30px solid #3978ec;
-}
-.Home .cards .card_dataviz {
-  height: 60%;
-  border-top: 30px solid #ec7444;
-}
-.Home .cards .cards_right {
-  width: 70%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.Home .cards .cards_right .cards_stats {
-  height: 35%;
-  align-items: flex-start;
-}
-.Home .cards .cards_right .cards_stats .card_stat {
-  width: 30%;
-  height: 75%;
-  border-top: 30px solid #eccd44;
 }
 
 .flexed-row-space {
@@ -109,6 +82,41 @@ body, html {
   border-top-right-radius: 15px !important;
 }
 
+.emoji {
+  width: 50px;
+  height: 50px;
+}
+
+.Home .cards {
+  padding-top: 5%;
+  height: 80%;
+}
+.Home .cards .card_planning {
+  width: 25%;
+  height: calc(100% - 30px);
+  border-top: 30px solid #3B86FF;
+}
+.Home .cards .card_dataviz {
+  height: 60%;
+  border-top: 30px solid #FFA34F;
+}
+.Home .cards .cards_right {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Home .cards .cards_right .cards_stats {
+  height: 35%;
+  align-items: flex-start;
+}
+.Home .cards .cards_right .cards_stats .card_stat {
+  width: 30%;
+  height: 75%;
+  border-top: 30px solid #FFDD2D;
+}
+
 .navMain {
   background-color: white;
 }
@@ -116,13 +124,20 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.navMain .navMain_content .MuiListItem-root {
-  border-radius: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .navMain .navMain_content img {
   width: 100px;
   height: 100px;
+}
+.navMain .navMain_content .MuiListItem-root {
+  border-radius: 10px;
+}
+.navMain .navMain_content .shortcuts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .list_users {

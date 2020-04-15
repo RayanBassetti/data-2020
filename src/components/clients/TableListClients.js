@@ -56,6 +56,7 @@ function TableListClients(props) {
                   },
                 }
             ]}
+            options={{selection: true}}
         />
     )
 }

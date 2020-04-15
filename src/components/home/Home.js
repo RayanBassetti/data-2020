@@ -1,12 +1,12 @@
 import React from 'react'
-import HomeHeader from './HomeHeader'
+import Header from '../common/components/Header'
 import HomePlanning from './HomePlanning'
 import HomeStats from './HomeStats'
 import HomeDataviz from './HomeDataviz'
 function Home() {
     return (
         <div className="content Home">
-            <HomeHeader />
+            <Header text={"Bonjour, Sophie !"} emoji={"waving_hand"}/>
             <div className="cards flexed-row-space">
                 <HomePlanning />
                 <div className="cards_right">

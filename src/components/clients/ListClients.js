@@ -26,7 +26,6 @@ class ListClients extends React.Component {
         const {data, loading} = this.state;
         return(
             <>
-                <h1>Bonjour Rick</h1>
                 {! loading &&
                 <>
                 <div className="list_users">

@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 // external components 
 import Alertes from './NavMenuList/Alertes'
 import ListItemLink from './NavMenuList/ListItemLink'
-import PathMethod from './PathMethod'
+import PathMethod from '../methods/PathMethod'
 
 // list components
 import List from '@material-ui/core/List';

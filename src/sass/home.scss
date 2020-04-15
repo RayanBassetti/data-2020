@@ -1,41 +1,15 @@
 .Home {
-    .header {
-        padding-bottom: 70px;
-        height: 60px;
-        .text {
-            width: 30%;
-            h1 {
-                font-size: 1.5em;
-            }
-            .emoji {
-                width: 50px;
-                height: 50px;
-            }
-        }
-        .badges {
-            width: 20%;
-            .badge {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                background-color: white;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-    }
     .cards {
+        padding-top: 5%;
         height: 80%;
         .card_planning {
             width: 25%;
-            height: 658px;
-            border-top: 30px solid rgb(57, 120, 236);
+            height: calc(100% - 30px);
+            border-top: 30px solid #3B86FF;
         }
         .card_dataviz {
             height: 60%;
-            border-top: 30px solid rgb(236, 116, 68);
+            border-top: 30px solid #FFA34F;
         }
         .cards_right {
             width: 70%;
@@ -50,26 +24,9 @@
                 .card_stat {
                     width: 30%;
                     height: 75%;;
-                    border-top: 30px solid rgb(236, 205, 68);
+                    border-top: 30px solid #FFDD2D;
                 }
             }
         }
     }
-}
-
-.flexed-row-space {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-.flexed-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.card_top {
-    border-top-left-radius: 15px !important;
-    border-top-right-radius: 15px !important;
 }
