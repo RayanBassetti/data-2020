@@ -1,14 +1,19 @@
-import React, {useContext} from 'react';
-
-import ListClients from './ListClients'
-import {ThemeContext} from '../contexts/ThemeContext'
-
-
+import React from 'react'
+import HomeHeader from './HomeHeader'
+import HomePlanning from './HomePlanning'
+import HomeStats from './HomeStats'
+import HomeDataviz from './HomeDataviz'
 function Home() {
-    const {theme} = useContext(ThemeContext)
-    return(
-        <div className={`content ${theme}`}>
-            <ListClients />
+    return (
+        <div className="content Home">
+            <HomeHeader />
+            <div className="cards flexed-row-space">
+                <HomePlanning />
+                <div className="cards_right">
+                    <HomeStats />
+                    <HomeDataviz />
+                </div>
+            </div>
         </div>
     )
 }

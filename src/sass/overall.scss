@@ -19,9 +19,17 @@ body, html {
     flex-direction: row;
     height: 100%;
     .content {
+        // height: 100%;
         width: 85%;
+        padding: 40px 80px 40px 80px;
     }
     .navMain {
+        height: 100%;
         width: 15%;
     }
+}
+
+.MuiTypography-root {
+    font-family: 'Inter' !important;
+
 }

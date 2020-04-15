@@ -27,7 +27,7 @@ function NavMenuList()  {
     return(
             <List component="nav" aria-label="main home clients">
                 <ListItemLink to="/" primary="Accueil" icon={<HomeIcon />} selected={selectedIndex === 0} handleListItemClick={(event) => handleListItemClick(event, 0)} />
-                <ListItemLink to="/users" primary="Clients" icon={<GroupIcon />} selected={selectedIndex === 1} handleListItemClick={(event) => handleListItemClick(event, 1)}/>
+                <ListItemLink to="/clients" primary="Clients" icon={<GroupIcon />} selected={selectedIndex === 1} handleListItemClick={(event) => handleListItemClick(event, 1)}/>
                 <Alertes selected={selectedIndex === 2} handleListItemClick={(event) => handleListItemClick(event, 2)} text={"Alertes"} />
                 <ListItemLink to="/messagerie" primary="Messagerie" icon={<ForumIcon />} selected={selectedIndex === 3} handleListItemClick={(event) => handleListItemClick(event, 3)}/>
                 <Planning selected={selectedIndex === 4} handleListItemClick={(event) => handleListItemClick(event, 4)} text={"Planning"} />

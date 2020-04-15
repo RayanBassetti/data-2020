@@ -24,15 +24,89 @@ body, html {
 }
 .app .content {
   width: 85%;
+  padding: 40px 80px 40px 80px;
 }
 .app .navMain {
+  height: 100%;
   width: 15%;
 }
 
-.home {
-  width: 100%;
-  border-left: 1px solid red;
-  background-color: red;
+.MuiTypography-root {
+  font-family: "Inter" !important;
+}
+
+.Home .header {
+  padding-bottom: 70px;
+  height: 60px;
+}
+.Home .header .text {
+  width: 30%;
+}
+.Home .header .text h1 {
+  font-size: 1.5em;
+}
+.Home .header .text .emoji {
+  width: 50px;
+  height: 50px;
+}
+.Home .header .badges {
+  width: 20%;
+}
+.Home .header .badges .badge {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.Home .cards {
+  height: 80%;
+}
+.Home .cards .card_planning {
+  width: 25%;
+  height: 658px;
+  border-top: 30px solid #3978ec;
+}
+.Home .cards .card_dataviz {
+  height: 60%;
+  border-top: 30px solid #ec7444;
+}
+.Home .cards .cards_right {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Home .cards .cards_right .cards_stats {
+  height: 35%;
+  align-items: flex-start;
+}
+.Home .cards .cards_right .cards_stats .card_stat {
+  width: 30%;
+  height: 75%;
+  border-top: 30px solid #eccd44;
+}
+
+.flexed-row-space {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexed-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card_top {
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
 }
 
 .navMain {

@@ -7,7 +7,7 @@ const PathMethod = () => {
         switch(location.pathname) {
             case "/":
                 return 0
-            case "/users": 
+            case "/clients": 
                 return 1
             case "/alertes":
                 return 2

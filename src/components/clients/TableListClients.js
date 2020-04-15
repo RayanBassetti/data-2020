@@ -11,7 +11,7 @@ function TableListClients(props) {
     const {users} = props
     const handleId = (idClient, user) => {
         delete user.tableData
-        props.history.push(`/users/${idClient}`, user)
+        props.history.push(`/clients/${idClient}`, user)
     }
 
     return(
