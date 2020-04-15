@@ -1,9 +1,12 @@
 .navMain {
     background-color: white;
-    .navMain_header {
+    .navMain_content {
         display: flex;
         flex-direction: column;
         align-items: center;
+        .MuiListItem-root {
+            border-radius: 10px;
+        }
         img {
             width: 100px;
             height: 100px;

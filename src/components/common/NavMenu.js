@@ -9,10 +9,10 @@ function NavMenu()  {
 
     return(
         <div className={`navMain`}>
-            <div className="navMain_header">
+            <div className="navMain_content">
                 <img src="https://cdn.1min30.com/wp-content/uploads/2018/02/Logo-Engie-1.jpg" alt="logo_engie"></img>
-            </div>
                 <NavMenuList />
+            </div>
                 {/* <Switch
                     onChange={toggleTheme}
                     checked={themeDark}

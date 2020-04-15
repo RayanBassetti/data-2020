@@ -38,12 +38,15 @@ body, html {
 .navMain {
   background-color: white;
 }
-.navMain .navMain_header {
+.navMain .navMain_content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.navMain .navMain_header img {
+.navMain .navMain_content .MuiListItem-root {
+  border-radius: 10px;
+}
+.navMain .navMain_content img {
   width: 100px;
   height: 100px;
 }
