@@ -4,12 +4,15 @@
         height: 80%;
         .card_planning {
             width: 25%;
-            height: calc(100% - 30px);
-            border-top: 30px solid #3B86FF;
+            height: calc(100% - 15px);
+            border-top: 15px solid #3B86FF;
         }
         .card_dataviz {
             height: 60%;
-            border-top: 30px solid #FFA34F;
+            border-top: 15px solid #FFA34F;
+            .MuiCardContent-root {
+                padding-top: 1px;
+            }
         }
         .cards_right {
             width: 70%;
@@ -20,11 +23,22 @@
             .cards_stats {
                 height: 35%;
                 align-items: flex-start;
-
                 .card_stat {
                     width: 30%;
-                    height: 75%;;
-                    border-top: 30px solid #FFDD2D;
+                    height: 80%;;
+                    border-top: 15px solid #FFDD2D;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .MuiCardContent-root {
+                        padding-top: 0;
+                        p {
+                            color: #686868;
+                            font-weight: 700;
+                            text-align: center;
+                            margin: 0;
+                        }
+                    }
                 }
             }
         }

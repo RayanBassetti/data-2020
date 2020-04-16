@@ -1,28 +1,46 @@
 import React from 'react';
 import Chart from "react-apexcharts";
 
+
+
 function RadialChart(props) {
-    const {text} = props
+    
+    const {text, data} = props
+
     const options = {
         chart: {
             id: "basic-radial"
         },
-        labels: [text],
+        yaxis : {
+            reversed: true
+        },
+        colors: ['#C2D7FA'],
+        labels: [`+ ${data}`],
         plotOptions: {
             radialBar: {
-                hollow: {
-                    size: '5%',
+                track: {
+                    show: false
                 },
-                startAngle: 80,
-                endAngle: 0,
-                offsetX: 0,
-                offsetY: 0,
+                startAngle: 0,
+                endAngle: 360,
+                offsetY: -20,
+                hollow: {
+                    margin: 5,
+                    size: '50%',
+                },
+                dataLabels: {
+                    name: {
+                        fontFamily: 'Montserrat',
+                        fontWeight: 900
+                    }
+                },
             },
         },
     }
     const series =  [60]
     return (
         <>
+            <p>{text}</p>
             <Chart options={options} series={series} type="radialBar" />
         </>
     )

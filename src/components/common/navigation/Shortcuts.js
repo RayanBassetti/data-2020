@@ -7,7 +7,7 @@ function Shortcuts() {
         <div className="shortcuts">
           <p>Mes raccourcis</p>
           <p>{links}</p>
-          <input value="" type="text" />
+          <input value="" type="text" onChange={(event) => setLink(event.target.value)}/>
           <button onClick={() => setLink("aze")}>
             Cliquez ici
           </button>

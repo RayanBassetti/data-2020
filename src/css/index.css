@@ -82,9 +82,14 @@ body, html {
   border-top-right-radius: 15px !important;
 }
 
-.emoji {
-  width: 50px;
-  height: 50px;
+.card_title {
+  margin: 10px 0px 0px 0px;
+}
+.card_title p {
+  margin: 0 0 0 10px;
+  color: #2A3B5D;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .Home .cards {
@@ -93,12 +98,15 @@ body, html {
 }
 .Home .cards .card_planning {
   width: 25%;
-  height: calc(100% - 30px);
-  border-top: 30px solid #3B86FF;
+  height: calc(100% - 15px);
+  border-top: 15px solid #3B86FF;
 }
 .Home .cards .card_dataviz {
   height: 60%;
-  border-top: 30px solid #FFA34F;
+  border-top: 15px solid #FFA34F;
+}
+.Home .cards .card_dataviz .MuiCardContent-root {
+  padding-top: 1px;
 }
 .Home .cards .cards_right {
   width: 70%;
@@ -113,8 +121,20 @@ body, html {
 }
 .Home .cards .cards_right .cards_stats .card_stat {
   width: 30%;
-  height: 75%;
-  border-top: 30px solid #FFDD2D;
+  height: 80%;
+  border-top: 15px solid #FFDD2D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Home .cards .cards_right .cards_stats .card_stat .MuiCardContent-root {
+  padding-top: 0;
+}
+.Home .cards .cards_right .cards_stats .card_stat .MuiCardContent-root p {
+  color: #686868;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
 }
 
 .navMain {
@@ -133,11 +153,16 @@ body, html {
 }
 .navMain .navMain_content .MuiListItem-root {
   border-radius: 10px;
+  color: #8798B5;
 }
 .navMain .navMain_content .shortcuts {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.Mui-selected {
+  color: #3B86FF !important;
 }
 
 .list_users {

@@ -21,7 +21,7 @@ function Header(props) {
         <div className="header flexed-row-space ">
             <div className="text flexed-row-space ">
                 <h1>{text}</h1>
-                {EmojiMethod(emoji)}
+                {EmojiMethod(emoji, 50, 50)}
             </div>
             <div className="badges flexed-row-space">
                 <div className="badge">

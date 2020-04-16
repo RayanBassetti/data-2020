@@ -31,7 +31,6 @@ body, html {
 
 .MuiTypography-root {
     font-family: 'Montserrat' !important;
-
 }
 
 .header {
@@ -79,7 +78,13 @@ body, html {
     border-top-left-radius: 15px !important;
     border-top-right-radius: 15px !important;
 }
-.emoji {
-    width: 50px;
-    height: 50px;
+
+.card_title {
+    margin: 10px 0px 0px 0px;
+    p {
+        margin: 0 0 0 10px;
+        color: #2A3B5D;
+        font-size: 18px;
+        font-weight: 600;
+    }
 }
