@@ -6,7 +6,7 @@ function HomePlanning() {
     return(
         <Card className="card_planning card_top">
             <CardContent>
-                <CardTitle emoji={"memo"} emWidth={20} emHeight={20} text={"Mes tâches"}/>
+                <CardTitle emoji={"memo"} emWidth={20} emHeight={20} text={"Mes Tâches"}/>
             </CardContent>
         </Card>
     )

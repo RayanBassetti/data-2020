@@ -1,18 +1,15 @@
 import React from 'react';
-import MaterialTable from 'material-table'
-
-import RowClientDetail from './RowClientDetail'
-import RowClientName from './RowClientName'
+import MaterialTable, {MTableBodyRow} from 'material-table'
 
 import { withRouter } from 'react-router-dom';
 
 
 function TableListClients(props) {
     const {users} = props
-    const handleId = (idClient, user) => {
-        delete user.tableData
-        props.history.push(`/clients/${idClient}`, user)
-    }
+    // const handleId = (idClient, user) => {
+    //     delete user.tableData
+    //     props.history.push(`/clients/${idClient}`, user)
+    // }
 
     return(
         <MaterialTable
@@ -25,11 +22,11 @@ function TableListClients(props) {
             }}
             columns={[
                 { 
-                    title: 'Nom du client', 
+                    title: 'Identité', 
                     field: 'name', 
                     render: users => {
                         return (
-                            <RowClientName user={users}/>
+                            <p>{users.name}</p>
                         )
                     } 
                 },
@@ -44,18 +41,21 @@ function TableListClients(props) {
                 { 
                     title: 'Priorité', 
                     field: 'current_emotion' 
-                }
+                },
+                { 
+                    title: 'Emotion', 
+                    field: 'pouti' 
+                },
+                { 
+                    title: 'Test', 
+                    field: 'Test' 
+                },
             ]}
-            detailPanel={[
-                {
-                  tooltip: 'Détail du client',
-                  render: users => {
-                    return (
-                      <RowClientDetail user={users} handleId={handleId}/>
-                    )
-                  },
-                }
-            ]}
+            components={{
+                Row: props => (
+                    <MTableBodyRow {...props} />
+                )
+            }}
             options={{selection: true}}
         />
     )

@@ -2,7 +2,7 @@ import React from 'react';
 import Chart from "react-apexcharts";
 
 function Spline(props) {
-    const {text, data, height} = props
+    const {text, height} = props
     const series =  [{
         name: 'Alertes résolues',
         data: [31, 40, 28, 51, 42, 109, 100]

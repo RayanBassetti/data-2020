@@ -139,6 +139,7 @@ body, html {
 
 .navMain {
   background-color: white;
+  color: #8798B5;
 }
 .navMain .navMain_content {
   display: flex;
@@ -153,12 +154,16 @@ body, html {
 }
 .navMain .navMain_content .MuiListItem-root {
   border-radius: 10px;
-  color: #8798B5;
+  font-weight: 900;
 }
 .navMain .navMain_content .shortcuts {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80%;
+}
+.navMain .navMain_content .shortcuts .title {
+  font-weight: 900;
 }
 
 .Mui-selected {
@@ -174,24 +179,6 @@ body, html {
   border: 1px solid white;
   margin: 10px;
   padding: 10px;
-}
-
-.rowClientName {
-  display: flex;
-  flex-direction: row;
-}
-.rowClientName .rowClientNameDetails {
-  display: flex;
-  flex-direction: column;
-}
-.rowClientName .rowClientNameDetails p {
-  margin: 0;
-}
-.rowClientName .rowClientNameDetails .name {
-  color: black;
-}
-.rowClientName .rowClientNameDetails .scoring {
-  color: #888888;
 }
 
 /*# sourceMappingURL=index.css.map */
