@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 
 function TableListClients(props) {
     const {users} = props
+    console.log(props)
     const handleId = (idClient, user) => {
         delete user.tableData
         props.history.push(`/clients/${idClient}`, user)
@@ -22,7 +23,7 @@ function TableListClients(props) {
             }}
             columns={[
                 { 
-                    title: 'Etat', 
+                    title: 'État', 
                     field: 'emotion' 
                 },
                 { 

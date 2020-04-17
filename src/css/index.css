@@ -63,6 +63,7 @@ body, html {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 5px 12px rgba(103, 164, 255, 0.35);
 }
 .header .badges .b_chat {
   background-color: #3B86FF !important;
@@ -192,6 +193,11 @@ body, html {
 }
 .list_users .MuiTableRow-head {
   background-color: #E5E5E5 !important;
+}
+.list_users .MuiTableRow-head .MuiTableCell-head {
+  color: #B4B4B4;
+  font-size: 1.1em;
+  font-weight: 600;
 }
 .list_users .MuiTableCell-root {
   padding: 0px;

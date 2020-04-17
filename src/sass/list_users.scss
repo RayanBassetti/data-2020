@@ -14,6 +14,11 @@
     }
     .MuiTableRow-head {
         background-color: #E5E5E5 !important;
+        .MuiTableCell-head {
+            color: #B4B4B4;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
     }
     .MuiTableCell-root {
         padding: 0px;

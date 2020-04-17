@@ -2,10 +2,15 @@ import React from 'react';
 
 import UserInfo from './UserInfo';
 
+import Header from '../common/components/Header'
+
 function UserProfile(props) {
     const user = props.location.state
     return(
-        <UserInfo data={user}/>
+        <>
+            <Header profil={true}/>
+            <UserInfo data={user}/>
+        </>
     )
 
 }
