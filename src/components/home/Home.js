@@ -5,9 +5,9 @@ import HomeStats from './HomeStats'
 import HomeDataviz from './HomeDataviz'
 function Home() {
     return (
-        <div className="content Home">
+        <div className="content  Home">
             <Header text={"Bonjour, Sophie !"} emoji={"waving_hand"}/>
-            <div className="cards flexed-row-space">
+            <div className="cards flexed-row-space padding_content">
                 <HomePlanning />
                 <div className="cards_right">
                     <HomeStats />

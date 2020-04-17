@@ -1,1 +1,2 @@
-# Demander au designer les paddings dans la page "Clients" pour faire rentrer la table de la liste des clients dans toute la largeur
+# Faire des scripts pour : 
+1) Convertir les noms des gens 

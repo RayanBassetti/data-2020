@@ -13,7 +13,7 @@ function TableListClients(props) {
 
     return(
         <MaterialTable
-            title="Clients"
+            title=""
             data={users}
             style={{
                 width: "100%",
@@ -21,6 +21,10 @@ function TableListClients(props) {
                 marginRight: "15px"
             }}
             columns={[
+                { 
+                    title: 'Etat', 
+                    field: 'emotion' 
+                },
                 { 
                     title: 'Identité', 
                     field: 'name', 
@@ -31,24 +35,12 @@ function TableListClients(props) {
                     } 
                 },
                 { 
-                    title: 'Dernière alerte', 
-                    field: 'last_update' 
+                    title: 'Profil', 
+                    field: 'profil_client' 
                 },
                 { 
-                    title: 'Date d\'inscription', 
-                    field: 'inscription' 
-                },
-                { 
-                    title: 'Priorité', 
-                    field: 'current_emotion' 
-                },
-                { 
-                    title: 'Emotion', 
-                    field: 'pouti' 
-                },
-                { 
-                    title: 'Test', 
-                    field: 'Test' 
+                    title: 'Type de famille', 
+                    field: 'familly_client' 
                 },
             ]}
             onRowClick={((evt, selectedRow) => handleId(selectedRow.id, selectedRow))}

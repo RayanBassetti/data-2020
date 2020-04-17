@@ -2,9 +2,20 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: 50px;
     .single_user {
         border: 1px solid white;
         margin: 10px;
         padding: 10px;
+    }
+    .MuiPaper-elevation2 {
+        box-shadow: initial;
+        background-color: #E5E5E5;
+    }
+    .MuiTableRow-head {
+        background-color: #E5E5E5 !important;
+    }
+    .MuiTableCell-root {
+        padding: 0px;
     }
 }

@@ -3,9 +3,9 @@ import React from 'react';
 import UserInfo from './UserInfo';
 
 function UserProfile(props) {
-    console.log(props)
+    const user = props.location.state
     return(
-        <UserInfo />
+        <UserInfo data={user}/>
     )
 
 }

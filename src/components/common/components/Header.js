@@ -33,7 +33,7 @@ function Header(props) {
     const {text, emoji} = props;
     const classes = useStyles();
     return (
-        <div className="header flexed-row-space ">
+        <div className="header flexed-row-space padding_content">
             <div className="text flexed-row-space ">
                 <h1>{text}</h1>
                 {EmojiMethod(emoji, 50, 50)}
