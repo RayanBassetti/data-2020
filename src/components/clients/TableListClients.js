@@ -6,10 +6,10 @@ import { withRouter } from 'react-router-dom';
 
 function TableListClients(props) {
     const {users} = props
-    // const handleId = (idClient, user) => {
-    //     delete user.tableData
-    //     props.history.push(`/clients/${idClient}`, user)
-    // }
+    const handleId = (idClient, user) => {
+        delete user.tableData
+        props.history.push(`/clients/${idClient}`, user)
+    }
 
     return(
         <MaterialTable
@@ -51,6 +51,7 @@ function TableListClients(props) {
                     field: 'Test' 
                 },
             ]}
+            onRowClick={((evt, selectedRow) => handleId(selectedRow.id, selectedRow))}
             components={{
                 Row: props => (
                     <MTableBodyRow {...props} />

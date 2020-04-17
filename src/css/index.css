@@ -63,6 +63,9 @@ body, html {
   justify-content: center;
   align-items: center;
 }
+.header .badges .b_chat {
+  background-color: #3B86FF !important;
+}
 
 .flexed-row-space {
   display: flex;

@@ -11,7 +11,7 @@ function Shortcuts() {
             <p className="title">Mes Raccourcis</p>
             <p>{links}</p>
           </div>
-          <Fab aria-label="add" onClick={() => setLink("piti chaton")}>
+          <Fab aria-label="add" onClick={() => setLink("Nouveau lien")}>
             <AddIcon />
           </Fab>
         </div>
