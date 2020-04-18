@@ -6,7 +6,8 @@
 /server/config/app-env
 /.pnp
 .pnp.js
-
+/scripts/users-gen/Lib
+/scripts/users-gen/Scripts
 # testing
 /coverage
 
