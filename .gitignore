@@ -8,6 +8,9 @@
 .pnp.js
 /scripts/users-gen/Lib
 /scripts/users-gen/Scripts
+/scripts/data-calculus/Lib
+/scripts/data-calculus/Scripts
+/scripts/data-calculus/database_ids.py
 # testing
 /coverage
 

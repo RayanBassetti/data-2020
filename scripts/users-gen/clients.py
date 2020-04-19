@@ -17,7 +17,7 @@ def genClients(number) :
             "address": fake.address(),
             "departement": fake.department(),
             "phone_number": fake.phone_number(),
-            "birthdate": fake.date_of_birth(None, 40, 65),
+            "birthdate": str(fake.date_of_birth(None, 40, 65)),
             "email": fake.free_email(),
             "gender": randomGender()
 
@@ -26,4 +26,6 @@ def genClients(number) :
     return clients
 
 with open('./json/clients.json', 'w') as outfile:
-    json.dump(genClients(1000), outfile)
+    json.dump(genClients(1), outfile)
+
+# print(singleClient[0])
