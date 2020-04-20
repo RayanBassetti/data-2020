@@ -4,7 +4,10 @@
 
 A) Front-end : 
 - React.js
-- Apex.js
+- React-Router
+- Material UI
+- Material Table
+- ApexCharts.js
 - Sass
 
 B) Back-end : 

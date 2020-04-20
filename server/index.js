@@ -28,7 +28,7 @@ const init = async () => {
 
     server.route([
         require('./routes/singleUser'),
-        require('./routes/allUsers'),
+        require('./routes/allClients'),
         require('./routes/getUserById')
     ])
 

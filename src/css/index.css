@@ -1,26 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 body, html {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family: "Muli";
+  font-family: "Montserrat" !important;
+  background-color: #E5E5E5;
+}
+
+.MuiTypography-body1 {
+  font-family: "Montserrat" !important;
 }
 
 #root, .app, .home {
   height: 100%;
-}
-
-.light {
-  background-color: white;
-  color: black;
-  transition: ease-in-out 1s;
-}
-
-.dark {
-  background-color: #3a3939;
-  color: white;
-  transition: ease-in-out 1s;
 }
 
 .app {
@@ -30,52 +25,278 @@ body, html {
 }
 .app .content {
   width: 85%;
+  padding-bottom: 40px;
 }
 .app .navMain {
-  width: 15%;
+  height: 100%;
+  width: 20%;
 }
 
-.home {
+.MuiTypography-root {
+  font-family: "Montserrat" !important;
+}
+
+.header {
+  height: 60px;
+  padding: 40px 80px 0px 80px;
+}
+.header .text {
+  width: 30%;
+}
+.header .text h1 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5em;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  color: #2A3B5D;
+}
+.header .badges {
+  width: 30%;
+}
+.header .badges .badge {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 12px rgba(103, 164, 255, 0.35);
+}
+.header .badges .b_chat {
+  background-color: #3B86FF !important;
+}
+
+.flexed-row-space {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexed-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card_top {
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+}
+
+.card_title {
+  margin: 10px 0px 0px 0px;
+}
+.card_title p {
+  margin: 0 0 0 10px;
+  color: #2A3B5D;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.fullwidth {
   width: 100%;
-  border-left: 1px solid red;
-  background-color: red;
+}
+
+.profil_tag {
+  width: 50px;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+}
+.profil_tag .pt_text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  color: #919191;
+}
+
+.progressbar_back {
+  height: 5px;
+  background-color: grey;
+  width: 100px;
+}
+.progressbar_back .progressbar_front {
+  height: 100%;
+  background-color: orange;
+}
+
+.Home .cards {
+  padding-top: 5%;
+  padding: 35px 80px 0px 80px;
+  height: 80%;
+}
+.Home .cards .card_planning {
+  width: 25%;
+  height: calc(100% - 15px);
+  border-top: 15px solid #3B86FF;
+}
+.Home .cards .card_dataviz {
+  height: 60%;
+  border-top: 15px solid #FFA34F;
+}
+.Home .cards .card_dataviz .MuiCardContent-root {
+  padding-top: 1px;
+}
+.Home .cards .cards_right {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Home .cards .cards_right .cards_stats {
+  height: 35%;
+  align-items: flex-start;
+}
+.Home .cards .cards_right .cards_stats .card_stat {
+  width: 30%;
+  height: 80%;
+  border-top: 15px solid #FFDD2D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Home .cards .cards_right .cards_stats .card_stat .MuiCardContent-root {
+  padding-top: 0;
+}
+.Home .cards .cards_right .cards_stats .card_stat .MuiCardContent-root p {
+  color: #686868;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
 }
 
 .navMain {
-  border-right: 1px solid blue;
+  background-color: white;
+  color: #8798B5;
+  box-shadow: 0px 10px 80px rgba(92, 139, 173, 0.05);
 }
-.navMain .navMain_header h1 {
-  font-size: 0.9em;
-  text-align: center;
+.navMain .navMain_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.navMain .navMain_content img {
+  width: 100px;
+  height: 100px;
+}
+.navMain .navMain_content .MuiListItem-root {
+  border-radius: 10px;
+  font-weight: 900;
+}
+.navMain .navMain_content .shortcuts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+.navMain .navMain_content .shortcuts .title {
+  font-weight: 900;
+}
+
+.Mui-selected {
+  color: #3B86FF !important;
 }
 
 .list_users {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 50px;
 }
 .list_users .single_user {
   border: 1px solid white;
   margin: 10px;
   padding: 10px;
 }
+.list_users .MuiPaper-elevation2 {
+  box-shadow: initial;
+  background-color: #E5E5E5;
+}
+.list_users .MuiTableRow-head {
+  background-color: #E5E5E5 !important;
+}
+.list_users .MuiTableRow-head .MuiTableCell-head {
+  color: #B4B4B4;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.list_users .MuiTableCell-root {
+  padding: 0px;
+}
 
-.rowClientName {
-  display: flex;
-  flex-direction: row;
+.single_client_content {
+  margin-top: 40px;
+  background-color: #F7F9FD;
 }
-.rowClientName .rowClientNameDetails {
-  display: flex;
-  flex-direction: column;
+.single_client_content .cards_top .card_top {
+  width: 50%;
+  margin: 10px;
 }
-.rowClientName .rowClientNameDetails p {
+.single_client_content .cards_top .card_top .card_top_content .scoring {
+  padding-left: 16px;
+}
+.single_client_content .cards_top .card_top .card_top_content .scoring .scoring_subpart {
+  width: 70%;
+}
+.single_client_content .client_card_title {
+  border-bottom: 1px solid #E1E1E1;
+}
+.single_client_content .client_card_title .cct_text {
   margin: 0;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  /* identical to box height */
+  letter-spacing: 0.03em;
+  color: #686868;
 }
-.rowClientName .rowClientNameDetails .name {
-  color: black;
+.single_client_content .client_card_title .cct_subtext {
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  font-variant: small-caps;
+  color: #C1C1C1;
 }
-.rowClientName .rowClientNameDetails .scoring {
-  color: #888888;
+
+.card_subtitle {
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  font-variant: small-caps;
+  color: #C1C1C1;
+}
+
+.bold_title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  color: #686868;
 }
 
 /*# sourceMappingURL=index.css.map */

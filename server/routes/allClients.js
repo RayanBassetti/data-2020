@@ -3,17 +3,17 @@ const db = require('../config/database')
 
 module.exports = {
     method: 'GET',
-    path: '/users',
+    path: '/fake_clients',
     options: {
         validate: {
             query: joi.object().keys({
-                limit: joi.number().integer().min(1).max(200).default(50),
+                limit: joi.number().integer().min(1).max(200).default(200),
                 offset: joi.number().integer().min(0).default(0)
             })
         }
     },
     handler: async (req, toolkit) => {
-        return db.select().from("common_users").limit(req.query.limit).offset(req.query.offset)
+        return db.select().from("fake_clients").limit(req.query.limit).offset(req.query.offset)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,
