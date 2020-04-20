@@ -11,7 +11,7 @@ class ListClients extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:4000/users')
+        fetch('http://localhost:4000/fake_clients')
             .then(results => {
                 return results.json()
             }).then(res => {
