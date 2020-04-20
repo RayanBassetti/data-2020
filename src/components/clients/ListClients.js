@@ -11,10 +11,11 @@ class ListClients extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:4000/users')
+        fetch('http://localhost:4000/fake_clients')
             .then(results => {
                 return results.json()
             }).then(res => {
+                console.log(res)
                 this.setState({
                     loading: false,
                     data: res.data
@@ -26,7 +27,6 @@ class ListClients extends React.Component {
         const {data, loading} = this.state;
         return(
             <>
-                <h1>Bonjour Rick</h1>
                 {! loading &&
                 <>
                 <div className="list_users">

@@ -2,10 +2,15 @@ import React from 'react';
 
 import UserInfo from './UserInfo';
 
+import Header from '../common/components/Header'
+
 function UserProfile(props) {
-    console.log(props)
+    const user = props.location.state
     return(
-        <UserInfo />
+        <div className="content">
+            <Header profil={true}/>
+            <UserInfo data={user}/>
+        </div>
     )
 
 }

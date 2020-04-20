@@ -16,7 +16,7 @@ import { withRouter } from 'react-router-dom';
 function SingleClient(props) {
 
     const handleId = (idClient) => {
-        props.history.push('/users/' + idClient, props.data)
+        props.history.push('/clients/' + idClient, props.data)
     }
 
     const [expanded, setExpanded] = React.useState(false);
