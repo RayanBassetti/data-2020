@@ -93,3 +93,36 @@ body, html {
         font-weight: 600;
     }
 }
+
+.fullwidth {
+    width: 100%;
+}
+
+.profil_tag {
+    width: 50px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #D6D6D6;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+    border-radius: 5px;
+    .pt_text {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 0.03em;
+        color: #919191;
+    }
+}
+
+.progressbar_back {
+    height: 5px;
+    background-color: grey;
+    width: 100px;
+    .progressbar_front {
+        height: 100%;
+        background-color: orange;
+    }
+}

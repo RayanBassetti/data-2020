@@ -1,12 +1,15 @@
 import React from 'react';
 import MaterialTable, {MTableBodyRow} from 'material-table'
 
+import {handleProfil, handleFeeling} from '../common/methods/ConvertIntMethod'
+
 import { withRouter } from 'react-router-dom';
+import Feeling from '../common/components/Feeling';
+import ProfilTag from '../common/components/ProfilTag';
 
 
 function TableListClients(props) {
     const {users} = props
-    console.log(props)
     const handleId = (idClient, user) => {
         delete user.tableData
         props.history.push(`/clients/${idClient}`, user)
@@ -24,24 +27,35 @@ function TableListClients(props) {
             columns={[
                 { 
                     title: 'État', 
-                    field: 'emotion' 
+                    field: 'feeling', 
+                    render: users => {
+                        return <Feeling feeling={handleFeeling(users.feeling)} />
+                    } 
                 },
                 { 
                     title: 'Identité', 
                     field: 'name', 
                     render: users => {
                         return (
-                            <p>{users.name}</p>
+                            <span value={users.name}>{users.name}</span>
                         )
                     } 
                 },
                 { 
                     title: 'Profil', 
-                    field: 'profil_client' 
+                    field: 'profil' , 
+                    render: users => {
+                        return <ProfilTag text={handleProfil(users.profil)} />
+                    } 
                 },
                 { 
-                    title: 'Type de famille', 
-                    field: 'familly_client' 
+                    title: 'Client depuis', 
+                    field: 'engie_time', 
+                    render: users => {
+                        return (
+                            <span value={users.engie_time}>{users.engie_time}</span>
+                        )
+                    } 
                 },
             ]}
             onRowClick={((evt, selectedRow) => handleId(selectedRow.id, selectedRow))}

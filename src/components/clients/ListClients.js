@@ -15,6 +15,7 @@ class ListClients extends React.Component {
             .then(results => {
                 return results.json()
             }).then(res => {
+                console.log(res)
                 this.setState({
                     loading: false,
                     data: res.data

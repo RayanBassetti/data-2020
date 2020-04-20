@@ -17,13 +17,16 @@ def randomPourcentage(start, finish) :
     return random.randrange(start, finish)
 
 def randomProfil() :
-    return random.choice(["Économe", "Autonome", "Écologie"])
+    # return random.choice(["Économe", "Autonome", "Écologie"])
+    return random.randrange(1, 3)
 
 def randomFamille() :
-    return random.choice(["IFaP", "IFoP", "IFaN", "IFoN", "PFaP", "PFoP", "PFaN", "PFoN"])
+    # return random.choice(["IFaP", "IFoP", "IFaN", "IFoN", "PFaP", "PFoP", "PFaN", "PFoN"])
+    return random.randrange(1, 8)
 
 def randomHumeur() :
-    return random.choice(["Colère", "Mitigé", "Curieux", "Harmonieux", "Heureux"])
+    # return random.choice(["Colère", "Mitigé", "Curieux", "Harmonieux", "Heureux"])
+    return random.randrange(1, 5)
 
 def scoringActivityApp() :
     numberConnection = random.randint(0, 30) # nombres de fois que l'application a été lancé 
@@ -60,6 +63,7 @@ def genClients(number) :
             "time_activity" : str(timeActivity),
             "profil": randomProfil(),
             "famille": randomFamille(),
+            "feeling": randomHumeur(),
             "satisfaction": randomPourcentage(1, 100),
             "relation": randomPourcentage(1, 100),
             "advice": randomPourcentage(1, 50),
@@ -69,4 +73,4 @@ def genClients(number) :
     return clients
 
 with open('./json/clients.json', 'w') as outfile:
-    json.dump(genClients(2000), outfile)
+    json.dump(genClients(500), outfile)

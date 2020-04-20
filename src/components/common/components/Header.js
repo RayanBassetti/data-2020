@@ -2,14 +2,16 @@ import React from 'react'
 
 import HeaderBadges from './HeaderBadges'
 
+import {withRouter} from 'react-router-dom'
+
 import EmojiMethod from '../methods/EmojiMethod'
 import { Button } from '@material-ui/core';
-
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 function Header(props) {
     const {text, emoji, profil} = props;
     return (
-        <div className="header flexed-row-space padding_content">
+        <div className="header flexed-row-space">
             <div className="text flexed-row-space">
                 {!profil && 
                     <>
@@ -20,7 +22,7 @@ function Header(props) {
                     </>
                 }
                 {profil && 
-                        <Button>Salut</Button>
+                        <Button variant="outlined" startIcon={<ArrowBackIosIcon />} onClick={() => props.history.goBack()} >Liste clients</Button>
                 }
             </div>
             <HeaderBadges />
@@ -28,4 +30,4 @@ function Header(props) {
     )
 }
 
-export default Header
+export default withRouter(Header)

@@ -7,7 +7,7 @@ module.exports = {
     options: {
         validate: {
             query: joi.object().keys({
-                limit: joi.number().integer().min(1).max(200).default(50),
+                limit: joi.number().integer().min(1).max(200).default(200),
                 offset: joi.number().integer().min(0).default(0)
             })
         }

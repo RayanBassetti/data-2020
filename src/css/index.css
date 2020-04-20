@@ -97,6 +97,39 @@ body, html {
   font-weight: 600;
 }
 
+.fullwidth {
+  width: 100%;
+}
+
+.profil_tag {
+  width: 50px;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+}
+.profil_tag .pt_text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  color: #919191;
+}
+
+.progressbar_back {
+  height: 5px;
+  background-color: grey;
+  width: 100px;
+}
+.progressbar_back .progressbar_front {
+  height: 100%;
+  background-color: orange;
+}
+
 .Home .cards {
   padding-top: 5%;
   padding: 35px 80px 0px 80px;
@@ -146,6 +179,7 @@ body, html {
 .navMain {
   background-color: white;
   color: #8798B5;
+  box-shadow: 0px 10px 80px rgba(92, 139, 173, 0.05);
 }
 .navMain .navMain_content {
   display: flex;
@@ -201,6 +235,68 @@ body, html {
 }
 .list_users .MuiTableCell-root {
   padding: 0px;
+}
+
+.single_client_content {
+  margin-top: 40px;
+  background-color: #F7F9FD;
+}
+.single_client_content .cards_top .card_top {
+  width: 50%;
+  margin: 10px;
+}
+.single_client_content .cards_top .card_top .card_top_content .scoring {
+  padding-left: 16px;
+}
+.single_client_content .cards_top .card_top .card_top_content .scoring .scoring_subpart {
+  width: 70%;
+}
+.single_client_content .client_card_title {
+  border-bottom: 1px solid #E1E1E1;
+}
+.single_client_content .client_card_title .cct_text {
+  margin: 0;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  /* identical to box height */
+  letter-spacing: 0.03em;
+  color: #686868;
+}
+.single_client_content .client_card_title .cct_subtext {
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  font-variant: small-caps;
+  color: #C1C1C1;
+}
+
+.card_subtitle {
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  font-variant: small-caps;
+  color: #C1C1C1;
+}
+
+.bold_title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  color: #686868;
 }
 
 /*# sourceMappingURL=index.css.map */
