@@ -11,6 +11,9 @@
 /scripts/data-calculus/Lib
 /scripts/data-calculus/Scripts
 /scripts/data-calculus/database_ids.py
+/scripts/data-calculus/single_client.xlsx
+/scripts/users-gen/json/clients.json
+
 # testing
 /coverage
 
