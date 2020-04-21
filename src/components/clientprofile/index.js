@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from '../common/components/Header'
+import HeaderProfile from '../common/components/HeaderProfile'
 import UserContent from './UserContent'
 import ClientDisplayContextProvider from '../contexts/ClientDisplayContext'
 
@@ -9,7 +9,7 @@ function UserProfile(props) {
     return(
         <div className="content">
             <ClientDisplayContextProvider>
-                <Header profil={true}/>
+                <HeaderProfile />
                 <UserContent data={user}/>
             </ClientDisplayContextProvider>
         </div>
