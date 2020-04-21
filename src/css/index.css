@@ -7,7 +7,7 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: "Montserrat" !important;
-  background-color: #E5E5E5;
+  background-color: #F4F6FB;
 }
 
 .MuiTypography-body1 {
@@ -29,7 +29,7 @@ body, html {
 }
 .app .navMain {
   height: 100%;
-  width: 20%;
+  width: 15%;
 }
 
 .MuiTypography-root {
@@ -177,9 +177,10 @@ body, html {
 }
 
 .navMain {
-  background-color: white;
+  background-color: #FFFFFF;
   color: #8798B5;
   box-shadow: 0px 10px 80px rgba(92, 139, 173, 0.05);
+  border-radius: 15px 0px 0px 15px;
 }
 .navMain .navMain_content {
   display: flex;
@@ -189,8 +190,8 @@ body, html {
   padding-right: 40px;
 }
 .navMain .navMain_content img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 .navMain .navMain_content .MuiListItem-root {
   border-radius: 10px;
@@ -223,10 +224,10 @@ body, html {
 }
 .list_users .MuiPaper-elevation2 {
   box-shadow: initial;
-  background-color: #E5E5E5;
+  background-color: #F4F6FB;
 }
 .list_users .MuiTableRow-head {
-  background-color: #E5E5E5 !important;
+  background-color: #F4F6FB !important;
 }
 .list_users .MuiTableRow-head .MuiTableCell-head {
   color: #B4B4B4;
@@ -241,62 +242,53 @@ body, html {
   margin-top: 40px;
   background-color: #F7F9FD;
 }
+.single_client_content .MuiCardContent-Root {
+  padding: 0 !important;
+  background-color: red;
+}
 .single_client_content .cards_top .card_top {
   width: 50%;
   margin: 10px;
 }
-.single_client_content .cards_top .card_top .card_top_content .scoring {
+.single_client_content .cards_top .card_top .card_top_content .ctc_right {
   padding-left: 16px;
 }
-.single_client_content .cards_top .card_top .card_top_content .scoring .scoring_subpart {
+.single_client_content .cards_top .card_top .card_top_content .ctc_right .ctc_right_subpart {
   width: 70%;
 }
 .single_client_content .client_card_title {
   border-bottom: 1px solid #E1E1E1;
+  padding: 16px;
 }
 .single_client_content .client_card_title .cct_text {
   margin: 0;
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 600;
   font-size: 22px;
   line-height: 27px;
-  /* identical to box height */
-  letter-spacing: 0.03em;
-  color: #686868;
 }
-.single_client_content .client_card_title .cct_subtext {
-  text-transform: uppercase;
+
+.card_content_text {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 18px;
   letter-spacing: 0.03em;
-  font-variant: small-caps;
-  color: #C1C1C1;
+  color: #686868;
+}
+
+.card_normal_text {
+  color: #686868;
+}
+
+.card_title_text {
+  font-weight: 600;
 }
 
 .card_subtitle {
   text-transform: uppercase;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: 0.03em;
   font-variant: small-caps;
   color: #C1C1C1;
-}
-
-.bold_title {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 18px;
-  letter-spacing: 0.03em;
-  color: #686868;
 }
 
 /*# sourceMappingURL=index.css.map */

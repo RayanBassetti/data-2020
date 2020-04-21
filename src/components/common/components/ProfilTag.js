@@ -1,10 +1,9 @@
 import React from 'react';
 
-const ProfilTag = (props) => {
-
+const ProfilTag = ({text}) => {
     return (
         <div className="profil_tag">
-            <p className="pt_text">{props.text}</p>
+            <p className="pt_text">{text}</p>
         </div>
     )
 }

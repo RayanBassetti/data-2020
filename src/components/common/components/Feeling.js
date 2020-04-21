@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Feeling = (props) => {
+const Feeling = ({feeling}) => {
     const ball = {
-        backgroundColor: props.feeling,
+        backgroundColor: feeling,
         width: '20px',
         height: '20px',
         borderRadius: '50%'

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 
 import HeaderBadges from './HeaderBadges'
 
@@ -8,7 +8,10 @@ import EmojiMethod from '../methods/EmojiMethod'
 import { Button } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
+import {ClientDisplayContext} from '../../contexts/ClientDisplayContext'
+
 function Header(props) {
+    const {theme, toggleDisplay} = useContext(ClientDisplayContext)
     const {text, emoji, profil} = props;
     return (
         <div className="header flexed-row-space">
@@ -22,7 +25,16 @@ function Header(props) {
                     </>
                 }
                 {profil && 
-                        <Button variant="outlined" startIcon={<ArrowBackIosIcon />} onClick={() => props.history.goBack()} >Liste clients</Button>
+                    <>
+                    <Button 
+                        variant="outlined" 
+                        startIcon={<ArrowBackIosIcon />} 
+                        onClick={() => props.history.goBack()} 
+                    >Liste clients</Button>
+                    <Button 
+                        onClick={() => toggleDisplay()}
+                    >{theme}</Button>
+                    </>
                 }
             </div>
             <HeaderBadges />
