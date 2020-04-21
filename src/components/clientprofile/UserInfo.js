@@ -10,16 +10,14 @@ import Infos from './cards/Infos';
 
 function ClientProfile(props) {
     return(
-        <div className="single_client_content">
-            <div className="cards_top flexed-row">
+        <>
+            <div className="cards_top flexed-row-around">
                 <Identity props={props} />
                 <Infos props={props} />
             </div>
-            <div className="cards_bottom flexed-row">
-                
-
+            <div className="cards_bottom flexed-row-around">
             </div>
-        </div>
+        </>
     )
 }
  

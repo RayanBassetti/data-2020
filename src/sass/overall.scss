@@ -73,6 +73,13 @@ body, html {
     justify-content: space-between;
     align-items: center;
 }
+
+.flexed-row-around {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+}
 .flexed-row {
     display: flex;
     flex-direction: row;

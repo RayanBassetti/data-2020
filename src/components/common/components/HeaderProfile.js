@@ -19,6 +19,7 @@ function HeaderProfile(props) {
                 onClick={() => props.history.goBack()} 
             >Liste clients</Button>
             <Button 
+                variant="outlined"
                 onClick={() => toggleDisplay()}
             >{actualTheme}</Button>
             </div>

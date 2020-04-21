@@ -53,4 +53,25 @@
     font-variant: small-caps;
     color: #C1C1C1;
 }
+.client_stats_content {
+    padding-top: 20px;
+    .client_graph {
+        width: 55%;
+        .apexcharts-legend {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around !important;
+            .apexcharts-legend-series .apexcharts-legend-text {
+                font-size: 15px !important;
+                font-family: 'Montserrat' !important;
+            }
+        }
+    }
+    
+    .client_objectifs {
+        width: 40%;
+    }
+    
+
+}
 

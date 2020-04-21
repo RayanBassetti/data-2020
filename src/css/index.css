@@ -76,6 +76,13 @@ body, html {
   align-items: center;
 }
 
+.flexed-row-around {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
 .flexed-row {
   display: flex;
   flex-direction: row;
@@ -289,6 +296,25 @@ body, html {
   text-transform: uppercase;
   font-variant: small-caps;
   color: #C1C1C1;
+}
+
+.client_stats_content {
+  padding-top: 20px;
+}
+.client_stats_content .client_graph {
+  width: 55%;
+}
+.client_stats_content .client_graph .apexcharts-legend {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around !important;
+}
+.client_stats_content .client_graph .apexcharts-legend .apexcharts-legend-series .apexcharts-legend-text {
+  font-size: 15px !important;
+  font-family: "Montserrat" !important;
+}
+.client_stats_content .client_objectifs {
+  width: 40%;
 }
 
 /*# sourceMappingURL=index.css.map */
