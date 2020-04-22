@@ -57,10 +57,10 @@ function Radar({data}) {
         data: [satisfaction + 10, relation + 10, 40, time_activity - 10, advice + 10, profil_speech + 20],
       }, {
         name: 'Ma progression',
-        data: [44, 76, 78, 13, 43, 10],
+        data: [10, 10, 10, 10, 10, 10],
     }]
     return (
-        <Chart options={options} series={series} height={'500'}type="radar"/>
+        <Chart options={options} series={series} height={'500'} type="radar"/>
     )
 }
 

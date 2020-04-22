@@ -10,18 +10,31 @@
             width: 50%;
             margin: 10px;
             .card_top_content {
+                align-items: stretch;
                 .ctc_right {
                     padding-left: 16px;
-                    .ctc_right_subpart {
-                        width: 70%;
+                    .ctc_right_content {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        height: 90%;
+                        .ctc_right_subpart {
+                            width: 70%;
+                        }
                     }
                 }
             }
         }
     }
+    .cards_bottom {
+        justify-content: space-between;
+        .card_bottom  {
+            margin: 10px;
+        }
+    }
     .client_card_title {
         border-bottom: 1px solid #E1E1E1;
-        padding: 16px;
+        margin: 20px 20px 0px 20px;
         .cct_text {
             margin: 0;
             font-weight: 600;
@@ -35,7 +48,7 @@
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 12px;
     line-height: 18px;
     letter-spacing: 0.03em;
     color: #686868;
@@ -47,8 +60,10 @@
 
 .card_title_text {
     font-weight: 600;
+    width: 100px;
 }
 .card_subtitle {
+    font-size: 12px;
     text-transform: uppercase;
     font-variant: small-caps;
     color: #C1C1C1;

@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, CardContent } from '@material-ui/core'
 import Title from './cards/components/Title'
 import Radar from '../apex/Radar'
+import Objectifs from './Objectifs'
 
 function UserGraphs({user}) {
     return (
@@ -15,6 +16,7 @@ function UserGraphs({user}) {
             <Card className="client_objectifs">
                 <CardContent>
                     <Title text="Objectifs" />
+                    <Objectifs />
                 </CardContent>
             </Card>
         </div>

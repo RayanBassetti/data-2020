@@ -1,1 +1,1 @@
-# fix la page "Profil client" avant de merge avec la branch develop
+# ajouter la partie onboarding, partie consProd, partie historique, partie Alertes, factures, dernier entretien, fusionner les colonnes Appareils

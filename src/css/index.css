@@ -129,12 +129,12 @@ body, html {
 
 .progressbar_back {
   height: 5px;
-  background-color: grey;
+  background-color: #EAEAEA;
   width: 100px;
 }
 .progressbar_back .progressbar_front {
   height: 100%;
-  background-color: orange;
+  background-color: #FFA06B;
 }
 
 .Home .cards {
@@ -257,15 +257,30 @@ body, html {
   width: 50%;
   margin: 10px;
 }
+.single_client_content .cards_top .card_top .card_top_content {
+  align-items: stretch;
+}
 .single_client_content .cards_top .card_top .card_top_content .ctc_right {
   padding-left: 16px;
 }
-.single_client_content .cards_top .card_top .card_top_content .ctc_right .ctc_right_subpart {
+.single_client_content .cards_top .card_top .card_top_content .ctc_right .ctc_right_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 90%;
+}
+.single_client_content .cards_top .card_top .card_top_content .ctc_right .ctc_right_content .ctc_right_subpart {
   width: 70%;
+}
+.single_client_content .cards_bottom {
+  justify-content: space-between;
+}
+.single_client_content .cards_bottom .card_bottom {
+  margin: 10px;
 }
 .single_client_content .client_card_title {
   border-bottom: 1px solid #E1E1E1;
-  padding: 16px;
+  margin: 20px 20px 0px 20px;
 }
 .single_client_content .client_card_title .cct_text {
   margin: 0;
@@ -278,7 +293,7 @@ body, html {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 18px;
   letter-spacing: 0.03em;
   color: #686868;
@@ -290,9 +305,11 @@ body, html {
 
 .card_title_text {
   font-weight: 600;
+  width: 100px;
 }
 
 .card_subtitle {
+  font-size: 12px;
   text-transform: uppercase;
   font-variant: small-caps;
   color: #C1C1C1;
