@@ -15,6 +15,10 @@ const StyledBadge = withStyles((theme) => ({
   },
 }))(Badge);
 
+const colorMessage = {
+  colorPrimary: 'white'
+}
+
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
@@ -35,7 +39,7 @@ function Header() {
             <div className="badge b_chat">
                 <IconButton aria-label="messages">
                     <StyledBadge badgeContent={3} max={9} color="primary">
-                        <ChatBubbleOutlineOutlinedIcon fontSize="large"/>
+                        <ChatBubbleOutlineOutlinedIcon fontSize="large" style={colorMessage}/>
                     </StyledBadge>
                 </IconButton>
             </div>
@@ -48,7 +52,7 @@ function Header() {
             </div>
             <div className="badge">
                 <IconButton aria-label="avatar">
-                    <Avatar alt="avatar_user" src="" variant="rounded" className={classes.large}/>
+                    <Avatar alt="avatar_user" src="https://img1.looper.com/img/gallery/things-only-adults-notice-in-shrek/intro-1573597941.jpg" variant="rounded" className={classes.large}/>
                 </IconButton>
             </div>
         </div>

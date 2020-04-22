@@ -15,10 +15,10 @@ const cardSpecs = {
     paddingRight: '30px'
 }
 
-// const tabsMenu = {
-//     backgroundColor: 'white',
-//     color: '#686868'
-// }
+const tabsMenu = {
+    backgroundColor: 'white',
+    color: '#686868'
+}
 
 // const singleTab = {
 //     width: '30px'
@@ -38,12 +38,21 @@ function Historique(props) {
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
+
+    // const handleDisplay = (value, index) => {
+    //     if(value === index) {
+    //         return {display: 'show'}
+    //     } else {
+    //         return {display: 'none'}
+    //     }
+    // }
+
     return(
         <Card className="card_bottom" style={cardSpecs}>
             <Title text="Historique" sub_text="Sur les 6 derniers mois"/>
             <CardContent className="card_bottom_content flexed-row">
             <AppBar position="static">
-                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+                <Tabs style={tabsMenu} value={value} onChange={handleChange} aria-label="simple tabs example">
                     <Tab label="Tous" {...a11yProps(0)} />
                     <Tab label="Appels" {...a11yProps(1)} />
                     <Tab label="Emails" {...a11yProps(2)} />

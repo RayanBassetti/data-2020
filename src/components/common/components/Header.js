@@ -11,10 +11,10 @@ function Header(props) {
         <div className="header flexed-row-space">
             <div className="text flexed-row-space">
                 <>
-                    <h1>{text}</h1>
                     {emoji &&
                     EmojiMethod(emoji, 50, 50)
                     }
+                    <h1>{text}</h1>
                 </>
             </div>
             <HeaderBadges />

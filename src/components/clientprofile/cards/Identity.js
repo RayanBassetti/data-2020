@@ -18,7 +18,7 @@ function Identity(props) {
     const {id, name, birthdate, gender, profil, famille, feeling, satisfaction, relation} = props.props.user
     return(
         <Card className="card_top">
-            <Title text="Test"/>
+            {/* <Title text="Test"/> */}
             <CardContent className="card_top_content flexed-row">
                 <div className="ctc_left fullwidth">
                     <p className="card_subtitle">Identité</p>

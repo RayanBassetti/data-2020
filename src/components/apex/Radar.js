@@ -16,7 +16,7 @@ function Radar({data}) {
             },
             toolbar: {
                 show: false
-                }
+            }
         },
         plotOptions: {
             radar: {

@@ -40,10 +40,8 @@ body, html {
   height: 60px;
   padding: 40px 80px 0px 80px;
 }
-.header .text {
-  width: 30%;
-}
 .header .text h1 {
+  margin-left: 30px;
   font-style: normal;
   font-weight: 600;
   font-size: 1.5em;
@@ -135,6 +133,11 @@ body, html {
 .progressbar_back .progressbar_front {
   height: 100%;
   background-color: #FFA06B;
+}
+
+.planning {
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 .Home .cards {
