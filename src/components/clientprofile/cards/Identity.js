@@ -9,31 +9,37 @@ import ProfilTag from '../../common/components/ProfilTag';
 import Feeling from '../../common/components/Feeling';
 import { handleProfil, handleFamily, handleFeeling } from '../../common/methods/ConvertIntMethod';
 import ProgressBar from '../../common/components/ProgressBar';
+import CardNormalText from './components/CardNormalText';
+import Title from './components/Title';
+
 
 
 function Identity(props) {
-    const {id, name, birthdate, gender, profil, famille, feeling, satisfaction, relation} = props.props.data
+    const {id, name, birthdate, gender, profil, famille, feeling, satisfaction, relation} = props.props.user
     return(
         <Card className="card_top">
+            {/* <Title text="Test"/> */}
             <CardContent className="card_top_content flexed-row">
-                <div className="infos fullwidth">
+                <div className="ctc_left fullwidth">
                     <p className="card_subtitle">Identité</p>
-                    <p><span className="bold_title">ID</span> {id}</p>
-                    <p><span className="bold_title">Prénom/Nom</span> {name}</p>
-                    <p><span className="bold_title">Naissance</span>  {birthdate}</p>
-                    <p><span className="bold_title">Genre</span>  {gender}</p>
+                    <CardNormalText title="ID" text={id} />
+                    <CardNormalText title="Prénom/Nom" text={name} />
+                    <CardNormalText title="Naissance" text={birthdate} />
+                    <CardNormalText title="Genre" text={gender} />
                 </div>
                 <Divider orientation="vertical" flexItem />
-                <div className="scoring fullwidth">
+                <div className="ctc_right fullwidth">
                     <p className="card_subtitle">Profils</p>
-                    <div className="scoring_subpart flexed-row-space">
-                        <p><ProfilTag text={handleProfil(profil)} /></p>
-                        <p><ProfilTag text={handleFamily(famille)} /></p>
-                        <p><Feeling feeling={handleFeeling(feeling)} /></p>
-                    </div>
-                    <div className="scoring_subpart">
-                        <p className="flexed-row-space"><span className="bold_title">Satisfaction</span><ProgressBar width={satisfaction}/></p>
-                        <p className="flexed-row-space"><span className="bold_title">Relation</span><ProgressBar width={relation}/></p>
+                    <div className="ctc_right_content">
+                        <div className="ctc_right_subpart flexed-row-space">
+                            <ProfilTag text={handleProfil(profil)} />
+                            <ProfilTag text={handleFamily(famille)} />
+                            <Feeling feeling={handleFeeling(feeling)} />
+                        </div>
+                        <div className="ctc_right_subpart">
+                            <div className="flexed-row-space"><span className="card_content_text card_title_text">Satisfaction</span><ProgressBar width={satisfaction}/></div>
+                            <div className="flexed-row-space"><span className="card_content_text card_title_text">Relation</span><ProgressBar width={relation}/></div>
+                        </div>
                     </div>
                 </div>
             </CardContent>

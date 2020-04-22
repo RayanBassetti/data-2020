@@ -11,9 +11,6 @@ function RadialChart(props) {
         chart: {
             id: "basic-radial"
         },
-        yaxis : {
-            reversed: true
-        },
         colors: ['#C2D7FA'],
         labels: [`+ ${data}`],
         plotOptions: {
@@ -31,13 +28,14 @@ function RadialChart(props) {
                 dataLabels: {
                     name: {
                         fontFamily: 'Montserrat',
-                        fontWeight: 900
+                        fontWeight: 900,
+                        fontSize: '30px'
                     }
                 },
             },
         },
     }
-    const series =  [60]
+    const series =  [data]
     return (
         <>
             <p>{text}</p>
