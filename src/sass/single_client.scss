@@ -1,65 +1,92 @@
 .single_client_content {
     margin-top: 40px;
     background-color: #F7F9FD;
+    .MuiCardContent-Root {
+        padding: 0 !important; 
+        background-color: red;
+    }
     .cards_top {
         .card_top {
             width: 50%;
             margin: 10px;
             .card_top_content {
-                .scoring {
+                align-items: stretch;
+                .ctc_right {
                     padding-left: 16px;
-                    .scoring_subpart {
-                        width: 70%;
+                    .ctc_right_content {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        height: 90%;
+                        .ctc_right_subpart {
+                            width: 70%;
+                        }
                     }
                 }
             }
         }
     }
+    .cards_bottom {
+        justify-content: space-between;
+        .card_bottom  {
+            margin: 10px;
+        }
+    }
     .client_card_title {
         border-bottom: 1px solid #E1E1E1;
+        margin: 20px 20px 0px 20px;
         .cct_text {
             margin: 0;
-            font-family: 'Montserrat';
-            font-style: normal;
             font-weight: 600;
             font-size: 22px;
             line-height: 27px;
-            /* identical to box height */
-            letter-spacing: 0.03em;
-            color: #686868;
-        }
-        .cct_subtext {
-            text-transform: uppercase;
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 15px;
-            line-height: 18px;
-            letter-spacing: 0.03em;
-            font-variant: small-caps;
-            color: #C1C1C1;
         }
     }
 }
 
-.card_subtitle {
-    text-transform: uppercase;
+.card_content_text {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    font-size: 15px;
-    line-height: 18px;
-    letter-spacing: 0.03em;
-    font-variant: small-caps;
-    color: #C1C1C1;
-}
-
-.bold_title {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
+    font-size: 12px;
     line-height: 18px;
     letter-spacing: 0.03em;
     color: #686868;
 }
+
+.card_normal_text {
+    color: #686868;
+}
+
+.card_title_text {
+    font-weight: 600;
+    width: 100px;
+}
+.card_subtitle {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    color: #C1C1C1;
+}
+.client_stats_content {
+    padding-top: 20px;
+    .client_graph {
+        width: 55%;
+        .apexcharts-legend {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around !important;
+            .apexcharts-legend-series .apexcharts-legend-text {
+                font-size: 15px !important;
+                font-family: 'Montserrat' !important;
+            }
+        }
+    }
+    
+    .client_objectifs {
+        width: 40%;
+    }
+    
+
+}
+

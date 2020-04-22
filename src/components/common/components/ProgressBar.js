@@ -1,7 +1,6 @@
 import React from 'react'
 
-const ProgressBar = (props) => {
-    const {width} = props
+const ProgressBar = ({width}) => {
     return (
         <div className="progressbar_back">
             <div className="progressbar_front" style={{width: width}}></div>

@@ -1,15 +1,17 @@
 import React from 'react';
 
-import UserInfo from './UserInfo';
-
-import Header from '../common/components/Header'
+import HeaderProfile from '../common/components/HeaderProfile'
+import UserContent from './UserContent'
+import ClientDisplayContextProvider from '../contexts/ClientDisplayContext'
 
 function UserProfile(props) {
     const user = props.location.state
     return(
         <div className="content">
-            <Header profil={true}/>
-            <UserInfo data={user}/>
+            <ClientDisplayContextProvider>
+                <HeaderProfile />
+                <UserContent data={user}/>
+            </ClientDisplayContextProvider>
         </div>
     )
 

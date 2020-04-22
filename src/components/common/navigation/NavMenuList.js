@@ -14,7 +14,7 @@ import List from '@material-ui/core/List';
 import HomeIcon from '@material-ui/icons/Home';
 import GroupIcon from '@material-ui/icons/Group';
 import ForumIcon from '@material-ui/icons/Forum';
-import Planning from './NavMenuList/Planning';
+import MapIcon from '@material-ui/icons/Map';
 
 
 function NavMenuList()  {
@@ -30,7 +30,7 @@ function NavMenuList()  {
                 <ListItemLink to="/clients" primary="Clients" icon={<GroupIcon />} selected={selectedIndex === 1} handleListItemClick={(event) => handleListItemClick(event, 1)}/>
                 <Alertes selected={selectedIndex === 2} handleListItemClick={(event) => handleListItemClick(event, 2)} text={"Alertes"} />
                 <ListItemLink to="/messagerie" primary="Messagerie" icon={<ForumIcon />} selected={selectedIndex === 3} handleListItemClick={(event) => handleListItemClick(event, 3)}/>
-                <Planning selected={selectedIndex === 4} handleListItemClick={(event) => handleListItemClick(event, 4)} text={"Planning"} />
+                <ListItemLink to="/planning" primary="Planning" icon={<MapIcon />} selected={selectedIndex === 4} handleListItemClick={(event) => handleListItemClick(event, 4)}/>
             </List>
             )
 }

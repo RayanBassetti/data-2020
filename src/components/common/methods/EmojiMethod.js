@@ -35,6 +35,30 @@ const EmojiMethod = (string, width, height) => {
                             width={width} 
                             height={height}
                         />
+            case "pin": 
+                return <img 
+                            className="emoji" 
+                            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/pushpin_1f4cc.png" 
+                            alt={string} 
+                            width={width} 
+                            height={height}
+                        />
+            case "clock": 
+                return <img 
+                            className="emoji" 
+                            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/alarm-clock_23f0.png" 
+                            alt={string} 
+                            width={width} 
+                            height={height}
+                        />
+            case "message": 
+                return <img 
+                            className="emoji" 
+                            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/incoming-envelope_1f4e8.png" 
+                            alt={string} 
+                            width={width} 
+                            height={height}
+                        />
             default :
                 return <img alt="emoji_not_found" />
         }
