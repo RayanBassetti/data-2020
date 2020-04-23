@@ -10,7 +10,7 @@ import Feeling from '../../common/components/Feeling';
 import { handleProfil, handleFamily, handleFeeling } from '../../common/methods/ConvertIntMethod';
 import ProgressBar from '../../common/components/ProgressBar';
 import CardNormalText from './components/CardNormalText';
-import Title from './components/Title';
+// import Title from './components/Title';
 
 
 

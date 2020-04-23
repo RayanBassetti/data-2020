@@ -284,6 +284,7 @@ body, html {
 .single_client_content .client_card_title {
   border-bottom: 1px solid #E1E1E1;
   margin: 20px 20px 0px 20px;
+  padding-bottom: 10px;
 }
 .single_client_content .client_card_title .cct_text {
   margin: 0;
@@ -334,7 +335,48 @@ body, html {
   font-family: "Montserrat" !important;
 }
 .client_stats_content .client_objectifs {
-  width: 40%;
+  width: 34%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.client_stats_content .client_objectifs .objectifs_progressbar {
+  border-radius: 10px;
+  height: 50px;
+}
+.client_stats_content .client_objectifs .objectifs_progressbar .op_front {
+  background-color: #74EDB3;
+}
+.client_stats_content .client_objectifs .op_back {
+  width: 100%;
+  background-color: #FAFAFA;
+  border: 1px solid #E6E6E6;
+}
+.client_stats_content .client_objectifs .oc_subtitle {
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: #C1C1C1;
+}
+.client_stats_content .client_objectifs .objectifs_list {
+  margin-top: 2%;
+}
+.client_stats_content .client_objectifs .objectifs_list .single_objectif {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #F5F5F5;
+  border-radius: 5px;
+}
+.client_stats_content .client_objectifs .objectifs_list .single_objectif .so_checkbox {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.client_stats_content .client_objectifs .objectifs_list .single_objectif .so_content {
+  width: 80%;
+}
+.client_stats_content .client_objectifs .objectifs_list .single_objectif .so_content .card_title_text {
+  width: initial;
 }
 
 /*# sourceMappingURL=index.css.map */
