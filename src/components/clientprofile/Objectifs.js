@@ -3,12 +3,17 @@ import React from 'react';
 import ObjectifsProgressBar from './cards/components/ObjectifsProgressBar'
 import ObjectifsList from './ObjectifsList'
 
-function Objectifs() {
+function Objectifs({data}) {
     return(
         <div className="objectifs_content">
-            <p className="card_content_text oc_subtitle">Campagne lancée le DATE se termine le DATE</p>
-            <ObjectifsProgressBar progress={50}/>
-            <ObjectifsList />
+            <p className="card_content_text oc_subtitle">Pas de campagne en cours.</p>
+            {data && 
+            <>
+                <p className="card_content_text oc_subtitle">Campagne lancée le DATE se termine le DATE</p>
+                <ObjectifsProgressBar progress={50}/>
+                <ObjectifsList />
+            </>
+            }
         </div>
     )
 }
