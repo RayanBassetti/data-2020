@@ -1,13 +1,15 @@
 import React from 'react'
 import AlerteColonne from './AlerteColonne'
 
+import {Waiting, Doing, ToCheck, Done} from './AlertesColors'
+
 function AlertesKanban() {
     return (
         <div className="alertes_kanban flexed-row-around">
-            <AlerteColonne title="En attente"/>
-            <AlerteColonne title="En cours"/>
-            <AlerteColonne title="A vérifiées"/>
-            <AlerteColonne title="Terminées"/>
+            <AlerteColonne title="En attente" titleStyle={Waiting}/>
+            <AlerteColonne title="En cours" titleStyle={Doing}/>
+            <AlerteColonne title="A vérifiées" titleStyle={ToCheck}/>
+            <AlerteColonne title="Terminées" titleStyle={Done}/>
         </div>
     )
 }
