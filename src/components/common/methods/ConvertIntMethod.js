@@ -1,3 +1,5 @@
+//method to convert the ints in a client line to a proper text
+
 export const handleProfil = (int) => {
     switch(int) {
         case(1) : 

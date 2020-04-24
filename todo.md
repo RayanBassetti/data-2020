@@ -1,5 +1,3 @@
-# ajouter la partie onboarding, partie consProd, partie historique, partie Alertes, factures, dernier entretien
-
 # scripts fake_clients : 
 - Partie onboarding 
 - Dernier entretien
