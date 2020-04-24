@@ -6,13 +6,22 @@
 /server/config/app-env
 /.pnp
 .pnp.js
+
+# python dependencies
 /scripts/users-gen/Lib
 /scripts/users-gen/Scripts
+/scripts/users-gen/json/clients.json
+
+# python dependencies
 /scripts/data-calculus/Lib
 /scripts/data-calculus/Scripts
 /scripts/data-calculus/database_ids.py
 /scripts/data-calculus/single_client.xlsx
-/scripts/users-gen/json/clients.json
+
+# python dependencies
+/scripts/users-tables/Lib
+/scripts/users-tables/Scripts
+
 
 # testing
 /coverage

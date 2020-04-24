@@ -1,23 +1,21 @@
 import React from 'react';
 // import ProgressBar from '../common/components/ProgressBar';
+import ObjectifsProgressBar from './cards/components/ObjectifsProgressBar'
+import ObjectifsList from './ObjectifsList'
 
-class Objectifs extends React.Component {
-    constructor(props) {
-        super(props);
-        this.props = {
-            objectifs_lists: []
-        }
-    }
-
-    render() {
-        return (
+function Objectifs({data}) {
+    return(
+        <div className="objectifs_content">
+            <p className="card_content_text oc_subtitle">Pas de campagne en cours.</p>
+            {data && 
             <>
-                <p>Progress Bar</p>
-                <p>List of objectives</p>
-                <p>Single objectif</p>
+                <p className="card_content_text oc_subtitle">Campagne lancée le DATE se termine le DATE</p>
+                <ObjectifsProgressBar progress={50}/>
+                <ObjectifsList />
             </>
-        )
-    }
+            }
+        </div>
+    )
 }
 
 export default Objectifs

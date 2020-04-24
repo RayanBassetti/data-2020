@@ -16,6 +16,11 @@ def randomNbPanneaux() :
 def randomPourcentage(start, finish) :
     return random.randrange(start, finish)
 
+def randomAlerte() : 
+    chances = random.choice([True, False])
+    if chances : 
+        return random.randrange(1, 3)
+
 def randomProfil() :
     # return random.choice(["Économe", "Autonome", "Écologie"])
     return random.randrange(1, 3)
@@ -73,4 +78,4 @@ def genClients(number) :
     return clients
 
 with open('./json/clients.json', 'w') as outfile:
-    json.dump(genClients(500), outfile)
+    json.dump(genClients(1), outfile)
