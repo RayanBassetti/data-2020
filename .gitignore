@@ -21,6 +21,7 @@
 # python dependencies
 /scripts/users-tables/Lib
 /scripts/users-tables/Scripts
+/scripts/users-tables/database_ids.py
 
 
 # testing
