@@ -1,8 +1,10 @@
 # scripts fake_clients : 
 - Partie onboarding 
-- Dernier entretien
-- Fusion des colonnes devices
-- Générer une facture pour chaque utilisateur avec Prénom/Nom_Devis.pdf
+    - Fusion des colonnes devices
+        - Mettre au clair tous les appareils qu'un client My Power peut avoir
+- Partie satisfaction/relation/sentiments : 
+    - Faire une fonction qui prend en compte la satisfaction/relation, et qui dit donc quel est 
+    l'humeur actuel de la personne 
 
 # script consProd/alertes : 
 - Faire une boucle sur le nombre d'utilisateurs de la table fake_clients
@@ -18,9 +20,6 @@
     - id_client
     - date
     - from_gen_to_consumer
-    - from_grid_to_consumer
-
-# script factures : 
-- Faire une boucle sur le nombre d'utilisateurs de la table fake_clients 
+    - from_grid_to_consumer 
 
 
