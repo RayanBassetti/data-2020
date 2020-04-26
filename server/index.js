@@ -29,7 +29,8 @@ const init = async () => {
     server.route([
         require('./routes/singleUser'),
         require('./routes/allClients'),
-        require('./routes/getUserById')
+        require('./routes/getUserById'),
+        require('./routes/postNewCampaign')
     ])
 
     await server.start();
