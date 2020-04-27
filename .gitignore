@@ -10,7 +10,7 @@
 # python dependencies
 /scripts/users-gen/Lib
 /scripts/users-gen/Scripts
-/scripts/users-gen/json/clients.json
+/scripts/users-gen/json
 
 # python dependencies
 /scripts/data-calculus/Lib
@@ -22,6 +22,7 @@
 /scripts/users-tables/Lib
 /scripts/users-tables/Scripts
 /scripts/users-tables/database_ids.py
+/scripts/users-tables/json
 
 
 # testing
