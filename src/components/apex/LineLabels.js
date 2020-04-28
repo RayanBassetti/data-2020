@@ -1,39 +1,36 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import Chart from "react-apexcharts";
 
 function LineLabels({userId}) {
-    const [data, setData] = useState(false);
+
+    const dates = []
+    const cons = []
+    const prod = []
 
     async function fetchData() {
         const res = await fetch(`http://localhost:4000/cons_prod_clients/${userId}`);
         res
-          .json()
-          .then(res => setData(res))
-          .catch(err => console.log(err));
+            .json()
+            .then(res => {
+                const {data} = res
+                data.forEach((item) => {
+                    dates.push(item.date)
+                    cons.push(item.from_gen_to_consumer)
+                    prod.push(item.from_grid_to_consumer)
+                }) 
+                console.log(dates, cons, prod)
+                // console.log(data)
+            })
+            .catch(err => console.log(err));
     }
     
     useEffect(() => {
         fetchData();
-        // console.log(data)
     });
-
-    const arrayDates = []
-    const arrayCons = []
-    const arrayProd = []
-    var arrays = []
-    function handleData() {
-        data.forEach((item) => {
-            arrayDates.push(item.date)
-            arrayCons.push(item.from_gen_to_consumer)
-            arrayProd.push(item.from_grid_to_consumer)
-        })
-        arrays = [arrayDates, arrayCons, arrayProd]
-        console.log(arrays)
-    }
 
     const options = {
         chart: {
-            height: 350,
+            height: 200,
             type: 'line',
             dropShadow: {
                 enabled: true,
@@ -65,7 +62,7 @@ function LineLabels({userId}) {
             size: 1
         },
         xaxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+            categories: dates,
             title: {
                 text: "Semaines",
                 style: {
@@ -80,7 +77,7 @@ function LineLabels({userId}) {
                     fontFamily: 'Montserrat'
                 }
             },
-            min: 5,
+            min: 0,
             max: 40
         },
         // legend: {
@@ -94,17 +91,16 @@ function LineLabels({userId}) {
     const series = [
         {
           name: "Consommation",
-          data: [28.5, 29, 33, 36, 32]
+          data: cons
         },
         {
           name: "Production",
-          data: [12, 11, 14, 18, 17]
+          data: prod
         }
     ]
     return (
         <>
         <Chart options={options} series={series} width={'450px'} type="line"/>
-        {arrays}
         </>
     )
 }
