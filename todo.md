@@ -5,6 +5,7 @@
 - Partie satisfaction/relation/sentiments : 
     - Faire une fonction qui prend en compte la satisfaction/relation, et qui dit donc quel est 
     l'humeur actuel de la personne 
+    - Faire une fonction qui prend la cons/prod, et si elle a été basse dernièrement, influe sur la satisfaction
 
 # script consProd : 
 - Faire une boucle sur les clients de la table fake_clients

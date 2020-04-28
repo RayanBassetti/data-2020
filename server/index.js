@@ -16,20 +16,19 @@ const init = async () => {
 
     server.route({
         method: 'GET',
-        path: '/api',
+        path: '/',
         handler: (req, h) => {
             return {
                 statusCode: 200,
                 errors: null,
-                message: 'OK',
+                message: 'Existing routes : /cons_prod_clients (GET), /fake_clients (GET), /new_client_campaign (POST)',
             }
         }
     })
 
     server.route([
-        require('./routes/singleUser'),
-        require('./routes/allClients'),
-        require('./routes/getUserById'),
+        require('./routes/getAllClients'),
+        require('./routes/getConsProdClients'),
         require('./routes/postNewCampaign')
     ])
 

@@ -301,6 +301,9 @@ body, html {
 .single_client_content .cards_top .card_top .card_top_content .ctc_right .ctc_right_content .ctc_right_subpart {
   width: 70%;
 }
+.single_client_content .cards_top .card_top .card_top_content .ctc_right .ctc_right_infos {
+  flex-direction: row;
+}
 .single_client_content .cards_bottom {
   justify-content: space-between;
 }

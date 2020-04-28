@@ -11,8 +11,8 @@ const cardSpecs = {
     width: '400px'
 }
 
-function MyPower(props) {
-    const {engie_time, name, nb_panneaux, gender} = props.props.user
+function MyPower({user}) {
+    const {engie_time, nb_panneaux, gender, facture} = user
     
     return(
         <Card className="card_bottom" style={cardSpecs}>
@@ -21,7 +21,7 @@ function MyPower(props) {
                 <div className="fullwidth">
                     <p className="card_subtitle">Informations</p>
                     <CardNormalText title="Client chez Engie depuis" text={engie_time} />
-                    <CardNormalText title="Factures" text={name} />
+                    <CardNormalText title="Factures" text={facture} />
                     <CardNormalText title="Appareils" text={gender} />
                     <CardNormalText title="Dernier entretien" text={gender} />
                     <CardNormalText title="Nombre de panneaux" text={nb_panneaux} />

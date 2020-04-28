@@ -73,3 +73,4 @@ def genClients(number) :
 
 with open('./json/clients.json', 'w') as outfile:
     json.dump(genClients(500), outfile)
+
