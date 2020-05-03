@@ -1,5 +1,6 @@
 const joi = require('@hapi/joi');
 const db = require('../config/database')
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
     method: 'POST',
@@ -13,13 +14,13 @@ module.exports = {
         }
     },
     handler: async (req, toolkit) => {
-        const {client_id, campaign_id, starting_date, ending_date} = req.payload
+        const {client_id, starting_date, ending_date} = req.payload
         const campaign = {
             "client_id": client_id,
-            "campaign_id": campaign_id,
+            "campaign_id": uuidv4(),
             "created_at": new Date().toISOString().slice(0, 10),
-            "starting_date": new Date().toISOString().slice(0, 10),
-            "ending_date": new Date().toISOString().slice(0, 10)
+            "starting_date": starting_date,
+            "ending_date": ending_date
         }
         return db('list_campaigns').insert(campaign)
         .then(result => {
