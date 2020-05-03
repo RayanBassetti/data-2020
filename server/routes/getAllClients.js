@@ -43,6 +43,5 @@ module.exports = {
                     data: null
                 }).code(500);
             });
-        
     }
 }

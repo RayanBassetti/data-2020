@@ -18,9 +18,8 @@ function LineLabels({userId}) {
                     cons.push(item.from_gen_to_consumer)
                     prod.push(item.from_grid_to_consumer)
                 }) 
-                console.log(dates, cons, prod)
-                // console.log(data)
             })
+            .then()
             .catch(err => console.log(err));
     }
     
@@ -62,7 +61,7 @@ function LineLabels({userId}) {
             size: 1
         },
         xaxis: {
-            categories: dates,
+            categories: ["2020-03-12", "2020-03-13", "2020-03-13", "2020-03-13", "2020-03-13"],
             title: {
                 text: "Semaines",
                 style: {
@@ -88,16 +87,18 @@ function LineLabels({userId}) {
         //     offsetX: -5
         // }
     }
+
     const series = [
         {
-          name: "Consommation",
-          data: cons
+            name: "Consommation",
+            data: cons
         },
         {
-          name: "Production",
-          data: prod
+            name: "Production",
+            data: prod
         }
     ]
+
     return (
         <>
         <Chart options={options} series={series} width={'450px'} type="line"/>
