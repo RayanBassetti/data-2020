@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
     method: 'POST',
-    path: '/new_client_campaign',
+    path: '/campaigns',
     options: {
         validate: {
             // query: joi.object().keys({
@@ -19,13 +19,13 @@ module.exports = {
             "client_id": client_id,
             "campaign_id": uuidv4(),
             "created_at": new Date().toISOString().slice(0, 10),
-            "starting_date": starting_date,
-            "ending_date": ending_date
+            "starting_date": new Date().toISOString().slice(0, 10),
+            "ending_date": new Date().toISOString().slice(0, 10)
         }
         return db('list_campaigns').insert(campaign)
         .then(result => {
             return toolkit.response({
-                statusCode: 200,
+                statusCode: 204,
                 errors: null,
                 message: 'OK',
                 meta: {
