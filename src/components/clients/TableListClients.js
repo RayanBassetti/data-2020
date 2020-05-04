@@ -1,12 +1,14 @@
-import React from 'react';
-import MaterialTable, {MTableBodyRow} from 'material-table'
+import React, {useContext} from 'react';
+import MaterialTable, {MTableBodyRow, MTableToolbar, MTableBody} from 'material-table'
 
 import {handleProfil, handleFeeling} from '../common/methods/ConvertIntMethod'
 
 import { withRouter } from 'react-router-dom';
 import Feeling from '../common/components/Feeling';
 import ProfilTag from '../common/components/ProfilTag';
-
+import ToolbarSwitch from './ToolbarSwitch';
+import DataListClients from './DataListClients'
+import {ListDisplayContext} from '../contexts/ListDisplayContext'
 
 function TableListClients(props) {
     const {users} = props
@@ -14,6 +16,7 @@ function TableListClients(props) {
         delete user.tableData
         props.history.push(`/clients/${idClient}`, user)
     }
+    const {theme} = useContext(ListDisplayContext)
 
     return(
         <MaterialTable
@@ -60,9 +63,37 @@ function TableListClients(props) {
             ]}
             onRowClick={((evt, selectedRow) => handleId(selectedRow.id, selectedRow))}
             components={{
+                Toolbar: props => (
+                    <>
+                        <MTableToolbar {...props} />
+                        <ToolbarSwitch />
+                    </>
+                ),
                 Row: props => (
-                    <MTableBodyRow {...props} />
+                    <>
+                        {theme === "List" &&
+                        <MTableBodyRow {...props} />
+                        }
+                        {theme === "Data" &&
+                        <></>
+                        }
+                        {theme === "Squares" &&
+                        <p>single square</p>
+                        }
+                    </>
                 )
+                // Body: props => (
+                //     <>
+                //     {(theme === "List" || theme === "Squares") &&
+                //     <MTableBody {...props} />
+                    
+                //     }
+                //     {theme === "Data" &&
+                //         <DataListClients data={users}/>
+                //     }
+                //     </>
+                // ),
+
             }}
             options={{selection: true}}
         />

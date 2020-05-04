@@ -1,9 +1,7 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
 import TableListClients from './TableListClients'
-import ToolbarSwitch from './ToolbarSwitch'
 
-import {ListDisplayContext} from '../contexts/ListDisplayContext'
 
 
 function ListClients()  {
@@ -21,21 +19,11 @@ function ListClients()  {
             })
     })
 
-    const {theme} = useContext(ListDisplayContext)
     return(
         <>
             {! loading &&
                 <div className="list_users">
-                    <ToolbarSwitch />
-                    {theme === "List" && 
-                        <TableListClients users={data}/>
-                    }
-                    {theme === "Data" && 
-                        <h1>Data</h1>
-                    }
-                    {theme === "Squares" && 
-                        <h1>Squares</h1>
-                    }
+                    <TableListClients users={data}/>
                     {/* {users} */}
                 </div>
             }
