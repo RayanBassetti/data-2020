@@ -3,16 +3,16 @@ const db = require('../config/database')
 
 module.exports = {
     method: 'GET',
-    path: '/campaigns/{campaign_id}',
+    path: '/campaigns/{client_id}',
     options: {
         validate: {
             params: joi.object().keys({
-                campaign_id: joi.string()
+                client_id: joi.string()
             })
         }
     },
     handler: async (req, toolkit) => {
-        return db('list_campaigns').where('campaign_id', req.params.campaign_id)
+        return db('list_campaigns').where('client_id', req.params.client_id)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,

@@ -1,55 +1,60 @@
-import React from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
 import TableListClients from './TableListClients'
+import ToolbarSwitch from './ToolbarSwitch'
 
-class ListClients extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            loading: true
-        }
-    }
+import {ListDisplayContext} from '../contexts/ListDisplayContext'
 
-    componentDidMount() {
+
+function ListClients()  {
+    
+    const [loading, setLoading] = useState(true)
+    const [data, setData] = useState([])
+
+    useEffect(() => {
         fetch('http://localhost:4000/fake_clients')
             .then(results => {
                 return results.json()
             }).then(res => {
-                this.setState({
-                    loading: false,
-                    data: res.data
-                })
+                setLoading(false)
+                setData(res.data)
             })
-    }
+    })
 
-    render() {
-        const {data, loading} = this.state;
-        return(
-            <>
-                {! loading &&
-                <>
+    const {theme} = useContext(ListDisplayContext)
+    return(
+        <>
+            {! loading &&
                 <div className="list_users">
-                    <TableListClients users={data}/>
+                    <ToolbarSwitch />
+                    {theme === "List" && 
+                        <TableListClients users={data}/>
+                    }
+                    {theme === "Data" && 
+                        <h1>Data</h1>
+                    }
+                    {theme === "Squares" && 
+                        <h1>Squares</h1>
+                    }
                     {/* {users} */}
                 </div>
-                </>
-                }
-                {loading &&
-                <>
-                <h2>Loading... (if nothing appears, check logs, statusCode did not return 200.)</h2>
-                        <div className="sweet-loading">
-                            <ClipLoader
-                            size={150}
-                            //size={"150px"} this also works
-                            color={"#00AAFF"}
-                            loading={this.state.loading}
-                            />
-                        </div>
-                </>
-                }
+            }
+            {loading &&
+            <>
+            <h2>Loading... (if nothing appears, check logs, statusCode did not return 200.)</h2>
+                <div className="sweet-loading">
+                    <ClipLoader
+                    size={150}
+                    //size={"150px"} this also works
+                    color={"#00AAFF"}
+                    loading={loading}
+                    />
+                </div>
             </>
-        )
-    }
+            }
+        </>
+    )
+    
 }
 
 export default ListClients
