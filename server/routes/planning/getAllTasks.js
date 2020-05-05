@@ -1,9 +1,9 @@
 const joi = require('@hapi/joi');
-const db = require('../config/database')
+const db = require('../../config/database')
 
 module.exports = {
     method: 'GET',
-    path: '/fake_clients',
+    path: '/planning',
     options: {
         validate: {
             query: joi.object().keys({
@@ -13,7 +13,7 @@ module.exports = {
         }
     },
     handler: async (req, toolkit) => {
-        return db.select().from("fake_clients").limit(req.query.limit).offset(req.query.offset)
+        return db.select().from("tasks_planning").limit(req.query.limit).offset(req.query.offset)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,

@@ -1,18 +1,18 @@
 const joi = require('@hapi/joi');
-const db = require('../config/database')
+const db = require('../../config/database')
 
 module.exports = {
     method: 'GET',
-    path: '/campaigns/{client_id}',
+    path: '/users/{user_id}',
     options: {
         validate: {
             params: joi.object().keys({
-                client_id: joi.string()
+                user_id: joi.string()
             })
         }
     },
     handler: async (req, toolkit) => {
-        return db('list_campaigns').where('client_id', req.params.client_id)
+        return db('common_users').where('id', req.params.user_id)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,

@@ -69,19 +69,19 @@ function TableListClients(props) {
                         <ToolbarSwitch />
                     </>
                 ),
-                Row: props => (
-                    <>
-                        {theme === "List" &&
-                        <MTableBodyRow {...props} />
-                        }
-                        {theme === "Data" &&
-                        <></>
-                        }
-                        {theme === "Squares" &&
-                        <p>single square</p>
-                        }
-                    </>
-                )
+                // Row: props => (
+                //     <>
+                //         {theme === "List" &&
+                //         <MTableBodyRow {...props} />
+                //         }
+                //         {theme === "Data" &&
+                //         <></>
+                //         }
+                //         {theme === "Squares" &&
+                //         <p>single square</p>
+                //         }
+                //     </>
+                // )
                 // Body: props => (
                 //     <>
                 //     {(theme === "List" || theme === "Squares") &&

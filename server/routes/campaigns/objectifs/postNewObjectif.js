@@ -1,10 +1,10 @@
 const joi = require('@hapi/joi');
-const db = require('../config/database')
+const db = require('../../config/database')
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
     method: 'POST',
-    path: '/campaigns',
+    path: '/campaigns/{client_id}/objectifs',
     options: {
         validate: {
             // query: joi.object().keys({
@@ -14,15 +14,16 @@ module.exports = {
         }
     },
     handler: async (req, toolkit) => {
-        const {client_id, starting_date, ending_date} = req.payload
-        const campaign = {
+        const {client_id, title, text} = req.payload
+        const objectif = {
             "client_id": client_id,
-            "campaign_id": uuidv4(),
+            "objectif_id": uuidv4(),
+            "title": title,
+            "text": text,
+            "status": false,
             "created_at": new Date().toISOString().slice(0, 10),
-            "starting_date": new Date().toISOString().slice(0, 10),
-            "ending_date": new Date().toISOString().slice(0, 10)
         }
-        return db('list_campaigns').insert(campaign)
+        return db('list_objectifs').insert(objectif)
         .then(result => {
             return toolkit.response({
                 statusCode: 204,

@@ -1,18 +1,41 @@
 const joi = require('@hapi/joi');
-const db = require('../config/database')
+const db = require('../../config/database')
 
-module.exports = {
+exports.GetPanelById = {
     method: 'GET',
-    path: '/cons_prod_clients/{client_id}',
+    path: '/panels/{panel_id}',
     options: {
         validate: {
             params: joi.object().keys({
-                client_id: joi.string().required()
+                panel_id: joi.string().required()
+            })
+        }
+    },
+    handler: async (req, h) => {
+        return {
+            statusCode: 200,
+            errors: null,
+            message: 'OK',
+            data: {
+                panel_info: req.params
+            }
+        }
+    }
+}
+
+exports.GetUsers = {
+    method: 'GET',
+    path: '/api/users',
+    options: {
+        validate: {
+            query: joi.object().keys({
+                limit: joi.number().integer().min(1).max(200).default(20),
+                offset: joi.number().integer().min(0).default(0)
             })
         }
     },
     handler: async (req, toolkit) => {
-        return db('cons_prod_clients_1').where('client_id', req.params.client_id)
+        return db.select().distinct('name').from('history_panels').limit(req.query.limit).offset(req.query.offset)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,
@@ -31,8 +54,8 @@ module.exports = {
                     message: 'Internal Server Error',
                     errors: [
                         {
-                            message: 'Failed to connect to database - Needed : UUID',
-                            error: err
+                            message: 'Failed to connect to database',
+                            err: err
                         }
                     ],
                     meta: {
