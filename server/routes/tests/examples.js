@@ -1,19 +1,41 @@
 const joi = require('@hapi/joi');
-const db = require('../config/database')
+const db = require('../../config/database')
 
-module.exports = {
+exports.GetPanelById = {
     method: 'GET',
-    path: '/users/single',
+    path: '/panels/{panel_id}',
+    options: {
+        validate: {
+            params: joi.object().keys({
+                panel_id: joi.string().required()
+            })
+        }
+    },
+    handler: async (req, h) => {
+        return {
+            statusCode: 200,
+            errors: null,
+            message: 'OK',
+            data: {
+                panel_info: req.params
+            }
+        }
+    }
+}
+
+exports.GetUsers = {
+    method: 'GET',
+    path: '/api/users',
     options: {
         validate: {
             query: joi.object().keys({
-                limit: joi.number().integer().min(1).max(200).default(50),
+                limit: joi.number().integer().min(1).max(200).default(20),
                 offset: joi.number().integer().min(0).default(0)
             })
         }
     },
     handler: async (req, toolkit) => {
-        return db.select().from("single_pelo").limit(req.query.limit).offset(req.query.offset)
+        return db.select().distinct('name').from('history_panels').limit(req.query.limit).offset(req.query.offset)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,
@@ -33,7 +55,7 @@ module.exports = {
                     errors: [
                         {
                             message: 'Failed to connect to database',
-                            error: err
+                            err: err
                         }
                     ],
                     meta: {

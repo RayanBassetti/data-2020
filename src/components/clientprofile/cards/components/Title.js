@@ -1,7 +1,10 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 
-const Title = ({text, sub_text, button}) => {
+import PostMethod from '../../../common/methods/PostMethod'
+
+const Title = ({text, sub_text, button, clientId}) => {
+    
     return(
         <div className="client_card_title flexed-row-space">
             <p className="card_content_text cct_text">{text}</p>
@@ -11,7 +14,7 @@ const Title = ({text, sub_text, button}) => {
             {button && button === "objectifs" &&
                 <Button 
                     variant="outlined"
-                    onClick={() => alert('Clicked')}
+                    onClick={() => PostMethod(clientId)}
                 >Nouvelle Campagne</Button>
             }
         </div>

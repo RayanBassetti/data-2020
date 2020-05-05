@@ -15,7 +15,7 @@ function UserGraphs({user}) {
             </Card>
             <Card className="client_objectifs">
                 <CardContent>
-                    <Title text="Objectifs" button="objectifs"/>
+                    <Title text="Objectifs" button="objectifs" clientId={user.id}/>
                     <Objectifs />
                 </CardContent>
             </Card>

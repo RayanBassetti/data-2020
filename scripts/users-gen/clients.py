@@ -1,81 +1,76 @@
 # script to generate fake clients
 import json
 import random
+import shortuuid
 from faker import Factory
 fake = Factory.create('fr_FR')
 
-def randomGender() :
-    return random.choice(["H", "F"])
+def randomStrRange(choiceOne, choiceTwo) :
+    return random.choice([choiceOne, choiceTwo])
 
-def randomDevices() : 
-    return random.choice([["Fronius"], ["Fronius", "NetAtmo"], ["MySonnen"], ["MySonnen", "NetAtmo"]])
-
-def randomNbPanneaux() :
-    return random.randrange(1, 6)
-
-def randomPourcentage(start, finish) :
+def randomIntRange(start, finish) :
     return random.randrange(start, finish)
 
-def randomAlerte() : 
-    chances = random.choice([True, False])
-    if chances : 
-        return random.randrange(1, 3)
+# def randomDevices() : 
+#     # return random.choice([["Fronius"], ["Fronius", "NetAtmo"], ["MySonnen"], ["MySonnen", "NetAtmo"]])
+#     allDevices = []
+#     nbDevices = random.randrange(1, 3)
+#     for device in range(nbDevices) :
+#          allDevices.append(random.randrange(1, 3))
+        
 
-def randomProfil() :
-    # return random.choice(["Économe", "Autonome", "Écologie"])
-    return random.randrange(1, 3)
-
-def randomFamille() :
-    # return random.choice(["IFaP", "IFoP", "IFaN", "IFoN", "PFaP", "PFoP", "PFaN", "PFoN"])
-    return random.randrange(1, 8)
-
-def randomHumeur() :
-    # return random.choice(["Colère", "Mitigé", "Curieux", "Harmonieux", "Heureux"])
-    return random.randrange(1, 5)
 
 def scoringActivityApp() :
-    numberConnection = random.randint(0, 30) # nombres de fois que l'application a été lancé 
-    timeLoggedIn = random.randint(0, 90) # normalement en minutes, moyenne du temps passé sur l'application
+    numberConnection = randomIntRange(0, 30) # nombres de fois que l'application a été lancé sur un mois
+    timeLoggedIn = randomIntRange(0, 90) # normalement en minutes, moyenne du temps passé sur l'application
     return numberConnection + timeLoggedIn
 
 
 def genClients(number) : 
     clients = []
-    clientid = 1
     for _ in range(number):
-        fullName = fake.name()
-        address = fake.address()
-        departement = fake.department()
-        phoneNumber = fake.phone_number()
-        birthDate = str(fake.date_of_birth(None, 40, 65))
-        mail = fake.free_email()
+
+        birthDate = fake.date_of_birth(None, 40, 65)
         engieTime = fake.date_between(start_date='-90d', end_date='today')
         lastActivity = fake.date_between(start_date='-6d', end_date='today')
-        timeActivity = scoringActivityApp()
+        constructionDate = fake.date_of_birth(None, 10, 60) # the date_between method didn't work here, created conflicts with multiple clients
+        lastMaintenance = fake.date_between(start_date=engieTime, end_date='today')
+        fullName = fake.name()
+        facture = fullName + '_Devis.pdf'
+        orientation = random.choice(["Nord", "Est", "Sud", "Ouest"])
+
         clients.append({
-            "id": clientid,
+            "id": shortuuid.uuid(),
             "name": fullName,
-            "address": address,
-            "departement": departement,
-            "phone_number": phoneNumber,
-            "birthdate": birthDate,
-            "email": mail,
-            "gender": randomGender(),
+            "address": fake.address(),
+            "phone_number": fake.phone_number(),
+            "birthdate": str(birthDate),
+            "email": fake.free_email(),
+            "gender": randomStrRange("H", "F"),
             "engie_time": str(engieTime),
-            "devices": randomDevices(),
-            "nb_panneaux": randomNbPanneaux(),
+            # "devices": randomDevices(),
+            "nb_panneaux": randomIntRange(1, 6),
             "last_activity": str(lastActivity),
-            "time_activity" : str(timeActivity),
-            "profil": randomProfil(),
-            "famille": randomFamille(),
-            "feeling": randomHumeur(),
-            "satisfaction": randomPourcentage(1, 100),
-            "relation": randomPourcentage(1, 100),
-            "advice": randomPourcentage(1, 50),
-            "profil_speech": randomPourcentage(1, 50)
+            "time_activity" : scoringActivityApp(),
+            "profil": randomIntRange(1, 3), # "Économe", "Autonome", "Écologie"
+            "famille": randomIntRange(1, 8), # "IFaP", "IFoP", "IFaN", "IFoN", "PFaP", "PFoP", "PFaN", "PFoN"
+            "feeling": randomIntRange(1, 5), # "Colère", "Mitigé", "Curieux", "Harmonieux", "Heureux"
+            "satisfaction": randomIntRange(1, 100),
+            "relation": randomIntRange(1, 100),
+            "advice": randomIntRange(1, 100),
+            "profil_speech": randomIntRange(1, 100),
+            "type_building": randomStrRange("Maison", "Appartement"),
+            "owner": randomStrRange("Propriétaire", "Locataire"),
+            "orientation": orientation,
+            "nb_meters": randomIntRange(70, 240),
+            "nb_floors": randomIntRange(1, 3),
+            "nb_people": randomIntRange(1, 5),
+            "construction": str(constructionDate),
+            "last_maintenance": str(lastMaintenance),
+            "facture": facture
         })
-        clientid = clientid + 1
     return clients
 
 with open('./json/clients.json', 'w') as outfile:
-    json.dump(genClients(1), outfile)
+    json.dump(genClients(500), outfile)
+
