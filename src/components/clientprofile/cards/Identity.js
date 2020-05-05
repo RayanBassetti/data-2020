@@ -10,15 +10,14 @@ import Feeling from '../../common/components/Feeling';
 import { handleProfil, handleFamily, handleFeeling } from '../../common/methods/ConvertIntMethod';
 import ProgressBar from '../../common/components/ProgressBar';
 import CardNormalText from './components/CardNormalText';
-import Title from './components/Title';
+// import Title from './components/Title';
 
 
 
-function Identity(props) {
-    const {id, name, birthdate, gender, profil, famille, feeling, satisfaction, relation} = props.props.user
+function Identity({user}) {
+    const {id, name, birthdate, gender, profil, famille, feeling, satisfaction, relation} = user
     return(
         <Card className="card_top">
-            {/* <Title text="Test"/> */}
             <CardContent className="card_top_content flexed-row">
                 <div className="ctc_left fullwidth">
                     <p className="card_subtitle">Identité</p>

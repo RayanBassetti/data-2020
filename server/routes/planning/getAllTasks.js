@@ -1,18 +1,19 @@
 const joi = require('@hapi/joi');
-const db = require('../config/database')
+const db = require('../../config/database')
 
 module.exports = {
     method: 'GET',
-    path: '/users/{user_id}',
+    path: '/planning',
     options: {
         validate: {
-            params: joi.object().keys({
-                user_id: joi.string()
+            query: joi.object().keys({
+                limit: joi.number().integer().min(1).max(200).default(200),
+                offset: joi.number().integer().min(0).default(0)
             })
         }
     },
     handler: async (req, toolkit) => {
-        return db('common_users').where('id', req.params.user_id)
+        return db.select().from("tasks_planning").limit(req.query.limit).offset(req.query.offset)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,
@@ -31,7 +32,7 @@ module.exports = {
                     message: 'Internal Server Error',
                     errors: [
                         {
-                            message: 'Failed to connect to database - Needed : UUID',
+                            message: 'Failed to connect to database',
                             error: err
                         }
                     ],
@@ -42,6 +43,5 @@ module.exports = {
                     data: null
                 }).code(500);
             });
-        
     }
 }

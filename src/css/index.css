@@ -140,6 +140,32 @@ body, html {
   padding-right: 80px;
 }
 
+.card_content_text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.03em;
+  color: #686868;
+}
+
+.card_normal_text {
+  color: #686868;
+}
+
+.card_title_text {
+  font-weight: 600;
+  width: 100px;
+}
+
+.card_subtitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: #C1C1C1;
+}
+
 .Home .cards {
   padding-top: 5%;
   padding: 35px 80px 0px 80px;
@@ -275,6 +301,9 @@ body, html {
 .single_client_content .cards_top .card_top .card_top_content .ctc_right .ctc_right_content .ctc_right_subpart {
   width: 70%;
 }
+.single_client_content .cards_top .card_top .card_top_content .ctc_right .ctc_right_infos {
+  flex-direction: row;
+}
 .single_client_content .cards_bottom {
   justify-content: space-between;
 }
@@ -284,38 +313,13 @@ body, html {
 .single_client_content .client_card_title {
   border-bottom: 1px solid #E1E1E1;
   margin: 20px 20px 0px 20px;
+  padding-bottom: 10px;
 }
 .single_client_content .client_card_title .cct_text {
   margin: 0;
   font-weight: 600;
   font-size: 22px;
   line-height: 27px;
-}
-
-.card_content_text {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: 0.03em;
-  color: #686868;
-}
-
-.card_normal_text {
-  color: #686868;
-}
-
-.card_title_text {
-  font-weight: 600;
-  width: 100px;
-}
-
-.card_subtitle {
-  font-size: 12px;
-  text-transform: uppercase;
-  font-variant: small-caps;
-  color: #C1C1C1;
 }
 
 .client_stats_content {
@@ -334,7 +338,99 @@ body, html {
   font-family: "Montserrat" !important;
 }
 .client_stats_content .client_objectifs {
-  width: 40%;
+  width: 34%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.client_stats_content .client_objectifs .objectifs_progressbar {
+  border-radius: 10px;
+  height: 50px;
+}
+.client_stats_content .client_objectifs .objectifs_progressbar .op_front {
+  background-color: #74EDB3;
+}
+.client_stats_content .client_objectifs .op_back {
+  width: 100%;
+  background-color: #FAFAFA;
+  border: 1px solid #E6E6E6;
+}
+.client_stats_content .client_objectifs .oc_subtitle {
+  text-transform: uppercase;
+  font-variant: small-caps;
+  color: #C1C1C1;
+}
+.client_stats_content .client_objectifs .objectifs_list {
+  margin-top: 2%;
+}
+.client_stats_content .client_objectifs .objectifs_list .single_objectif {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #F5F5F5;
+  border-radius: 5px;
+}
+.client_stats_content .client_objectifs .objectifs_list .single_objectif .so_checkbox {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.client_stats_content .client_objectifs .objectifs_list .single_objectif .so_content {
+  width: 80%;
+}
+.client_stats_content .client_objectifs .objectifs_list .single_objectif .so_content .card_title_text {
+  width: initial;
+}
+
+.alertes_kanban {
+  margin-top: 2%;
+  height: 80%;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+}
+.alertes_kanban .single_kanban {
+  width: 20%;
+  height: 100%;
+}
+.alertes_kanban .single_kanban .sk_header {
+  width: 100%;
+}
+.alertes_kanban .single_kanban .sk_header .sk_title {
+  padding: 4px 14px 4px 14px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+.alertes_kanban .single_kanban .sk_header .sk_count {
+  background: #EBEBEB;
+  border: 1px solid #D6D6D6;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 3px 5px 2px 7px;
+  letter-spacing: 0.03em;
+  color: #686868;
+}
+.alertes_kanban .single_kanban .sk_content {
+  height: 100%;
+  width: 100%;
+  background: rgba(223, 227, 235, 0.46);
+  opacity: 0.5;
+  border: 1px solid rgba(223, 226, 235, 0.49);
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 13px;
+}
+.alertes_kanban .single_kanban .sk_content .MuiCardContent-root {
+  padding: 20px;
+  margin: 0;
+}
+.alertes_kanban .single_kanban .sk_content .MuiCardContent-root .alerte_title {
+  margin: 0;
+  color: #2A3B5D;
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=index.css.map */

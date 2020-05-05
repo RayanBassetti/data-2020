@@ -11,12 +11,12 @@ const cardSpecs = {
     width: '500px'
 }
 
-function ConsProd(props) {
+function ConsProd({userId}) {
     return(
         <Card className="card_bottom" style={cardSpecs}>
             <Title text="Consommation et production"/>
             <CardContent className="card_bottom_content flexed-row">
-                <LineLabels data={props} />
+                <LineLabels userId={userId} />
             </CardContent>
         </Card>
     )

@@ -9,6 +9,7 @@ import NavMenu from '../common/navigation/NavMenu';
 import Home from '../home/Home';
 import Planning from '../planning';
 import Messagerie from '../messagerie';
+import Alertes from '../alertes';
 
 function RoutingSwitch() {
     return(
@@ -40,6 +41,11 @@ function RoutingSwitch() {
                         exact 
                         path="/planning/"
                         render={() => <Planning />}>
+                    </Route>
+                    <Route 
+                        exact 
+                        path="/alertes/"
+                        render={() => <Alertes />}>
                     </Route>
             </Switch>
         </Router>

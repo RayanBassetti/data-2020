@@ -11,17 +11,17 @@ import ConsProd from './cards/ConsProd';
 import Historique from './cards/Historique';
 
 
-function ClientProfile(props) {
+function ClientProfile({user}) {
     return(
         <>
             <div className="cards_top flexed-row-around">
-                <Identity props={props} />
-                <Infos props={props} />
+                <Identity user={user} />
+                <Infos user={user} />
             </div>
             <div className="cards_bottom flexed-row-around">
-                <MyPower props={props} />
-                <ConsProd props={props} />
-                <Historique props={props} />
+                <MyPower user={user} />
+                <ConsProd userId={user.id} />
+                <Historique user={user} />
             </div>
         </>
     )
