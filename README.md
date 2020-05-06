@@ -14,6 +14,7 @@ B) Back-end :
 - Hapi
 - Joi
 - Nodemon
+- Hapi-Swagger
 
 ## How to setup : 
 
@@ -41,6 +42,8 @@ B) Back-end :
 
 The server starts at port 4000, the front at port 3000. 
 Feel free to change them if needed.
+
+## Known issues / bugs / missings parts 
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH
 
