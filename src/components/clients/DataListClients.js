@@ -1,16 +1,26 @@
 import React from 'react';
 
 import Donut from '../apex/Donut'
+import StackedBars from '../apex/StackedBars'
+import { CardContent, Card } from '@material-ui/core';
+import CardTitle from '../common/components/CardTitle';
 
-
-function DataListClients({data}) {
-    console.log("test")
+function DataListClients({users}) {
     return (
-        <>
-            <h1>Salut</h1>
-            {/* <Donut data={data} /> */}
-            {/* <StackedBars data={data} /> */}
-        </>
+        <div className="list_users_data flexed-row-around">
+            <Card>
+                <CardTitle text="Etat des utilisateurs" />
+                <CardContent>
+                    <Donut data={users} />
+                </CardContent>
+            </Card>
+            <Card style={{width: '70%'}}>
+                <CardTitle text="Profils et Types de Familles" />
+                <CardContent>
+                    <StackedBars data={users} />
+                </CardContent>
+            </Card>
+        </div>
     )
 }
 

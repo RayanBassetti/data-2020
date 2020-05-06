@@ -5,7 +5,9 @@ function CardTitle(props) {
     const {emoji, emWidth, emHeight, text} = props
     return (
         <div className="flexed-row card_title">
-            {EmojiMethod(emoji, emWidth, emHeight)}
+            {emoji && 
+            EmojiMethod(emoji, emWidth, emHeight)
+            }
             <p>{text}</p>
         </div>
     )

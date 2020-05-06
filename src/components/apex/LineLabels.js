@@ -8,7 +8,7 @@ function LineLabels({userId}) {
     const prod = []
 
     async function fetchData() {
-        const res = await fetch(`http://localhost:4000/cons_prod_clients/${userId}`);
+        const res = await fetch(`http://localhost:4000/clients/${userId}/cons_prod`);
         res
             .json()
             .then(res => {

@@ -1,6 +1,10 @@
 'use strict';
 
 const Hapi = require('@hapi/hapi');
+const Inert = require('@hapi/inert');
+const Vision = require('@hapi/vision');
+const HapiSwagger = require('hapi-swagger');
+const Pack = require('./package');
 
 const init = async () => {
 
@@ -36,8 +40,24 @@ const init = async () => {
         require('./routes/campaigns/postNewCampaign')
     ])
 
+    const swaggerOptions = {
+        info: {
+            title: 'Rayan Bassetti - Hapi/JOI/Knex - Documentation',
+            version: Pack.version,
+        },
+    };
+
+    await server.register([
+        Inert,
+        Vision,
+        {
+            plugin: HapiSwagger,
+            options: swaggerOptions
+        }
+    ]);
+
     await server.start();
-    console.log('Server running on %s', server.info.uri);
+    console.log('Server running on %s. Please consider going on /documentation for a proper page describing the different routes.', server.info.uri);
 };
 
 process.on('unhandledRejection', (err) => {

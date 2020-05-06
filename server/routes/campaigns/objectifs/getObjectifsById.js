@@ -5,6 +5,9 @@ module.exports = {
     method: 'GET',
     path: '/campaigns/{client_id}/objectifs',
     options: {
+        tags: ['api'],
+        description: 'Get objectifs',
+        notes: 'Get all the objectifs related to a single client, with the client_id related',
         validate: {
             params: joi.object().keys({
                 client_id: joi.string().required()

@@ -6,6 +6,9 @@ module.exports = {
     method: 'POST',
     path: '/campaigns',
     options: {
+        tags: ['api'],
+        description: 'Create campaign',
+        notes: 'Create a single campaign',
         validate: {
             // query: joi.object().keys({
             //     limit: joi.number().integer().min(1).max(200).default(200),

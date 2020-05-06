@@ -3,8 +3,11 @@ const db = require('../../config/database')
 
 module.exports = {
     method: 'GET',
-    path: '/cons_prod_clients/{client_id}',
+    path: '/clients/{client_id}/cons_prod',
     options: {
+        tags: ['api'],
+        description: 'Get cons/prod',
+        notes: 'Get the rows of the consommation/production of a client, with the client id',
         validate: {
             params: joi.object().keys({
                 client_id: joi.string().required()

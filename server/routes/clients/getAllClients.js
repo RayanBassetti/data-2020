@@ -3,8 +3,11 @@ const db = require('../../config/database')
 
 module.exports = {
     method: 'GET',
-    path: '/fake_clients',
+    path: '/clients',
     options: {
+        tags: ['api'],
+        description: 'Get clients',
+        notes: 'Get all the clients',
         validate: {
             query: joi.object().keys({
                 limit: joi.number().integer().min(1).max(200).default(200),
