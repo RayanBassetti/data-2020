@@ -5,14 +5,9 @@ export const ThemeContext = createContext();
 class ThemeContextProvider extends React.Component {
 
     componentDidMount() {
-        const params = JSON.parse(localStorage.getItem("params"))
-        if(Object.keys(params).length === 0 || !params) {
-            this.setState({
-                theme: "light"
-            })
-        } else {
-            this.setState(params)
-        }
+        this.setState({
+            theme: "light"
+        })
     }
 
     applyTheme = (color) => {

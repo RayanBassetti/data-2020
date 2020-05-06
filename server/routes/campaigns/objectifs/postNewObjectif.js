@@ -6,6 +6,9 @@ module.exports = {
     method: 'POST',
     path: '/campaigns/{client_id}/objectifs',
     options: {
+        tags: ['api'],
+        description: 'Create objectif',
+        notes: 'Create a new objectif for a specific client, with the client_id indicated',
         validate: {
             // query: joi.object().keys({
             //     limit: joi.number().integer().min(1).max(200).default(200),

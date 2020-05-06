@@ -1,11 +1,7 @@
 import React from 'react';
 import Chart from "react-apexcharts";
 
-
-
-function RadialChart(props) {
-    
-    const {text} = props
+function RadialChart({text}) {
 
     const options = {
         chart: {
@@ -56,25 +52,6 @@ function RadialChart(props) {
           ]
         },
         {
-          name: 'Alertes en cours',
-          data: [
-            {
-              x: 'Lundi',
-              y: [
-                new Date('2019-03-02').getTime(),
-                new Date('2019-03-05').getTime()
-              ]
-            },
-            {
-              x: 'Mardi',
-              y: [
-                new Date('2019-03-06').getTime(),
-                new Date('2019-03-16').getTime()
-              ]
-            }
-          ]
-        },
-        {
           name: 'Prise de contact',
           data: [
             {
@@ -98,24 +75,40 @@ function RadialChart(props) {
             },
           ]
         },
-        {
-          name: 'Campagnes',
-          data: [
-            {
-              x: 'Lundi',
-              y: [
-                new Date('2019-03-10').getTime(),
-                new Date('2019-03-11').getTime()
-              ]
-            },
-          ]
-        }
+        // {
+        //   name: 'Alertes en cours',
+        //   data: [
+        //     {
+        //       x: 'Lundi',
+        //       y: [
+        //         new Date('2019-03-02').getTime(),
+        //         new Date('2019-03-05').getTime()
+        //       ]
+        //     },
+        //     {
+        //       x: 'Mardi',
+        //       y: [
+        //         new Date('2019-03-06').getTime(),
+        //         new Date('2019-03-16').getTime()
+        //       ]
+        //     }
+        //   ]
+        // },
+        // {
+        //   name: 'Campagnes',
+        //   data: [
+        //     {
+        //       x: 'Lundi',
+        //       y: [
+        //         new Date('2019-03-10').getTime(),
+        //         new Date('2019-03-11').getTime()
+        //       ]
+        //     },
+        //   ]
+        // }
     ]
     return (
-        <>
-            <p>{text}</p>
-            <Chart options={options} series={series} height={'40%'} type="rangeBar" />
-        </>
+        <Chart options={options} series={series} height={'40%'} type="rangeBar" />
     )
 }
 

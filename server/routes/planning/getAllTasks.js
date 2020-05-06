@@ -5,6 +5,9 @@ module.exports = {
     method: 'GET',
     path: '/planning',
     options: {
+        tags: ['api'],
+        description: 'Get planning',
+        notes: 'Get all the tasks of the planning',
         validate: {
             query: joi.object().keys({
                 limit: joi.number().integer().min(1).max(200).default(200),
