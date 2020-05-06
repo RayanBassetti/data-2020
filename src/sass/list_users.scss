@@ -1,6 +1,6 @@
 .list_users {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     margin-top: 50px;
     .single_user {
@@ -22,5 +22,8 @@
     }
     .MuiTableCell-root {
         padding: 0px;
+    }
+    .list_users_data {
+        
     }
 }

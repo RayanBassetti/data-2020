@@ -2,72 +2,84 @@ import React from 'react';
 import Chart from "react-apexcharts";
 
 function StackedBars({data}) {
-    console.log(data)
 
-    const series = [
+    const handleSeries = (profil) => {
+        let families = [1, 2, 3, 4, 5, 6, 7, 8]
+        let familleCount = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+        data.forEach(item => {
+            families.forEach(number => {
+                switch(item.famille) {
+                    case(number) : 
+                        switch(item.profil) {
+                            case(profil) : 
+                                familleCount[number + 1] = familleCount[number + 1] + 1
+                                break;
+                            default : 
+                                console.log("error")
+                        }
+                    break;
+                    default:
+                        console.log("error")
+                }
+            }
+            )
+        });
+        return familleCount
+    }
+
+    const series =  [
         {
-            name: 'Marine Sprite',
-            data: [44, 55, 41, 37, 22, 43, 21]
-        }, {
-            name: 'Striking Calf',
-            data: [53, 32, 33, 52, 13, 43, 32]
-        }, {
-            name: 'Tank Picture',
-            data: [12, 17, 11, 9, 15, 11, 20]
-        }, {
-            name: 'Bucket Slope',
-            data: [9, 7, 5, 8, 6, 9, 4]
-        }, {
-            name: 'Reborn Kid',
-            data: [25, 12, 19, 32, 25, 24, 10]
-        }
+            name: "Econome",
+            data: handleSeries(1)
+        },
+        {
+            name: "Autonome",
+            data: handleSeries(2)
+        },
+        {
+            name: "Ecologique",
+            data: handleSeries(3)
+        },
     ]
     const options = {
         chart: {
-          type: 'bar',
-          height: 350,
-          stacked: true,
+            type: 'bar',
+            height: 350,
+            stacked: true,
+            stackType: '100%',
+            toolbar: {
+                show: false
+            }
         },
         plotOptions: {
-          bar: {
-            horizontal: true,
-          },
+            bar: {
+                horizontal: true,
+            },
         },
         stroke: {
-          width: 1,
-          colors: ['#fff']
-        },
-        title: {
-          text: 'Fiction Books Sales'
+            width: 1,
+            colors: ['#fff']
         },
         xaxis: {
-          categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
-          labels: {
-            formatter: function (val) {
-              return val + "K"
-            }
-          }
+          categories: ["IFaP", "IFoP", "IFaN", "IFoN", "PFaP", "PFoP", "PFaN", "PFoN"],
         },
         yaxis: {
-          title: {
-            text: undefined
-          },
+            title: {
+                text: undefined
+            },
         },
         tooltip: {
-          y: {
-            formatter: function (val) {
-              return val + "K"
-            }
-          }
+            // tooltip on hover
         },
         fill: {
-          opacity: 1
+            opacity: 1
         },
         legend: {
-          position: 'top',
-          horizontalAlign: 'left',
-          offsetX: 40
-        }
+            position: 'top',
+            horizontalAlign: 'left',
+            offsetX: 40
+            }
     }
 
     return (
