@@ -16,7 +16,7 @@ function ListClients()  {
 
     const {theme} = useContext(ListDisplayContext)
     useEffect(() => {
-        fetch('http://localhost:4000/fake_clients')
+        fetch('http://localhost:4000/clients')
             .then(results => {
                 return results.json()
             }).then(res => {
