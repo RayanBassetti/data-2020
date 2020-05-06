@@ -6,7 +6,6 @@ import { CardContent, Card } from '@material-ui/core';
 import CardTitle from '../common/components/CardTitle';
 
 function DataListClients({users}) {
-    console.log(users)
     return (
         <div className="list_users_data flexed-row-around">
             <Card>
@@ -15,8 +14,8 @@ function DataListClients({users}) {
                     <Donut data={users} />
                 </CardContent>
             </Card>
-            <Card>
-                <CardTitle text="Profil et type de famille" />
+            <Card style={{width: '70%'}}>
+                <CardTitle text="Profils et Types de Familles" />
                 <CardContent>
                     <StackedBars data={users} />
                 </CardContent>

@@ -6,7 +6,6 @@ function StackedBars({data}) {
     const handleSeries = (profil) => {
         let families = [1, 2, 3, 4, 5, 6, 7, 8]
         let familleCount = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-
         data.forEach(item => {
             families.forEach(number => {
                 switch(item.famille) {
@@ -43,6 +42,7 @@ function StackedBars({data}) {
         },
     ]
     const options = {
+        colors: ['#82CAFF', '#31D69A', '#FFDB59'],
         chart: {
             type: 'bar',
             height: 350,
@@ -83,9 +83,7 @@ function StackedBars({data}) {
     }
 
     return (
-        <>
-        <Chart options={options} series={series} width={'450px'} type="bar"/>
-        </>
+        <Chart options={options} series={series} width={'70%'} type="bar"/>
     )
 }
 

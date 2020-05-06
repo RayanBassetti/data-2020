@@ -2,7 +2,6 @@ import React from 'react';
 import Chart from "react-apexcharts";
 
 function Donut({data}) {
-    console.log(data)
 
     let negatif = 0;
     let mitige = 0;
@@ -28,23 +27,18 @@ function Donut({data}) {
     }
 
     const series = handleData()
-    console.log(series)
 
     const options = {
         colors: [ '#FF6060','#FFA34F', '#FFDD2D' ],
         chart: {
         type: 'donut',
         },
+        labels: ['Négatifs', 'Mitigés', 'Curieux'],
+        legend: {
+            position: 'bottom',
+        },
         responsive: [{
-        breakpoint: 480,
-        options: {
-            chart: {
-            width: 200
-            },
-            legend: {
-            position: 'bottom'
-            }
-        }
+        breakpoint: 480, 
         }]
     }
 
