@@ -1,7 +1,7 @@
 import React from 'react';
 import Chart from "react-apexcharts";
 
-function LineLabels({data}) {
+function Donut({data}) {
     console.log(data)
 
     const series = [44, 55, 41, 17, 15]
@@ -30,4 +30,4 @@ function LineLabels({data}) {
     )
 }
 
-export default LineLabels
+export default Donut

@@ -1,15 +1,14 @@
 import React from 'react';
 
 import Donut from '../apex/Donut'
+import StackedBars from '../apex/StackedBars'
 
-
-function DataListClients({data}) {
-    console.log("test")
+function DataListClients({users}) {
+    console.log(users)
     return (
         <>
-            <h1>Salut</h1>
-            {/* <Donut data={data} /> */}
-            {/* <StackedBars data={data} /> */}
+            <Donut data={users} />
+            <StackedBars data={users} />
         </>
     )
 }
