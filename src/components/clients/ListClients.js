@@ -3,7 +3,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import TableListClients from './displays/TableListClients'
 import ToolbarSwitch from './components/ToolbarSwitch';
 import DataListClients from './displays/DataListClients'
-import SquaresListClients from './displays/SquaresListClients'
+import MosaicListClients from './displays/MosaicListClients'
 
 import {ListDisplayContext} from '../contexts/ListDisplayContext'
 
@@ -26,7 +26,7 @@ function ListClients()  {
 
     return(
         <>
-            {! loading &&
+            {!loading &&
                 <div className="list_users">
                     <ToolbarSwitch />
                     {theme === "List" &&
@@ -35,8 +35,8 @@ function ListClients()  {
                     {theme === "Data" &&
                     <DataListClients users={data}/>
                     }
-                    {theme === "Squares" &&
-                    <SquaresListClients users={data}/>
+                    {theme === "Mosaic" &&
+                    <MosaicListClients users={data}/>
                     }
                     {/* {users} */}
                 </div>

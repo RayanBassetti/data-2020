@@ -48,6 +48,7 @@ Feel free to change them if needed.
 - For the clients list : 
     - Plan was to change the toolbar of the material-table, and to be able to change the clients lists by modifying the row/body components depending on the user input.
       For now, it's only a change between 3 components.
+    - The style of the body inside the MaterialTable can't be changed (not supported), making the display of the clients with squares possible but not good looking.
     
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH
