@@ -3,11 +3,14 @@ import { Card, CardContent } from '@material-ui/core';
 
 function HomePlanning() {
     return(
-    <Card>
-        <CardContent>
+        <div>
             <h1>Planning</h1>
-        </CardContent>
-    </Card>
+            <Card>
+                <CardContent>
+                    <p>Single Card</p>
+                </CardContent>
+            </Card>
+        </div>
     )
 }
 

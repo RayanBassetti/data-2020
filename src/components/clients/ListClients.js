@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
 import ClipLoader from "react-spinners/ClipLoader";
-import TableListClients from './TableListClients'
-import ToolbarSwitch from './ToolbarSwitch';
-import DataListClients from './DataListClients'
-import SquaresListClients from './SquaresListClients'
+import TableListClients from './displays/TableListClients'
+import ToolbarSwitch from './components/ToolbarSwitch';
+import DataListClients from './displays/DataListClients'
+import SquaresListClients from './displays/SquaresListClients'
 
 import {ListDisplayContext} from '../contexts/ListDisplayContext'
 
@@ -12,7 +12,6 @@ function ListClients()  {
     
     const [loading, setLoading] = useState(true)
     const [data, setData] = useState([])
-    console.log(data)
 
     const {theme} = useContext(ListDisplayContext)
     useEffect(() => {

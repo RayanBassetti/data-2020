@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button } from '@material-ui/core';
-import {ListDisplayContext} from '../contexts/ListDisplayContext'
+import {ListDisplayContext} from '../../contexts/ListDisplayContext'
 
 function ToolbarSwitch() {
     const {toggleDisplay} = useContext(ListDisplayContext)

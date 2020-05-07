@@ -3,11 +3,14 @@ import { Card, CardContent } from '@material-ui/core';
 
 function ClientCard() {
     return(
-        <Card>
-            <CardContent>
-            <h1>Client Card</h1>
-            </CardContent>
-        </Card>
+        <div>
+            <p className="card_content_text card_title_text">DERNIER PROFIL CONSULTÉ</p>
+            <Card>
+                <CardContent>
+                    <h1>Profil</h1>
+                </CardContent>
+            </Card>
+        </div>
     )
 }
 

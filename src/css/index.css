@@ -26,6 +26,7 @@ body, html {
 .app .content {
   width: 85%;
   padding-bottom: 40px;
+  padding-right: 2%;
 }
 .app .navMain {
   height: 100%;
@@ -273,6 +274,7 @@ body, html {
 .list_users .MuiTableCell-root {
   padding: 0px;
 }
+
 .single_client_content {
   margin-top: 40px;
   background-color: #F7F9FD;

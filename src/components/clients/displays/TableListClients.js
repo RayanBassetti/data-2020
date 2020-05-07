@@ -1,11 +1,11 @@
 import React from 'react';
 import MaterialTable from 'material-table'
 
-import {handleProfil, handleFeeling} from '../common/methods/ConvertIntMethod'
+import {handleProfil, handleFeeling} from '../../common/methods/ConvertIntMethod'
 
 import { withRouter } from 'react-router-dom';
-import Feeling from '../common/components/Feeling';
-import ProfilTag from '../common/components/ProfilTag';
+import Feeling from '../../common/components/Feeling';
+import ProfilTag from '../../common/components/ProfilTag';
 
 function TableListClients(props) {
     const {users} = props
