@@ -25,7 +25,7 @@ const init = async () => {
             return {
                 statusCode: 200,
                 errors: null,
-                message: 'Existing routes : /cons_prod_clients (GET), /fake_clients (GET), /new_client_campaign (POST)',
+                message: 'Go to /documentation for a full description of all available routes.',
             }
         }
     })

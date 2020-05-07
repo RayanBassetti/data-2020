@@ -12,7 +12,7 @@ const cardSpecs = {
 }
 
 function MyPower({user}) {
-    const {engie_time, nb_panneaux, gender, facture} = user
+    const {engie_time, nb_panneaux, gender, last_maintenance, facture} = user
     
     return(
         <Card className="card_bottom" style={cardSpecs}>
@@ -23,7 +23,7 @@ function MyPower({user}) {
                     <CardNormalText title="Client chez Engie depuis" text={engie_time} />
                     <CardNormalText title="Factures" text={facture} />
                     <CardNormalText title="Appareils" text={gender} />
-                    <CardNormalText title="Dernier entretien" text={gender} />
+                    <CardNormalText title="Dernier entretien" text={last_maintenance} />
                     <CardNormalText title="Nombre de panneaux" text={nb_panneaux} />
                 </div>
             </CardContent>
