@@ -3,9 +3,6 @@ import Chart from "react-apexcharts";
 
 
 function BarsActivity() {
-    const color = {
-        background: 'linear-gradient(180deg, #03ABFF 0%, rgba(3, 171, 255, 0) 100%)'
-    }
     const series = [{
         data: [21, 22, 10, 28, 16]
     }]
