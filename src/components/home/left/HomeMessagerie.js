@@ -1,11 +1,16 @@
 import React from 'react';
 import { Card, CardContent } from '@material-ui/core';
 
+import HomeTitle from '../HomeTitle'
+
 function HomeMessagerie() {
     return(
-    <Card>
+    <Card style={{marginTop: '50px', padding: '35px'}}>
+        <HomeTitle text="Messagerie Pro" size="12px" />
         <CardContent>
-            <h1>Messagerie</h1>
+        </CardContent>
+        <HomeTitle text="Messagerie Client" size="12px" />
+        <CardContent>
         </CardContent>
     </Card>
     )

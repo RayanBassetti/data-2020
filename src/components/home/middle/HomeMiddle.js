@@ -5,7 +5,7 @@ import HomeAlertes from './HomeAlertes';
 function HomeMiddle() {
 
     return (
-        <div>
+        <div className="home_section">
             <Comparatif />
             <HomeAlertes />
         </div>

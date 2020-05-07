@@ -4,7 +4,7 @@ import HomePlanning from './HomePlanning';
 function HomeRight() {
 
     return (
-        <div>
+        <div className="home_section">
             <HomePlanning />
         </div>
 

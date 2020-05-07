@@ -1,10 +1,11 @@
 import React from 'react';
 import { Card, CardContent } from '@material-ui/core';
+import HomeTitle from '../HomeTitle';
 
 function HomePlanning() {
     return(
         <div>
-            <h1>Planning</h1>
+            <HomeTitle text="Aujourd'hui" size="20px" />
             <Card>
                 <CardContent>
                     <p>Single Card</p>

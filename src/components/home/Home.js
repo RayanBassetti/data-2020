@@ -8,7 +8,7 @@ function Home() {
     return (
         <div className="content  Home">
             <Header text={"Bonjour, Sophie !"} emoji={"waving_hand"}/>
-            <div className="cards flexed-row-space padding_content">
+            <div className="cards flexed-row-around padding_content">
                 <HomeLeft />
                 <HomeMiddle />
                 <HomeRight />

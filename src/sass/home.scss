@@ -3,45 +3,15 @@
         padding-top: 5%;
         padding: 35px 80px 0px 80px;
         height: 80%;
-        .card_planning {
-            width: 25%;
-            height: calc(100% - 15px);
-            border-top: 15px solid #3B86FF;
-        }
-        .card_dataviz {
-            height: 60%;
-            border-top: 15px solid #FFA34F;
-            .MuiCardContent-root {
-                padding-top: 1px;
-            }
-        }
-        .cards_right {
-            width: 70%;
-            height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        .home_section {
+            width: 30%;
             display: flex;
+            justify-content: space-around;
             flex-direction: column;
-            justify-content: space-between;
-            .cards_stats {
-                height: 35%;
-                align-items: flex-start;
-                .card_stat {
-                    width: 30%;
-                    height: 80%;;
-                    border-top: 15px solid #FFDD2D;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    .MuiCardContent-root {
-                        padding-top: 0;
-                        p {
-                            color: #686868;
-                            font-weight: 700;
-                            text-align: center;
-                            margin: 0;
-                        }
-                    }
-                }
-            }
         }
+
     }
 }
