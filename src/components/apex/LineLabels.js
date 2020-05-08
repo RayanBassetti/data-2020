@@ -13,12 +13,12 @@ function LineLabels({userId}) {
             }).then(res => {
                 const {data} = res
                 data.forEach((item) => {
-                    dates.push(item.date)
-                    cons.push(item.from_gen_to_consumer)
-                    prod.push(item.from_grid_to_consumer)
+                    setDates(dates => [...dates, item.date])
+                    setCons(cons => [...cons, item.from_gen_to_consumer])
+                    setProd(prod => [...prod, item.from_grid_to_consumer])
                 }) 
             })
-    })
+    }, [])
 
     const options = {
         chart: {

@@ -9,7 +9,7 @@ function HomeMessagerie() {
         <HomeTitle text="Messagerie Pro" size="12px" />
         <CardContent>
         </CardContent>
-        <HomeTitle text="Messagerie Client" size="12px" />
+        <HomeTitle text="Messagerie Clients" size="12px" />
         <CardContent>
         </CardContent>
     </Card>
