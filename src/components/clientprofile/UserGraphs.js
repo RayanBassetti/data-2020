@@ -4,6 +4,7 @@ import Title from './cards/components/Title'
 import Radar from '../apex/Radar'
 import Objectifs from './Objectifs'
 
+
 function UserGraphs({user}) {
     return (
         <div className="client_stats_content flexed-row-around">

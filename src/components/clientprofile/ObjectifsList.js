@@ -2,7 +2,7 @@ import React from 'react';
 // import ProgressBar from '../common/components/ProgressBar';
 import SingleObjectif from './cards/components/SingleObjectif'
 
-function ObjectifsList() {
+function ObjectifsList({objectifs}) {
     const data = [
         {
             title: "Faire ses courses",
@@ -20,7 +20,7 @@ function ObjectifsList() {
 
     function handleData() {
         let arrayLists = []
-        data.forEach(single => {
+        objectifs.forEach(single => {
             const singleObjectif = <SingleObjectif title={single.title} text={single.text} />
             arrayLists.push(singleObjectif)
         })
