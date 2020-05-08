@@ -3,20 +3,20 @@ import React from 'react';
 import SingleObjectif from './cards/components/SingleObjectif'
 
 function ObjectifsList({objectifs}) {
-    const data = [
-        {
-            title: "Faire ses courses",
-            text: "Lorem Ipsum texte long "
-        },
-        {
-            title: "Faire ses courses",
-            text: "Lorem Ipsum texte long "
-        },
-        {
-            title: "Faire ses courses",
-            text: "Lorem Ipsum texte long "
-        },
-    ]
+    // const data = [
+    //     {
+    //         title: "Faire ses courses",
+    //         text: "Lorem Ipsum texte long "
+    //     },
+    //     {
+    //         title: "Faire ses courses",
+    //         text: "Lorem Ipsum texte long "
+    //     },
+    //     {
+    //         title: "Faire ses courses",
+    //         text: "Lorem Ipsum texte long "
+    //     },
+    // ]
 
     function handleData() {
         let arrayLists = []

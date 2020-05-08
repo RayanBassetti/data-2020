@@ -1,24 +1,23 @@
 import 'date-fns';
 import React, {useState} from 'react';
-import Grid from '@material-ui/core/Grid';
 import DateFnsUtils from '@date-io/date-fns';
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 
-export default function MaterialUIPickers() {
+export default function DatePicker() {
   // The first commit of Material-UI
   const [starting_date, setStartingDate] = useState(new Date('2020-05-08T21:11:54'));
   const [ending_date, setEndingDate] = useState(new Date('2020-05-08T21:11:54'));
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
+  const handleDateChange = (setter, date) => {
+    setter(date);
   };
 
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <Grid container justify="space-around">
+      <div className="flex-row-around">
         <KeyboardDatePicker
           disableToolbar
           variant="inline"
@@ -27,7 +26,7 @@ export default function MaterialUIPickers() {
           id="date-picker-inline"
           label="Date de début de la campagne"
           value={starting_date}
-          onChange={handleDateChange}
+          onChange={handleDateChange(setStartingDate)}
           KeyboardButtonProps={{
             'aria-label': 'change date',
           }}
@@ -40,12 +39,12 @@ export default function MaterialUIPickers() {
           id="date-picker-inline"
           label="Date de fin de la campagne"
           value={ending_date}
-          onChange={handleDateChange}
+          onChange={handleDateChange(setEndingDate)}
           KeyboardButtonProps={{
             'aria-label': 'change date',
           }}
         />
-      </Grid>
+      </div>
     </MuiPickersUtilsProvider>
   );
 }
