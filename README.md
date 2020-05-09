@@ -52,6 +52,7 @@ Feel free to change them if needed.
 
 - For the client profile : 
     - The campaign creation is a hot mess with sole purpose to half work and be a demo.
+    - Create components for user input to create a campaign
     
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH

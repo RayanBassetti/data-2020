@@ -27,12 +27,3 @@
     - Ces 2 clés vont être séparées pour faire deux CSV et deux tables
 
 
-# campagne utilisateur 
-On check si une campagne existe :
-    - Si oui, on la pull
-    - Si non, on affiche le bouton "Nouvelle campagne"
-        - On choisit les 2 dates (start, end)
-            - On push le body + on pull la campagne
-
-On check si les objectifs existent 
-    Si oui, on le.s pull

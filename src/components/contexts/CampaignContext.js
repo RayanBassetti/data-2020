@@ -15,6 +15,9 @@ class CampaignContextProvider extends React.Component {
             "Content-type": "application/json; charset=UTF-8"
             }
         })
+        .then(this.setState({
+            submitted: true
+        }))
     }
 
     fetchObjectifs = (id) => {
@@ -39,6 +42,9 @@ class CampaignContextProvider extends React.Component {
             "Content-type": "application/json; charset=UTF-8"
             }
         })
+        .then(this.setState({
+            submitted: true
+        }))
     }
 
     fetchCampaign = (id) => {
@@ -50,10 +56,17 @@ class CampaignContextProvider extends React.Component {
             .catch(err => console.log(err))
     }
 
+    setSubmit = () => {
+        this.setState({
+            submitted: false
+        })
+    }
+
     render() {
         return (
             <CampaignContext.Provider value={{
                 ...this.state, 
+                setSubmit: this.setSubmit,
                 fetchCampaign: this.fetchCampaign, 
                 createCampaign: this.createCampaign,
                 fetchObjectifs: this.fetchObjectifs,
