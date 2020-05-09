@@ -4,12 +4,6 @@ export const CampaignContext = createContext();
 
 class CampaignContextProvider extends React.Component {
 
-    componentDidMount() {
-        this.setState({
-            campaign: false
-        })
-    }
-
     createCampaign = (id, start, end) => {
         fetch('http://localhost:4000/campaigns', {
             method: 'POST',
@@ -22,18 +16,20 @@ class CampaignContextProvider extends React.Component {
             "Content-type": "application/json; charset=UTF-8"
             }
         })
-        .then(this.setState({
-            campaign: true,
-        }))
         .then(this.fetchCampaign(id))
     }
 
     fetchCampaign = (id) => {
         fetch(`http://localhost:4000/campaigns/${id}`)
-            .then(res => {return res.json()})
+            .then(res => res.json())
             .then(res => this.setState({
-                campaignData: res.data
+                campaignData: res.data[0]
             }))
+            .catch(err => console.log(err))
+            // .then(res => {return res.json()})
+            // .then(res => this.setState({
+            //     campaignData: res.data
+            // }))
     }
 
     render() {

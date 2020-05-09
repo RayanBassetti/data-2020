@@ -22,8 +22,8 @@ module.exports = {
             "client_id": client_id,
             "campaign_id": uuidv4(),
             "created_at": new Date().toISOString().slice(0, 10),
-            "starting_date": new Date().toISOString().slice(0, 10),
-            "ending_date": new Date().toISOString().slice(0, 10),
+            "starting_date": starting_date,
+            "ending_date": ending_date,
         }
         return db('list_campaigns').where('client_id', req.payload.client_id)
             .then(res => {
@@ -37,7 +37,8 @@ module.exports = {
                             }
                         ],
                         meta: {
-                            existing_id: req.payload.client_id
+                            existing_id: req.payload.client_id,
+                            data: res
                         },
                     }).code(403);
                 } else {

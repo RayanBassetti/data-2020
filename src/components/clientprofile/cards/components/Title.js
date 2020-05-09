@@ -7,7 +7,7 @@ import { CampaignContext } from '../../../contexts/CampaignContext'
 
 const Title = ({text, sub_text, button, clientId}) => {
 
-    const {campaign, createCampaign} = useContext(CampaignContext)
+    const {campaignData, createCampaign} = useContext(CampaignContext)
 
     const [open, setOpen] = useState(false)
     const [starting_date, setStartingDate] = useState(new Date())
@@ -24,7 +24,7 @@ const Title = ({text, sub_text, button, clientId}) => {
             {sub_text && 
             <p className="card_content_text card_subtitle">Dernière activité le {sub_text}</p>
             }
-            {(button === "objectifs" && !campaign) &&
+            {(button === "objectifs" && !campaignData) &&
             <>
                 <Button 
                     variant="outlined"
@@ -45,7 +45,7 @@ const Title = ({text, sub_text, button, clientId}) => {
                 </Dialog>
               </>
             }
-            {(button === "objectifs" && campaign) &&
+            {(button === "objectifs" && campaignData) &&
             <>
                 <Button 
                     variant="outlined"

@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 // import ProgressBar from '../common/components/ProgressBar';
 import ObjectifsProgressBar from './cards/components/ObjectifsProgressBar'
 import ObjectifsList from './ObjectifsList'
@@ -6,10 +6,15 @@ import { Button } from '@material-ui/core';
 
 import {CampaignContext} from '../contexts/CampaignContext'
 
-function Objectifs() {
+function Objectifs({userId}) {
     const [objectifs, setObjectifs] = useState([])
 
-    const {campaignData} = useContext(CampaignContext)
+    const {campaignData, fetchCampaign} = useContext(CampaignContext)
+
+    useEffect(() => {
+        fetchCampaign(userId)
+    }, [userId])
+
     console.log(campaignData)
 
     const addNewObjectif = () => {
@@ -25,7 +30,7 @@ function Objectifs() {
             }
             {campaignData && 
             <>
-                <p className="card_content_text oc_subtitle">Campagne lancée le {campaignData[0].starting_date} se termine le {campaignData[0].ending_date}</p>
+                <p className="card_content_text oc_subtitle">Campagne lancée le {campaignData.starting_date} se termine le {campaignData.ending_date}</p>
                 <ObjectifsProgressBar progress={50}/>
                 <ObjectifsList objectifs={objectifs}/>
             </>
