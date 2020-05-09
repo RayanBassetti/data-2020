@@ -15,8 +15,6 @@ function Objectifs({userId}) {
         fetchCampaign(userId)
     }, [userId])
 
-    console.log(campaignData)
-
     const addNewObjectif = () => {
         let item = {title: "Lorem Ipsum", text: "Faire les courses", status: false}
         setObjectifs(objectifs => [...objectifs, item])

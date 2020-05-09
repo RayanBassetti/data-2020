@@ -37,7 +37,9 @@ const init = async () => {
         require('./routes/clients/getConsProdClients'),
         require('./routes/tests/getUserById'),
         require('./routes/campaigns/getCampaignById'),
-        require('./routes/campaigns/postNewCampaign')
+        require('./routes/campaigns/postNewCampaign'),
+        require('./routes/campaigns/objectifs/getObjectifsById'),
+        require('./routes/campaigns/objectifs/postNewObjectif'),
     ])
 
     const swaggerOptions = {

@@ -20,9 +20,11 @@ function ObjectifsList({objectifs}) {
 
     function handleData() {
         let arrayLists = []
+        let count = 0
         objectifs.forEach(single => {
-            const singleObjectif = <SingleObjectif title={single.title} text={single.text} />
+            const singleObjectif = <SingleObjectif title={single.title} text={single.text} key={count}/>
             arrayLists.push(singleObjectif)
+            count = count + 1;
         })
         return arrayLists
     }

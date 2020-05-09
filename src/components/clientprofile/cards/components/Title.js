@@ -1,4 +1,7 @@
+// disclaimer : probablement le pire fichier de tout ce code.
+
 import React, { useState, useContext } from 'react';
+
 import { Button, Dialog, DialogContent, DialogActions, DialogTitle } from '@material-ui/core';
 import { MuiPickersUtilsProvider, DatePicker } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
@@ -7,7 +10,7 @@ import { CampaignContext } from '../../../contexts/CampaignContext'
 
 const Title = ({text, sub_text, button, clientId}) => {
 
-    const {campaignData, createCampaign} = useContext(CampaignContext)
+    const {campaignData, createCampaign, fetchCampaign} = useContext(CampaignContext)
 
     const [open, setOpen] = useState(false)
     const [starting_date, setStartingDate] = useState(new Date())
@@ -16,6 +19,7 @@ const Title = ({text, sub_text, button, clientId}) => {
     const handleSubmit = () => {
         setOpen(false)
         createCampaign(clientId, starting_date, ending_date)
+        fetchCampaign(clientId)
     }
     
     return(
