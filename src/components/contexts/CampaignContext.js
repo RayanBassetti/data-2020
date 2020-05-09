@@ -17,7 +17,7 @@ class CampaignContextProvider extends React.Component {
         })
     }
 
-    fetchsObjectifs = (id) => {
+    fetchObjectifs = (id) => {
         fetch(`http://localhost:4000/campaigns/${id}/objectifs`)
             .then(res => res.json())
             .then(res => this.setState({
@@ -56,7 +56,7 @@ class CampaignContextProvider extends React.Component {
                 ...this.state, 
                 fetchCampaign: this.fetchCampaign, 
                 createCampaign: this.createCampaign,
-                fetchsObjectifs: this.fetchsObjectifs,
+                fetchObjectifs: this.fetchObjectifs,
                 createObjectif: this.createObjectif
             }}>
                 {this.props.children}
