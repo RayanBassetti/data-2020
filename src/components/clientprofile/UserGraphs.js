@@ -4,7 +4,6 @@ import Title from './cards/components/Title'
 import Radar from '../apex/Radar'
 import Objectifs from './Objectifs'
 
-import CampaignContextProvider from '../contexts/CampaignContext'
 
 function UserGraphs({user}) {
     return (
@@ -16,12 +15,10 @@ function UserGraphs({user}) {
                 </CardContent>
             </Card>
             <Card className="client_objectifs">
-                <CampaignContextProvider>
                     <CardContent>
                         <Title text="Objectifs" button="objectifs" clientId={user.id}/>
                         <Objectifs />
                     </CardContent>
-                </CampaignContextProvider>
             </Card>
         </div>
     )

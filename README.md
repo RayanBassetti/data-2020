@@ -51,7 +51,7 @@ Feel free to change them if needed.
     - The style of the body inside the MaterialTable can't be changed (not supported), making the display of the clients with squares possible but not good looking.
 
 - For the client profile : 
-    - The cons/prod graph only "works" if the graph is selected, else it doesn't show anything.
+    - The campaign creation is a hot mess with sole purpose to half work and be a demo.
     
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH

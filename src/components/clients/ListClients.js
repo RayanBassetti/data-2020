@@ -14,6 +14,7 @@ function ListClients()  {
     const [data, setData] = useState([])
 
     const {theme} = useContext(ListDisplayContext)
+
     useEffect(() => {
         fetch('http://localhost:4000/clients')
             .then(results => {

@@ -1,15 +1,13 @@
 import React, { useState, useContext } from 'react';
 import { Button, Dialog, DialogContent, DialogActions, DialogTitle } from '@material-ui/core';
 import { MuiPickersUtilsProvider, DatePicker } from '@material-ui/pickers';
-import PostMethod from '../../../common/methods/PostMethod'
 import DateFnsUtils from '@date-io/date-fns';
 
-import {CampaignContext} from '../../../contexts/CampaignContext'
+import { CampaignContext } from '../../../contexts/CampaignContext'
 
 const Title = ({text, sub_text, button, clientId}) => {
 
-    const {campaign} = useContext(CampaignContext)
-
+    const {campaign, createCampaign} = useContext(CampaignContext)
 
     const [open, setOpen] = useState(false)
     const [starting_date, setStartingDate] = useState(new Date())
@@ -17,7 +15,7 @@ const Title = ({text, sub_text, button, clientId}) => {
 
     const handleSubmit = () => {
         setOpen(false)
-        return PostMethod(clientId, starting_date, ending_date)
+        createCampaign(clientId, starting_date, ending_date)
     }
     
     return(
@@ -45,6 +43,14 @@ const Title = ({text, sub_text, button, clientId}) => {
                         <Button variant="outlined" onClick={() => handleSubmit()}>Créer</Button>
                     </DialogActions>
                 </Dialog>
+              </>
+            }
+            {(button === "objectifs" && campaign) &&
+            <>
+                <Button 
+                    variant="outlined"
+                    onClick={() => setOpen(true)}
+                >Modifier Campagne</Button>
               </>
             }
         </div>

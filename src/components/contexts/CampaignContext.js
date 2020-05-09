@@ -1,12 +1,16 @@
-import React, {createContext, useState} from 'react'
+import React, {createContext} from 'react'
 
 export const CampaignContext = createContext();
 
-function CampaignContextProvider({children}) {
+class CampaignContextProvider extends React.Component {
 
-    const [campaign, setCampaign] = useState(false)
+    componentDidMount() {
+        this.setState({
+            campaign: false
+        })
+    }
 
-    const createCampaign = (id, start, end) => {
+    createCampaign = (id, start, end) => {
         fetch('http://localhost:4000/campaigns', {
             method: 'POST',
             body: JSON.stringify({
@@ -18,21 +22,28 @@ function CampaignContextProvider({children}) {
             "Content-type": "application/json; charset=UTF-8"
             }
         })
+        .then(this.setState({
+            campaign: true,
+        }))
+        .then(this.fetchCampaign(id))
     }
 
-    const fetchCampaign = (id) => {
+    fetchCampaign = (id) => {
         fetch(`http://localhost:4000/campaigns/${id}`)
-            .then(res => res.json())
-            .then(res => setCampaign(res.data))
+            .then(res => {return res.json()})
+            .then(res => this.setState({
+                campaignData: res.data
+            }))
     }
 
-    return(
-        <CampaignContext.Provider value={{
-            ...campaign, createCampaign: createCampaign, fetchCampaign: fetchCampaign
-        }}>
-            {children}
-        </CampaignContext.Provider>
-    )
+    render() {
+        return (
+            <CampaignContext.Provider value={{...this.state, fetchCampaign: this.fetchCampaign, createCampaign: this.createCampaign}}>
+                {this.props.children}
+            </CampaignContext.Provider>
+
+        )
+    }
 }
 
 export default CampaignContextProvider

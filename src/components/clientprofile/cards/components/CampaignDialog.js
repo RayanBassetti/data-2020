@@ -22,7 +22,7 @@ function CampaignDialog({open, setOpen}) {
 
     return (
         <Dialog open={open} onClose={() => setOpen(false)} aria-labelledby="form-dialog-title">
-            <DialogTitle id="form-dialog-title">Créer une campagne</DialogTitle>
+            <DialogTitle id="form-dialog-title">Créer une azeazeaze</DialogTitle>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <div className="flex-row-around">
         <KeyboardDatePicker
