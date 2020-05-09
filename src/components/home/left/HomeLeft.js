@@ -5,7 +5,7 @@ import HomeMessagerie from './HomeMessagerie';
 function HomeLeft() {
 
     return (
-        <div>
+        <div className="home_section">
             <ClientCard />
             <HomeMessagerie />
         </div>

@@ -1,21 +1,20 @@
-function PostMethod(id) {
+function PostMethod(id, start, end) {
 
     fetch('http://localhost:4000/campaigns', {
             method: 'POST',
             body: JSON.stringify({
-                client_id: id
+                "client_id": id,
+                "starting_date": start,
+                "ending_date": end
             }),
             headers: {
             "Content-type": "application/json; charset=UTF-8"
             }
         })
-        .then(res => res.json())
-        .then(res => console.log(res))
         .then(
             fetch(`http://localhost:4000/campaigns/${id}`)
                 .then(res => res.json())
-                .then(res => console.log(res))
-                .catch(err => console.log(err))
+                .then(res => {return res})
         )
 }
 

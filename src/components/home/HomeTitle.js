@@ -1,0 +1,9 @@
+import React from 'react'
+
+const HomeTitle = ({text, size}) => {
+    return (
+        <p className="card_content_text card_title_text" style={{width: '100%', textTransform: 'uppercase', fontSize: size}}>{text}</p>
+    )
+}
+
+export default HomeTitle

@@ -1,5 +1,6 @@
 const joi = require('@hapi/joi');
-const db = require('../../config/database')
+const db = require('../../../config/database')
+
 
 module.exports = {
     method: 'GET',

@@ -1,5 +1,5 @@
 const joi = require('@hapi/joi');
-const db = require('../../config/database')
+const db = require('../../../config/database')
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
@@ -10,6 +10,13 @@ module.exports = {
         description: 'Create objectif',
         notes: 'Create a new objectif for a specific client, with the client_id indicated',
         validate: {
+            params: joi.object().keys({
+                client_id: joi.string().required()
+            }),
+            payload: joi.object().keys({
+                title: joi.string().required(),
+                text: joi.string().min(6).max(140).required()
+            })
             // query: joi.object().keys({
             //     limit: joi.number().integer().min(1).max(200).default(200),
             //     offset: joi.number().integer().min(0).default(0)
@@ -17,9 +24,9 @@ module.exports = {
         }
     },
     handler: async (req, toolkit) => {
-        const {client_id, title, text} = req.payload
+        const {title, text} = req.payload
         const objectif = {
-            "client_id": client_id,
+            "client_id": req.params.client_id,
             "objectif_id": uuidv4(),
             "title": title,
             "text": text,

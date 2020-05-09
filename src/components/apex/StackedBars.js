@@ -15,11 +15,11 @@ function StackedBars({data}) {
                                 familleCount[number + 1] = familleCount[number + 1] + 1
                                 break;
                             default : 
-                                console.log("error")
+                                return false
                         }
                     break;
                     default:
-                        console.log("error")
+                        return false
                 }
             }
             )

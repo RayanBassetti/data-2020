@@ -1,31 +1,27 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Chart from "react-apexcharts";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function LineLabels({userId}) {
+    const [dates, setDates] = useState([])
+    const [cons, setCons] = useState([])
+    const [prod, setProd] = useState([])
+    const [loading, setLoading] = useState(true)
 
-    const dates = []
-    const cons = []
-    const prod = []
-
-    async function fetchData() {
-        const res = await fetch(`http://localhost:4000/clients/${userId}/cons_prod`);
-        res
-            .json()
-            .then(res => {
+    useEffect(() => {
+        fetch(`http://localhost:4000/clients/${userId}/cons_prod`)
+            .then(results => {
+                return results.json()
+            }).then(res => {
                 const {data} = res
                 data.forEach((item) => {
-                    dates.push(item.date)
-                    cons.push(item.from_gen_to_consumer)
-                    prod.push(item.from_grid_to_consumer)
+                    setDates(dates => [...dates, item.date])
+                    setCons(cons => [...cons, item.from_gen_to_consumer])
+                    setProd(prod => [...prod, item.from_grid_to_consumer])
                 }) 
+                setLoading(false)
             })
-            .then()
-            .catch(err => console.log(err));
-    }
-    
-    useEffect(() => {
-        fetchData();
-    });
+    }, [userId])
 
     const options = {
         chart: {
@@ -61,7 +57,7 @@ function LineLabels({userId}) {
             size: 1
         },
         xaxis: {
-            categories: ["2020-03-12", "2020-03-13", "2020-03-13", "2020-03-13", "2020-03-13"],
+            categories: dates,
             title: {
                 text: "Semaines",
                 style: {
@@ -101,7 +97,19 @@ function LineLabels({userId}) {
 
     return (
         <>
-        <Chart options={options} series={series} width={'450px'} type="line"/>
+        {!loading && 
+            <Chart options={options} series={series} width={'450px'} type="line"/>
+        }
+        {loading &&
+            <div className="sweet-loading">
+                <ClipLoader
+                size={150}
+                //size={"150px"} this also works
+                color={"#00AAFF"}
+                loading={loading}
+                />
+            </div>
+        }
         </>
     )
 }
