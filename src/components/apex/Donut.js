@@ -20,7 +20,7 @@ function Donut({data}) {
                     curieux = curieux + 1
                     break;
                 default : 
-                    console.log("error")
+                    return false
             }
         });
         return [negatif, mitige, curieux]

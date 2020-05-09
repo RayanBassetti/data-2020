@@ -13,10 +13,11 @@
         background-color: #F4F6FB;
     }
     .MuiTableRow-head {
-        background-color: #F4F6FB !important;
         .MuiTableCell-head {
             color: #B4B4B4;
-            font-size: 1.1em;
+            background-color: #F4F6FB !important;
+            text-transform: uppercase;
+            font-size: 15px;
             font-weight: 600;
         }
     }

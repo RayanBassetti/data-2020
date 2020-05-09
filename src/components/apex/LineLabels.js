@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import Chart from "react-apexcharts";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function LineLabels({userId}) {
     const [dates, setDates] = useState([])
     const [cons, setCons] = useState([])
     const [prod, setProd] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch(`http://localhost:4000/clients/${userId}/cons_prod`)
@@ -13,12 +15,13 @@ function LineLabels({userId}) {
             }).then(res => {
                 const {data} = res
                 data.forEach((item) => {
-                    dates.push(item.date)
-                    cons.push(item.from_gen_to_consumer)
-                    prod.push(item.from_grid_to_consumer)
+                    setDates(dates => [...dates, item.date])
+                    setCons(cons => [...cons, item.from_gen_to_consumer])
+                    setProd(prod => [...prod, item.from_grid_to_consumer])
                 }) 
+                setLoading(false)
             })
-    })
+    }, [userId])
 
     const options = {
         chart: {
@@ -94,7 +97,19 @@ function LineLabels({userId}) {
 
     return (
         <>
-        <Chart options={options} series={series} width={'450px'} type="line"/>
+        {!loading && 
+            <Chart options={options} series={series} width={'450px'} type="line"/>
+        }
+        {loading &&
+            <div className="sweet-loading">
+                <ClipLoader
+                size={150}
+                //size={"150px"} this also works
+                color={"#00AAFF"}
+                loading={loading}
+                />
+            </div>
+        }
         </>
     )
 }

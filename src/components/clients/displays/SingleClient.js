@@ -18,7 +18,6 @@ function SingleClient(props) {
     }
 
     const {data} = props.data
-    console.log(props)
     return (
         <Card className="single_user" onClick={() => handleId(data.id, data)} style={{width: '15%', cursor: 'pointer'}}>
             <CardContent>
