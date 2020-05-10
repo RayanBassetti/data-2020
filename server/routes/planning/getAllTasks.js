@@ -16,7 +16,7 @@ module.exports = {
         }
     },
     handler: async (req, toolkit) => {
-        return db.select().from("tasks_planning").limit(req.query.limit).offset(req.query.offset)
+        return db.select().from("list_planning").limit(req.query.limit).offset(req.query.offset)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,

@@ -8,7 +8,7 @@ module.exports = {
     options: {
         tags: ['api'],
         description: 'Get objectifs',
-        notes: 'Get all the objectifs related to a single client, with the client_id related',
+        notes: 'Get all the objectifs related to a single client, with the client_id indicated',
         validate: {
             params: joi.object().keys({
                 client_id: joi.string().required()

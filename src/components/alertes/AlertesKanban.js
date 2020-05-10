@@ -1,22 +1,28 @@
-import React, {useEffect} from 'react'
+import React, {useContext, useEffect} from 'react'
 import AlerteColonne from './AlerteColonne'
 
 import {Waiting, Doing, ToCheck, Done} from './AlertesColors'
+import { AlertesContext } from '../contexts/AlertesContext'
 
-function AlertesKanban({data}) {
+function AlertesKanban() {
+
+    const {alertes} = useContext(AlertesContext)
 
     const handleData = (status) => {
         let list = []
-        data.forEach(item => {
+        alertes.forEach(item => {
             if(item.status === status) {
                 list.push(item)
             } else {
                 return false
             }
         })
-        console.log(list)
         return list
     }
+
+    useEffect(() => {
+        // update the alertes
+    }, [alertes])
 
     return (
         <div className="alertes_kanban flexed-row-around">

@@ -10,16 +10,28 @@ import Feeling from '../../common/components/Feeling'
 function ClientCard() {
 
     const [data, setData] = useState([])
+    const [alerte, setAlerte] = useState([])
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
+    const fetchAlerte = (id) => {
+        fetch(`http://localhost:4000/alertes/${id}`)
+            .then(res => res.json())
+            .then(res => setAlerte(res.data))
+    }
+
+    const fetchClient = () => {
         fetch('http://localhost:4000/clients?limit=1')
         .then(results => {return results.json()})
         .then(res => {
             setData(res.data)
             setLoading(false)
+            fetchAlerte(res.data[0].id)
         })
-    }, [])
+    }
+
+    useEffect(() => {
+        fetchClient()
+    }, [loading])
     
 
     return(
@@ -33,10 +45,14 @@ function ClientCard() {
                     <div>
                         <p className="card_content_text">{data[0].name}</p>
                         <p className="card_content_text">Dernière activité: {data[0].last_activity}</p>
-                        <p className="card_content_text">Etat de l'alerte</p>
-                        <p >client_alerte</p>
-                        <p className="card_content_text">Priorité</p>
-                        <p>priority</p>
+                        {alerte &&
+                            <>
+                            <p className="card_content_text">Etat de l'alerte</p>
+                            <p >client_alerte</p>
+                            <p className="card_content_text">Priorité</p>
+                            <p>priority</p>
+                            </>
+                        }
                     </div>
                     <div>
                         <div className="flexed-row-space">

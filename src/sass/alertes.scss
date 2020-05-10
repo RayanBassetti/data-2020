@@ -7,6 +7,7 @@
     .single_kanban {
         width: 20%;
         height: 100%;
+        margin-top: 2%;
         .sk_header {
             width: 100%;                
             .sk_title {
@@ -37,6 +38,7 @@
             box-sizing: border-box;
             border-radius: 5px;
             padding: 13px;
+            overflow: auto;
             .MuiCardContent-root {
                 padding: 20px;
                 margin: 0;
