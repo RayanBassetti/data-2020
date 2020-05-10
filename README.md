@@ -70,6 +70,9 @@ Feel free to change them if needed.
 - React Hooks : 
     - UseEffect/UseMemo, still struggling to properly understand how they work
 
+- Objectif post :
+    - Can't create multiple objectifs for a client
+
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH
 
 The front-end of this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
