@@ -62,6 +62,10 @@ Feel free to change them if needed.
 
 - Clients table : 
     - Do something about the column with date type, the front translates them as such, giving long dates and not just DD-MM-YYYY
+
+- Alertes : 
+    - A better handle of the number of queries/filters to apply to call the alertes
+    - Refresh the list when an alert status changes
     
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH

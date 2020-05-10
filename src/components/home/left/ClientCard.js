@@ -6,6 +6,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import ProfilTag from '../../common/components/ProfilTag'
 import { handleFeeling, handleProfil, handleFamily } from '../../common/methods/ConvertIntMethod';
 import Feeling from '../../common/components/Feeling'
+import Priority from '../../common/components/Priority';
 
 function ClientCard() {
 
@@ -17,6 +18,7 @@ function ClientCard() {
         fetch(`http://localhost:4000/alertes/${id}`)
             .then(res => res.json())
             .then(res => setAlerte(res.data))
+        console.log(alerte)
     }
 
     const fetchClient = () => {
@@ -45,12 +47,12 @@ function ClientCard() {
                     <div>
                         <p className="card_content_text">{data[0].name}</p>
                         <p className="card_content_text">Dernière activité: {data[0].last_activity}</p>
-                        {alerte &&
+                        {alerte.length > 0 &&
                             <>
                             <p className="card_content_text">Etat de l'alerte</p>
-                            <p >client_alerte</p>
+                            <p >{alerte.status}</p>
                             <p className="card_content_text">Priorité</p>
-                            <p>priority</p>
+                            <Priority priority={alerte.priority} />
                             </>
                         }
                     </div>

@@ -4,6 +4,7 @@ import CardNormalText from '../clientprofile/cards/components/CardNormalText'
 import { AlertesContext } from '../contexts/AlertesContext'
 
 import {ReactLoader} from '../common/components/ReactLoader'
+import Priority from '../common/components/Priority'
 
 function CardKanban({data}) {
 
@@ -21,14 +22,17 @@ function CardKanban({data}) {
                 <div className="ck_content">
                     <p className="alerte_title">{title}</p>
                     <CardNormalText title="Client" text={client_name}/>
-                    <CardNormalText title="Priorité" text={priority}/>
+                    <CardNormalText title="Priorité"/>
+                    <Priority priority={priority} />
                     <p className="card_content_text card_subtitle">Ouvert le {date}</p>
                     <div className="flexed-row">
                         {/* {tags.map((item, index) => {
                             return <span key={index}>{item}</span>
                         })} */}
                     </div>
+                    {status != 4 &&
                     <Button variant="outlined" onClick={() => updateAlerte(alerte_id, (status + 1))}>Next step</Button>
+                    }
                 </div>
                 }
             </CardContent>
