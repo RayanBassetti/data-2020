@@ -2,19 +2,41 @@
 
 ## Stack :
 
-A) Front-end : 
-- React.js
-- React-Router
-- Material UI
-- Material Table
-- ApexCharts.js
-- Sass
+# Front-end : 
+- Base : 
+    - React (and React Hooks)
+    - React Router
+    - Context
+- UI :
+    - Material UI
+    - Sass
+- Components : 
+    - Material Table
+    - Material TablePicker
+    - React Spinner
+- Dataviz : 
+    - ApexCharts
 
-B) Back-end : 
-- Hapi
-- Joi
-- Nodemon
-- Hapi-Swagger
+# Back-end : 
+- Base :
+    - Node
+- Framework :
+    - Hapi
+    - Joi
+- Configuration : 
+    - dot-env
+    - Nodemon
+- Others :
+    - Hapi-Swagger
+
+# Scripts : 
+- Base : 
+    - Python 
+- Librairies : 
+    - Faker
+    - Shortuuid
+    - Pandas
+    - Psycog2
 
 ## How to setup : 
 
@@ -51,9 +73,27 @@ Feel free to change them if needed.
     - The style of the body inside the MaterialTable can't be changed (not supported), making the display of the clients with squares possible but not good looking.
 
 - For the client profile : 
-    - The campaign creation is a hot mess with sole purpose to half work and be a demo.
+    - The objectif creation gets me a 400 error once in a while.
     - Create components for user input to create a campaign
+
+- Sass : 
+    - Organize files
+
+- UseEffect : 
+    - Could have been used on the Alertes and Objectifs lists when generating a single card, but decided to do it softly instead
+
+- Clients table : 
+    - Do something about the column with date type, the front translates them as such, giving long dates and not just DD-MM-YYYY
+
+- Alertes : 
+    - A better handle of the number of queries/filters to apply to call the alertes
+    - Refresh the list when an alert status changes
     
+- React Hooks : 
+    - UseEffect/UseMemo, still struggling to properly understand how they work
+
+- Objectif post :
+    - Can't create multiple objectifs for a client
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH
 

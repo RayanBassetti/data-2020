@@ -5,6 +5,7 @@ import pandas as pd
 import psycopg2
 import datetime
 import random
+import shortuuid
 import json 
 
 from faker import Faker
@@ -20,9 +21,7 @@ try:
     cur = connection.cursor()
     # requests and reception of the data
     fake_clients = "SELECT * FROM fake_clients"
-    cons_prod_client = "SELECT * FROM cons_prod_clients"
     fakeClients = pd.read_sql(fake_clients, connection)
-    consProdClient = pd.read_sql(cons_prod_client, connection)
 
     consProd_array = []
     alertes_array = []
@@ -31,13 +30,16 @@ try:
         while count < 35 : #since we want to have 5 weeks of data, we set the max count to 7 days * 5
             date = faker.date_between(start_date='-'+ str(37 - count) + 'd', end_date='-'+ str(35 - count) + 'd')
             fromGenToConsumer = randomRange(0, 10)
-            if fromGenToConsumer < 3 : 
+            if fromGenToConsumer < 0.3 : 
                 alertes_array.append({
+                    "alerte_id": shortuuid.uuid(),
                     "client_id": row["id"],
+                    "client_name": row["name"],
                     "date": str(date),
                     "title": "Production des panneaux trop faible",
                     "priority": 2,
-                    "tags": "Marketing"
+                    "tags": "Marketing",
+                    "status": 1
                 })
             consProd_array.append({
                 "client_id": row["id"],
@@ -51,7 +53,7 @@ try:
     with open('./json/cons_prod_clients.json', 'w') as outfile:
         json.dump(consProd_array, outfile)
 
-    with open('./json/alertes_clients.json', 'w') as outfile_2:
+    with open('./json/list_alertes.json', 'w') as outfile_2:
         json.dump(alertes_array, outfile_2)
 
     ## transform the result into a permanent excel file

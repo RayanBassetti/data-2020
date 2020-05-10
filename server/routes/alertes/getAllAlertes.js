@@ -3,19 +3,20 @@ const db = require('../../config/database')
 
 module.exports = {
     method: 'GET',
-    path: '/clients/{client_id}/cons_prod',
+    path: '/alertes',
     options: {
         tags: ['api'],
-        description: 'Get cons/prod',
-        notes: 'Get the rows of the consommation/production of a client, with the client id',
+        description: 'Get alertes',
+        notes: 'Get all the alertes',
         validate: {
-            params: joi.object().keys({
-                client_id: joi.string().required()
+            query: joi.object().keys({
+                limit: joi.number().integer().min(1).max(200).default(50),
+                offset: joi.number().integer().min(0).default(0)
             })
         }
     },
     handler: async (req, toolkit) => {
-        return db('cons_prod_clients').where('client_id', req.params.client_id)
+        return db.select().from("list_alertes").limit(req.query.limit).offset(req.query.offset)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,
@@ -34,7 +35,7 @@ module.exports = {
                     message: 'Internal Server Error',
                     errors: [
                         {
-                            message: 'Failed to connect to database - Needed : UUID',
+                            message: 'Failed to connect to database',
                             error: err
                         }
                     ],
@@ -45,6 +46,5 @@ module.exports = {
                     data: null
                 }).code(500);
             });
-        
     }
 }

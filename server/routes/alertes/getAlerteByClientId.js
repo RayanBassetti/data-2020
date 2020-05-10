@@ -3,11 +3,11 @@ const db = require('../../config/database')
 
 module.exports = {
     method: 'GET',
-    path: '/clients/{client_id}/cons_prod',
+    path: '/alertes/{client_id}',
     options: {
         tags: ['api'],
-        description: 'Get cons/prod',
-        notes: 'Get the rows of the consommation/production of a client, with the client id',
+        description: 'Get single alerte',
+        notes: 'Get a single alerte, based on the id indicated',
         validate: {
             params: joi.object().keys({
                 client_id: joi.string().required()
@@ -15,7 +15,7 @@ module.exports = {
         }
     },
     handler: async (req, toolkit) => {
-        return db('cons_prod_clients').where('client_id', req.params.client_id)
+        return db('list_alertes').where('client_id', req.params.client_id)
             .then(result => {
                 return toolkit.response({
                     statusCode: 200,

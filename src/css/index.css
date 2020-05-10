@@ -26,6 +26,7 @@ body, html {
 .app .content {
   width: 85%;
   padding-bottom: 40px;
+  padding-left: 2%;
   padding-right: 2%;
 }
 .app .navMain {
@@ -168,6 +169,28 @@ body, html {
   color: #C1C1C1;
 }
 
+.toolbar_clients {
+  width: 20%;
+  align-self: flex-end;
+  margin-right: 5%;
+  margin-bottom: 2%;
+}
+
+.priority_bubble {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 53px;
+  height: 19px;
+  border-radius: 20px;
+  border: 1px solid #C5C5C5;
+}
+.priority_bubble .single {
+  background: #CECECE;
+  width: 15px;
+  height: 15px;
+  margin-left: 2px;
+}
+
 .Home .cards {
   padding-top: 5%;
   padding: 35px 80px 0px 80px;
@@ -242,6 +265,10 @@ body, html {
 }
 .list_users .MuiTableCell-root {
   padding: 0px;
+}
+.list_users .mosaic_table .MuiTableBody-root {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .single_client_content {
@@ -330,7 +357,11 @@ body, html {
   color: #C1C1C1;
 }
 .client_stats_content .client_objectifs .objectifs_list {
+  height: 100%;
   margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
 }
 .client_stats_content .client_objectifs .objectifs_list .single_objectif {
   display: flex;
@@ -392,6 +423,7 @@ body, html {
   box-sizing: border-box;
   border-radius: 5px;
   padding: 13px;
+  overflow: auto;
 }
 .alertes_kanban .single_kanban .sk_content .MuiCardContent-root {
   padding: 20px;
@@ -401,6 +433,7 @@ body, html {
   margin: 0;
   color: #2A3B5D;
   font-size: 12px;
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -31,11 +31,13 @@ const init = async () => {
     })
 
     server.route([
+        require('./routes/alertes/getAllAlertes'),
+        require('./routes/alertes/getAlerteByClientId'),
+        require('./routes/alertes/updateAlerteById'),
         require('./routes/planning/getAllTasks'),
         require('./routes/clients/getAllClients'),
         require('./routes/clients/getClientById'),
         require('./routes/clients/getConsProdClients'),
-        require('./routes/tests/getUserById'),
         require('./routes/campaigns/getCampaignById'),
         require('./routes/campaigns/postNewCampaign'),
         require('./routes/campaigns/objectifs/getObjectifsById'),

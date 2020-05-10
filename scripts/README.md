@@ -6,3 +6,7 @@
 
 - (dossier users-table) tables.py : Génération d'un JSON simulant la consommation/production d'un système MyPower d'un client Engie sur 5 semaines (1 ligne par semaine), et génération
 d'un JSON qui met une ligne en alerte pour le client si la production est trop faible.
+
+# Comment je mets les JSON générés dans la BDD : 
+
+Je convertis les JSON en CSV, et je les importe via TablePlus

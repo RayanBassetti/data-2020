@@ -1,39 +1,29 @@
 const joi = require('@hapi/joi');
-const db = require('../../../config/database')
-const { v4: uuidv4 } = require('uuid');
+const db = require('../../config/database')
 
 module.exports = {
-    method: 'POST',
-    path: '/campaigns/{client_id}/objectifs',
+    method: 'PUT',
+    path: '/alertes/{alerte_id}',
     options: {
         tags: ['api'],
-        description: 'Create objectif',
-        notes: 'Create a new objectif for a specific client, with the client_id indicated',
+        description: 'Update alerte',
+        notes: 'Update a single alerte',
         validate: {
             params: joi.object().keys({
-                client_id: joi.string().required()
+                alerte_id: joi.string().required()
             }),
             payload: joi.object().keys({
-                title: joi.string().required(),
-                text: joi.string().min(6).max(140).required()
+                status: joi.number().min(1).max(4),
+                priority: joi.number()
             })
-            // query: joi.object().keys({
-            //     limit: joi.number().integer().min(1).max(200).default(200),
-            //     offset: joi.number().integer().min(0).default(0)
-            // })
         }
     },
     handler: async (req, toolkit) => {
-        const {title, text} = req.payload
-        const objectif = {
-            "client_id": req.params.client_id,
-            "objectif_id": uuidv4(),
-            "title": title,
-            "text": text,
-            "status": false,
-            "created_at": new Date().toISOString().slice(0, 10),
+        const alerte = {
+            priority: req.payload.priority,
+            status: req.payload.status
         }
-        return db('list_objectifs').insert(objectif)
+        return db('list_alertes').where('alerte_id', req.params.alerte_id).update(alerte)
         .then(result => {
             return toolkit.response({
                 statusCode: 201,

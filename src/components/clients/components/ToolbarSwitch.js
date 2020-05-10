@@ -9,7 +9,7 @@ function ToolbarSwitch() {
         height: '50px'
     }
     return (
-        <div>
+        <div className="toolbar_clients flexed-row-around">
             <Button variant="outlined" onClick={() => toggleDisplay("List")}>
                 <img alt="list" src="https://i.ibb.co/c8zbhLX/lines.png" style={img}/>
             </Button>
