@@ -29,6 +29,15 @@
 - Others :
     - Hapi-Swagger
 
+# Scripts : 
+- Base : 
+    - Python 
+- Librairies : 
+    - Faker
+    - Shortuuid
+    - Pandas
+    - Psycog2
+
 ## How to setup : 
 
 1) Clone the project on your local machine 
