@@ -67,6 +67,8 @@ Feel free to change them if needed.
     - A better handle of the number of queries/filters to apply to call the alertes
     - Refresh the list when an alert status changes
     
+- React Hooks : 
+    - UseEffect/UseMemo, still struggling to properly understand how they work
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH
 

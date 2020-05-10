@@ -266,6 +266,10 @@ body, html {
 .list_users .MuiTableCell-root {
   padding: 0px;
 }
+.list_users .mosaic_table .MuiTableBody-root {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .single_client_content {
   margin-top: 40px;
@@ -389,7 +393,6 @@ body, html {
 .alertes_kanban .single_kanban {
   width: 20%;
   height: 100%;
-  margin-top: 2%;
 }
 .alertes_kanban .single_kanban .sk_header {
   width: 100%;

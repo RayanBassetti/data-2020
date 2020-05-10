@@ -25,7 +25,6 @@ function AlerteColonne({title, titleStyle, data}) {
             <div className="sk_content">
                 {cardsLists}
             </div>
-
         </div>
     )
 }

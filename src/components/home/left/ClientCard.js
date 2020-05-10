@@ -18,7 +18,6 @@ function ClientCard() {
         fetch(`http://localhost:4000/alertes/${id}`)
             .then(res => res.json())
             .then(res => setAlerte(res.data))
-        console.log(alerte)
     }
 
     const fetchClient = () => {

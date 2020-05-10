@@ -15,9 +15,6 @@ const StyledBadge = withStyles((theme) => ({
   },
 }))(Badge);
 
-const colorMessage = {
-  colorPrimary: 'white'
-}
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,8 +35,8 @@ function Header() {
         <div className="badges flexed-row-space">
             <div className="badge b_chat">
                 <IconButton aria-label="messages">
-                    <StyledBadge badgeContent={3} max={9} color="primary">
-                        <ChatBubbleOutlineOutlinedIcon fontSize="large" style={colorMessage}/>
+                    <StyledBadge badgeContent={3} max={9} color="secondary">
+                        <ChatBubbleOutlineOutlinedIcon fontSize="large"/>
                     </StyledBadge>
                 </IconButton>
             </div>
