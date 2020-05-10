@@ -7,9 +7,9 @@ import {ReactLoader} from '../common/components/ReactLoader'
 
 function CardKanban({data}) {
 
-    const {title, id, client_name, priority, date, tags} = data
+    const {title, alerte_id, client_name, priority, date, status} = data
 
-    const {handleStatus, loading} = useContext(AlertesContext)
+    const {handleStatus, loading, updateAlerte} = useContext(AlertesContext)
 
     return (
         <Card>
@@ -28,7 +28,7 @@ function CardKanban({data}) {
                             return <span key={index}>{item}</span>
                         })} */}
                     </div>
-                    <Button variant="outlined" onClick={() => handleStatus(id)}>Next step</Button>
+                    <Button variant="outlined" onClick={() => updateAlerte(alerte_id, (status + 1))}>Next step</Button>
                 </div>
                 }
             </CardContent>

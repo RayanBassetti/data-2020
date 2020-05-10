@@ -10,7 +10,7 @@ module.exports = {
         notes: 'Get all the alertes',
         validate: {
             query: joi.object().keys({
-                limit: joi.number().integer().min(1).max(200).default(20),
+                limit: joi.number().integer().min(1).max(200).default(50),
                 offset: joi.number().integer().min(0).default(0)
             })
         }
