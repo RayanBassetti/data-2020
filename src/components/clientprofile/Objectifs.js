@@ -11,7 +11,7 @@ function Objectifs({userId}) {
     const [open, setOpen] = useState(false)
     const [title, setTitle] = useState("")
     const [text, setText] = useState("")
-
+    const [progress, setProgress] = useState(0)
 
     const {submitted, campaignData, setSubmit, fetchCampaign, objectifs, createObjectif, fetchObjectifs} = useContext(CampaignContext)
 
@@ -23,10 +23,10 @@ function Objectifs({userId}) {
 
     const handleSubmit = () => {
         setOpen(false)
-        createObjectif(userId, title, text)
         setSubmit()
+        createObjectif(userId, title, text)
     }
-
+    
     return(
         <div className="objectifs_content">
             {!campaignData && 
@@ -49,8 +49,8 @@ function Objectifs({userId}) {
                 <p className="card_content_text oc_subtitle">Campagne lancée le {campaignData.starting_date} se termine le {campaignData.ending_date}</p>
                 {objectifs && 
                 <>
-                    <ObjectifsProgressBar progress={50}/>
-                    <ObjectifsList objectifs={objectifs}/>
+                    <ObjectifsProgressBar progress={progress}/>
+                    <ObjectifsList objectifs={objectifs} setProgress={setProgress}/>
                 </>
                 }
             </>

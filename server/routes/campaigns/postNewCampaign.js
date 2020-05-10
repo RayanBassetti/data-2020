@@ -45,7 +45,7 @@ module.exports = {
                     return db('list_campaigns').insert(campaign)
                         .then(result => {
                             return toolkit.response({
-                                statusCode: 204,
+                                statusCode: 201,
                                 errors: null,
                                 message: 'OK',
                                 meta: {
@@ -53,7 +53,7 @@ module.exports = {
                                     params: req.params
                                 },
                                 data: result
-                            }).code(204);
+                            }).code(201);
                         })
                         .catch(err => {
                             return toolkit.response({

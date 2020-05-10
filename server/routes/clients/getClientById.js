@@ -7,7 +7,7 @@ module.exports = {
     options: {
         tags: ['api'],
         description: 'Get single client',
-        notes: 'Get a single client by id, indicated in the route',
+        notes: 'Get a single client by id, indicated in the url',
         validate: {
             params: joi.object().keys({
                 client_id: joi.string().required()

@@ -52,7 +52,7 @@ def genClients(number) :
             "nb_panneaux": randomIntRange(1, 6),
             "last_activity": str(lastActivity),
             "time_activity" : scoringActivityApp(),
-            "profil": randomIntRange(1, 3), # "Économe", "Autonome", "Écologie"
+            "profil": randomIntRange(1, 4), # "Économe", "Autonome", "Écologie"
             "famille": randomIntRange(1, 8), # "IFaP", "IFoP", "IFaN", "IFoN", "PFaP", "PFoP", "PFaN", "PFoN"
             "feeling": randomIntRange(1, 5), # "Colère", "Mitigé", "Curieux", "Harmonieux", "Heureux"
             "satisfaction": randomIntRange(1, 100),
@@ -72,5 +72,5 @@ def genClients(number) :
     return clients
 
 with open('./json/clients.json', 'w') as outfile:
-    json.dump(genClients(500), outfile)
+    json.dump(genClients(200), outfile)
 
