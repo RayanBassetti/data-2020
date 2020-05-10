@@ -2,19 +2,32 @@
 
 ## Stack :
 
-A) Front-end : 
-- React.js
-- React-Router
-- Material UI
-- Material Table
-- ApexCharts.js
-- Sass
+# Front-end : 
+- Base : 
+    - React (and React Hooks)
+    - React Router
+    - Context
+- UI :
+    - Material UI
+    - Sass
+- Components : 
+    - Material Table
+    - Material TablePicker
+    - React Spinner
+- Dataviz : 
+    - ApexCharts
 
-B) Back-end : 
-- Hapi
-- Joi
-- Nodemon
-- Hapi-Swagger
+# Back-end : 
+- Base :
+    - Node
+- Framework :
+    - Hapi
+    - Joi
+- Configuration : 
+    - dot-env
+    - Nodemon
+- Others :
+    - Hapi-Swagger
 
 ## How to setup : 
 
