@@ -1,16 +1,29 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 
 import CardKanban from './CardKanban'
 
-function AlerteColonne({title, titleStyle}) {
+function AlerteColonne({title, titleStyle, data}) {
+
+    const cardsLists = useMemo(
+        function() {
+          return <>
+          {
+            data.map(item => {
+                return <CardKanban data={item} key={item.title} />
+            })
+          }
+          </>
+        }, [data]
+      )
+
     return(
         <div className="single_kanban">
             <div className="sk_header flexed-row-around">
                 <p className="sk_title" style={titleStyle}>{title}</p>
-                <p className="sk_count">1</p>
+                <p className="sk_count">{data.length}</p>
             </div>
             <div className="sk_content">
-                <CardKanban />
+                {cardsLists}
             </div>
 
         </div>

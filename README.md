@@ -56,6 +56,9 @@ Feel free to change them if needed.
 
 - Sass : 
     - Organize files
+
+- UseEffect : 
+    - Could have been used on the Alertes and Objectifs lists when generating a single card, but decided to do it softly instead
     
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH
