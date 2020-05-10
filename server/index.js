@@ -32,6 +32,8 @@ const init = async () => {
 
     server.route([
         require('./routes/alertes/getAllAlertes'),
+        require('./routes/alertes/getAlerteByClientId'),
+        require('./routes/alertes/updateAlerteById'),
         require('./routes/planning/getAllTasks'),
         require('./routes/clients/getAllClients'),
         require('./routes/clients/getClientById'),

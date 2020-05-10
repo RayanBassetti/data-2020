@@ -59,6 +59,9 @@ Feel free to change them if needed.
 
 - UseEffect : 
     - Could have been used on the Alertes and Objectifs lists when generating a single card, but decided to do it softly instead
+
+- Clients table : 
+    - Do something about the column with date type, the front translates them as such, giving long dates and not just DD-MM-YYYY
     
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH

@@ -21,9 +21,7 @@ try:
     cur = connection.cursor()
     # requests and reception of the data
     fake_clients = "SELECT * FROM fake_clients"
-    cons_prod_client = "SELECT * FROM cons_prod_clients"
     fakeClients = pd.read_sql(fake_clients, connection)
-    consProdClient = pd.read_sql(cons_prod_client, connection)
 
     consProd_array = []
     alertes_array = []
