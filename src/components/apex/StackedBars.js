@@ -45,7 +45,6 @@ function StackedBars({data}) {
         colors: ['#82CAFF', '#31D69A', '#FFDB59'],
         chart: {
             type: 'bar',
-            height: 350,
             stacked: true,
             stackType: '100%',
             toolbar: {
@@ -83,7 +82,7 @@ function StackedBars({data}) {
     }
 
     return (
-        <Chart options={options} series={series} width={'70%'} type="bar"/>
+        <Chart options={options} series={series} width={'100%'} type="bar"/>
     )
 }
 

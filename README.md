@@ -51,8 +51,11 @@ Feel free to change them if needed.
     - The style of the body inside the MaterialTable can't be changed (not supported), making the display of the clients with squares possible but not good looking.
 
 - For the client profile : 
-    - The campaign creation is a hot mess with sole purpose to half work and be a demo.
+    - The objectif creation gets me a 400 error once in a while.
     - Create components for user input to create a campaign
+
+- Sass : 
+    - Organize files
     
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH

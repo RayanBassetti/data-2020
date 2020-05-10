@@ -29,7 +29,6 @@ class CampaignContextProvider extends React.Component {
             .catch(err => console.log(err))
     }
 
-
     createCampaign = (id, start, end) => {
         fetch('http://localhost:4000/campaigns', {
             method: 'POST',

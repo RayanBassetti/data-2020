@@ -26,6 +26,7 @@ body, html {
 .app .content {
   width: 85%;
   padding-bottom: 40px;
+  padding-left: 2%;
   padding-right: 2%;
 }
 .app .navMain {
@@ -166,6 +167,13 @@ body, html {
   text-transform: uppercase;
   font-variant: small-caps;
   color: #C1C1C1;
+}
+
+.toolbar_clients {
+  width: 20%;
+  align-self: flex-end;
+  margin-right: 5%;
+  margin-bottom: 2%;
 }
 
 .Home .cards {
@@ -330,7 +338,11 @@ body, html {
   color: #C1C1C1;
 }
 .client_stats_content .client_objectifs .objectifs_list {
+  height: 100%;
   margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
 }
 .client_stats_content .client_objectifs .objectifs_list .single_objectif {
   display: flex;

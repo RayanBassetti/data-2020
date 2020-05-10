@@ -3,26 +3,12 @@ import React from 'react';
 import SingleObjectif from './cards/components/SingleObjectif'
 
 function ObjectifsList({objectifs}) {
-    // const data = [
-    //     {
-    //         title: "Faire ses courses",
-    //         text: "Lorem Ipsum texte long "
-    //     },
-    //     {
-    //         title: "Faire ses courses",
-    //         text: "Lorem Ipsum texte long "
-    //     },
-    //     {
-    //         title: "Faire ses courses",
-    //         text: "Lorem Ipsum texte long "
-    //     },
-    // ]
 
-    function handleData() {
+    const handleData = () => {
         let arrayLists = []
         let count = 0
         objectifs.forEach(single => {
-            const singleObjectif = <SingleObjectif title={single.title} text={single.text} key={count}/>
+            const singleObjectif = <SingleObjectif title={single.title} text={single.text} status={single.status} key={count}/>
             arrayLists.push(singleObjectif)
             count = count + 1;
         })
