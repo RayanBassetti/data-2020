@@ -33,6 +33,7 @@
 - Base : 
     - Python 
 - Librairies : 
+    - Virtual-Env
     - Faker
     - Shortuuid
     - Pandas

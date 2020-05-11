@@ -5,14 +5,14 @@ function StackedBars({data}) {
 
     const handleSeries = (profil) => {
         let families = [1, 2, 3, 4, 5, 6, 7, 8]
-        let familleCount = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        let familleCount = [0, 0, 0, 0, 0, 0, 0, 0]
         data.forEach(item => {
             families.forEach(number => {
                 switch(item.famille) {
                     case(number) : 
                         switch(item.profil) {
                             case(profil) : 
-                                familleCount[number + 1] = familleCount[number + 1] + 1
+                                familleCount[number] = familleCount[number] + 1
                                 break;
                             default : 
                                 return false

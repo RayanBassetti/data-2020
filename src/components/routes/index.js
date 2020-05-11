@@ -8,7 +8,7 @@ import ClientProfile from '../clientprofile'
 import NavMenu from '../common/navigation/NavMenu';
 import Home from '../home/Home';
 import Planning from '../planning';
-import Messagerie from '../messagerie';
+// import Messagerie from '../messagerie';
 import Alertes from '../alertes';
 
 function RoutingSwitch() {
@@ -32,11 +32,11 @@ function RoutingSwitch() {
                         render={(props) => <ClientProfile {...props} />} // allows to pass props from component to this one
                     >
                     </Route>
-                    <Route 
+                    {/* <Route 
                         exact 
                         path="/messagerie/"
                         render={() => <Messagerie />}>
-                    </Route>
+                    </Route> */}
                     <Route 
                         exact 
                         path="/planning/"
