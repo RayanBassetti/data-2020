@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import ThemeContextProvider from './components/contexts/ThemeContext';
+import AlertesContextProvider from './components/contexts/AlertesContext';
 
 
 ReactDOM.render(
     <ThemeContextProvider>
-        <App />
+        <AlertesContextProvider>
+            <App />
+        </AlertesContextProvider>
     </ThemeContextProvider>, 
     document.getElementById('root')
 );

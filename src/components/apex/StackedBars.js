@@ -4,7 +4,7 @@ import Chart from "react-apexcharts";
 function StackedBars({data}) {
 
     const handleSeries = (profil) => {
-        let families = [1, 2, 3, 4, 5, 6, 7, 8]
+        let families =     [1, 2, 3, 4, 5, 6, 7, 8]
         let familleCount = [0, 0, 0, 0, 0, 0, 0, 0]
         data.forEach(item => {
             families.forEach(number => {
