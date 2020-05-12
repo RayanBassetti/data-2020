@@ -4,6 +4,5 @@
 
 - (dossier data-calculus) data.py : Script qui va se connecter à la vue "single_client" pour optimiser la lecture de la data, et l'interprétation que l'on va en faire sur nos maquettes de concept et sur notre présentation globale
 
-- (dossier users-table) tables.py : Génération d'un JSON simulant la consommation/production d'un système MyPower d'un client Engie sur 5 semaines (1 ligne par semaine), et génération
-d'un JSON qui met une ligne en alerte pour le client si la production est trop faible.
+- (dossier users-table) tables.py : Envoie dans la table "cons_prod_clients" 5 lignes par clients de consommation/production, et si un des chiffres de production est très faible, update du feeling/satisfaction de l'utilisateur concerné + création d'une alerte
 
