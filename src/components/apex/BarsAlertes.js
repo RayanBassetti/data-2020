@@ -51,7 +51,7 @@ function BarsAlertes() {
             }
         },
         dataLabels: {
-            enabled: false
+            enabled: true
         },
         xaxis: {
             categories: ['En attentes', 'En cours', 'A vérifier', 'Terminées', 'Postmortem à réaliser'],

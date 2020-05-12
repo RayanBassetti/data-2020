@@ -11,6 +11,7 @@
 /scripts/users-gen/Lib
 /scripts/users-gen/Scripts
 /scripts/users-gen/json
+/scripts/users-gen/database_ids.py
 
 # python dependencies
 /scripts/data-calculus/Lib

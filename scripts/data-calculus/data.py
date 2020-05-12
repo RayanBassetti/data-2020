@@ -32,6 +32,13 @@ try:
     singleClient["economie_hedbomadaire"] = (((singleClient["total"] * 0.175) / 12) / 4 / 7) 
     ## transform the result into a permanent excel file
     singleClient.to_excel('single_client.xlsx', sheet_name='single', index=False)
+
+    for _, row in singleClient.iterrows() : 
+        count = 0;
+        while count < 30 : 
+            print(row["from_gen_to_consumer"])
+            count = count + 1
+
     # singleClient = pd.read_excel('single_client.xlsx', sheet_name='single')
 
     # close the communication with the PostgreSQL

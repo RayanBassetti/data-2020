@@ -72,8 +72,8 @@ function LineLabels({userId}) {
                     fontFamily: 'Montserrat'
                 }
             },
-            min: 0,
-            max: 40
+            min: 5,
+            max: 140
         },
         // legend: {
         //     position: 'bottom',

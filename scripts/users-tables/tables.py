@@ -21,6 +21,9 @@ try:
     cur = connection.cursor()
     # requests and reception of the data
     fake_clients = "SELECT * FROM fake_clients"
+
+    updateClientMood = "UPDATE fake_clients SET feeling = %s, satisfaction = %s WHERE id = %s"
+
     fakeClients = pd.read_sql(fake_clients, connection)
 
     consProd_array = []
@@ -29,8 +32,9 @@ try:
         count = 0
         while count < 35 : #since we want to have 5 weeks of data, we set the max count to 7 days * 5
             date = faker.date_between(start_date='-'+ str(37 - count) + 'd', end_date='-'+ str(35 - count) + 'd')
-            fromGenToConsumer = randomRange(0, 10)
-            if fromGenToConsumer < 0.3 : 
+            fromGenToConsumer = randomRange(10, 30)
+            if fromGenToConsumer < 11 : 
+                # création d'une alerte
                 alertes_array.append({
                     "alerte_id": shortuuid.uuid(),
                     "client_id": row["id"],
@@ -41,11 +45,14 @@ try:
                     "tags": "Marketing",
                     "status": 1
                 })
+                # update du sentiment utilisateur 
+                cur.execute(updateClientMood, (1, randomRange(1, 20), row["id"]))
+                print(row["id"])
             consProd_array.append({
                 "client_id": row["id"],
                 "date": str(date),
                 "from_gen_to_consumer": fromGenToConsumer,
-                "from_grid_to_consumer": randomRange(10, 30)
+                "from_grid_to_consumer": randomRange(100, 120)
             })
             count = count + 7
         
@@ -58,7 +65,7 @@ try:
 
     ## transform the result into a permanent excel file
     # singleClient = pd.read_excel('single_client.xlsx', sheet_name='single')
-
+    connection.commit()
     # close the communication with the PostgreSQL
     cur.close()
 except (Exception, psycopg2.DatabaseError) as error:
