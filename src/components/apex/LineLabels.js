@@ -72,7 +72,7 @@ function LineLabels({userId}) {
                     fontFamily: 'Montserrat'
                 }
             },
-            min: 5,
+            min: 0,
             max: 200
         },
         // legend: {
@@ -98,7 +98,7 @@ function LineLabels({userId}) {
     return (
         <>
         {!loading && 
-            <Chart options={options} series={series} width={'450px'} type="line"/>
+            <Chart options={options} series={series} width='450px'  type="line"/>
         }
         {loading &&
             <div className="sweet-loading">
