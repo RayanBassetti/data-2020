@@ -35,8 +35,8 @@ try:
     # requests and reception of the data
 
     # createClient = "INSERT INTO fake_clients_clone VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-    refresh = "DELETE FROM fake_clients_clone"
-    createClient = "INSERT INTO fake_clients_clone VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    refresh = "DELETE FROM fake_clients"
+    createClient = "INSERT INTO fake_clients VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     
     # empties the table
     cur.execute(refresh)
