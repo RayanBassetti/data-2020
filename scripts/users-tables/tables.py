@@ -39,8 +39,6 @@ try:
             date = faker.date_between(start_date='-'+ str(37 - count) + 'd', end_date='-'+ str(35 - count) + 'd')
             fromGenToConsumer = randomRange(10, 30)
             if fromGenToConsumer < 10.5 : 
-                # création d'une alerte
-                cur.execute(alerte, (shortuuid.uuid(), row["id"], row["name"], str(date), "Production des panneaux trop faible", 1, "Marketing", 1))
                 # update du sentiment utilisateur 
                 cur.execute(updateClientMood, (2, randomRange(10, 30), row["id"]))
             if fromGenToConsumer < 10.5 and count == 28 : 
