@@ -56,7 +56,7 @@ try:
         time_activity = scoringActivityApp()
         profil = randomIntRange(1, 4) # "Économe", "Autonome", "Écologie"
         famille = randomIntRange(1, 8) # "IFaP", "IFoP", "IFaN", "IFoN", "PFaP", "PFoP", "PFaN", "PFoN"
-        feeling = randomIntRange(2, 5) # "Mitigé", "Curieux", "Harmonieux", "Heureux"
+        feeling = randomIntRange(3, 5) # "Curieux", "Harmonieux", "Heureux"
         satisfaction = randomIntRange(20, 100)
         relation = randomIntRange(1, 100)
         advice = randomIntRange(1, 100)

@@ -38,11 +38,16 @@ try:
         while count < 35 : #since we want to have 5 weeks of data, we set the max count to 7 days * 5
             date = faker.date_between(start_date='-'+ str(37 - count) + 'd', end_date='-'+ str(35 - count) + 'd')
             fromGenToConsumer = randomRange(10, 30)
-            if fromGenToConsumer < 11 : 
+            if fromGenToConsumer < 10.5 : 
+                # création d'une alerte
+                cur.execute(alerte, (shortuuid.uuid(), row["id"], row["name"], str(date), "Production des panneaux trop faible", 1, "Marketing", 1))
+                # update du sentiment utilisateur 
+                cur.execute(updateClientMood, (2, randomRange(10, 30), row["id"]))
+            if fromGenToConsumer < 10.5 and count == 28 : 
                 # création d'une alerte
                 cur.execute(alerte, (shortuuid.uuid(), row["id"], row["name"], str(date), "Production des panneaux trop faible", 2, "Marketing", 1))
                 # update du sentiment utilisateur 
-                cur.execute(updateClientMood, (1, randomRange(1, 20), row["id"]))
+                cur.execute(updateClientMood, (1, randomRange(0, 20), row["id"]))
             # création d'une ligne cons/prod pour une semaine pour un client    
             cur.execute(consProdClient, (row["id"], str(date), fromGenToConsumer, randomRange(100, 200)))
             count = count + 7

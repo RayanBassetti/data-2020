@@ -73,7 +73,7 @@ function LineLabels({userId}) {
                 }
             },
             min: 5,
-            max: 140
+            max: 200
         },
         // legend: {
         //     position: 'bottom',
