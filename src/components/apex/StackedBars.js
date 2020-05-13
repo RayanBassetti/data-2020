@@ -12,7 +12,7 @@ function StackedBars({data}) {
                     case(number) : 
                         switch(item.profil) {
                             case(profil) : 
-                                familleCount[number] = familleCount[number] + 1
+                                familleCount[number - 1] = familleCount[number - 1 ] + 1
                                 break;
                             default : 
                                 return false
