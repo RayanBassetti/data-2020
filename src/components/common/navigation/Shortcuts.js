@@ -29,7 +29,6 @@ function Shortcuts(props) {
                     return (
                       <a href={item}>{item}</a>
                     )
-
                   }
               })}
             </div>
