@@ -107,7 +107,7 @@ try:
         # commit the requests to the database
         connection.commit()
 
-        count = count + 1;
+        count = count + 1
     # close the communication with the PostgreSQL
     cur.close()
 
