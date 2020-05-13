@@ -20,10 +20,6 @@ function AlertesKanban() {
         return list
     }
 
-    useEffect(() => {
-        // update the alertes
-    }, [alertes])
-
     return (
         <div className="alertes_kanban flexed-row-around">
             <AlerteColonne title="En attente" titleStyle={Waiting} data={handleData(1)}/>

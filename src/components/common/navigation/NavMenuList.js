@@ -32,7 +32,7 @@ function NavMenuList()  {
                 <ListItemLink to="/clients" primary="Clients" icon={<GroupIcon />} selected={selectedIndex === 1} handleListItemClick={(event) => handleListItemClick(event, 1)}/>
                 {/* <Alertes selected={selectedIndex === 2} handleListItemClick={(event) => handleListItemClick(event, 2)} text={"Alertes"} /> */}
                 <ListItemLink to="/alertes" primary="Alertes" icon={<NotificationsIcon />} selected={selectedIndex === 2} handleListItemClick={(event) => handleListItemClick(event, 2)}/>
-                <ListItemLink to="/messagerie" primary="Messagerie" icon={<ForumIcon />} selected={selectedIndex === 3} handleListItemClick={(event) => handleListItemClick(event, 3)}/>
+                {/* <ListItemLink to="/messagerie" primary="Messagerie" icon={<ForumIcon />} selected={selectedIndex === 3} handleListItemClick={(event) => handleListItemClick(event, 3)}/> */}
                 <ListItemLink to="/planning" primary="Planning" icon={<MapIcon />} selected={selectedIndex === 4} handleListItemClick={(event) => handleListItemClick(event, 4)}/>
             </List>
             )

@@ -15,7 +15,7 @@ function ConsProd({userId}) {
     return(
         <Card className="card_bottom" style={cardSpecs}>
             <Title text="Consommation et production"/>
-            <CardContent className="card_bottom_content flexed-row">
+            <CardContent className="card_bottom_content flexed-row" style={{width: '100%'}}>
                 <LineLabels userId={userId} />
             </CardContent>
         </Card>

@@ -34,7 +34,6 @@ function AlertesContextProvider({children}) {
             "Content-type": "application/json; charset=UTF-8"
             }
         })
-        .then(setUpdated(false))
     }
     
     const handleStatus = (id) => {
@@ -51,6 +50,7 @@ function AlertesContextProvider({children}) {
         <AlertesContext.Provider value={{
             loading: loading,
             alertes: alertes,
+            setUpdated: setUpdated,
             handleStatus: handleStatus,
             fetchAlertes: fetchAlertes,
             updateAlerte: updateAlerte

@@ -4,7 +4,7 @@ import HomeTitle from '../HomeTitle';
 
 function CardPlanning({title}) {
     return (
-        <Card>
+        <Card style={{width: '80%', marginTop: '5%'}}>
             <CardContent>
                 <HomeTitle text={title} size="12px" />
             </CardContent>

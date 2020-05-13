@@ -73,7 +73,7 @@ function LineLabels({userId}) {
                 }
             },
             min: 0,
-            max: 40
+            max: 200
         },
         // legend: {
         //     position: 'bottom',
@@ -98,7 +98,7 @@ function LineLabels({userId}) {
     return (
         <>
         {!loading && 
-            <Chart options={options} series={series} width={'450px'} type="line"/>
+            <Chart options={options} series={series} width='450px'  type="line"/>
         }
         {loading &&
             <div className="sweet-loading">

@@ -3,14 +3,25 @@ import { Card, CardContent, Button } from '@material-ui/core'
 import CardNormalText from '../clientprofile/cards/components/CardNormalText'
 import { AlertesContext } from '../contexts/AlertesContext'
 
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+
 import {ReactLoader} from '../common/components/ReactLoader'
 import Priority from '../common/components/Priority'
 
 function CardKanban({data}) {
 
     const {title, alerte_id, client_name, priority, date, status} = data
+    const {loading, updateAlerte, setUpdated} = useContext(AlertesContext)
 
-    const {loading, updateAlerte} = useContext(AlertesContext)
+
+    const handleChange = (event) => {
+        console.log("current status" + status, "new status" + event.target.value)
+        updateAlerte(alerte_id, event.target.value)
+        setUpdated(true)
+    }
 
     return (
         <Card style={{marginTop: '5%'}}>
@@ -33,7 +44,22 @@ function CardKanban({data}) {
                         })} */}
                     </div>
                     {status !== 4 &&
-                    <Button variant="outlined" onClick={() => updateAlerte(alerte_id, (status + 1))}>Next step</Button>
+                        <>
+                            <FormControl>
+                                <InputLabel id="demo-simple-select-label">Change status</InputLabel>
+                                <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value={status}
+                                onChange={handleChange}
+                                >
+                                <MenuItem value={1}>En attente</MenuItem>
+                                <MenuItem value={2}>En cours</MenuItem>
+                                <MenuItem value={3}>A vérifié</MenuItem>
+                                <MenuItem value={4}>Terminé</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </>
                     }
                 </div>
                 }

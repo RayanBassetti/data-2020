@@ -3,8 +3,10 @@ import Header from '../common/components/Header'
 import HomeLeft from './left/HomeLeft'
 import HomeMiddle from './middle/HomeMiddle'
 import HomeRight from './right/HomeRight'
+import { withRouter } from 'react-router'
 
-function Home() {
+function Home(props) {
+    console.log(props.history)
     return (
         <div className="content  Home">
             <Header text={"Bonjour, Sophie !"} emoji={"waving_hand"}/>
@@ -17,4 +19,4 @@ function Home() {
     )
 }
 
-export default Home
+export default withRouter(Home)

@@ -1,5 +1,9 @@
 # PROJET DATA - P2021 - ENGIE
 
+## Design of the app : 
+
+https://www.figma.com/file/PSmFUG7tMkzrDvhKBj5OdN/CRM-ENGIE?node-id=207%3A1
+
 ## Stack :
 
 # Front-end : 
@@ -12,7 +16,7 @@
     - Sass
 - Components : 
     - Material Table
-    - Material TablePicker
+    - Material DatePicker
     - React Spinner
 - Dataviz : 
     - ApexCharts
@@ -28,15 +32,18 @@
     - Nodemon
 - Others :
     - Hapi-Swagger
+- Lexicon : 
+    - https://docs.google.com/spreadsheets/d/17zEY9pYN28mQ3iuS1iuc9ESDDr4OYT7D--nUVsgAO0E/edit?usp=sharing
 
 # Scripts : 
 - Base : 
     - Python 
-- Librairies : 
+- External librairies : 
+    - Virtual-Env
     - Faker
     - Shortuuid
     - Pandas
-    - Psycog2
+    - Psycopg2
 
 ## How to setup : 
 
@@ -70,17 +77,12 @@ Feel free to change them if needed.
 - For the clients list : 
     - Plan was to change the toolbar of the material-table, and to be able to change the clients lists by modifying the row/body components depending on the user input.
       For now, it's only a change between 3 components.
-    - The style of the body inside the MaterialTable can't be changed (not supported), making the display of the clients with squares possible but not good looking.
 
 - For the client profile : 
-    - The objectif creation gets me a 400 error once in a while.
     - Create components for user input to create a campaign
 
 - Sass : 
     - Organize files
-
-- UseEffect : 
-    - Could have been used on the Alertes and Objectifs lists when generating a single card, but decided to do it softly instead
 
 - Clients table : 
     - Do something about the column with date type, the front translates them as such, giving long dates and not just DD-MM-YYYY
@@ -94,6 +96,17 @@ Feel free to change them if needed.
 
 - Objectif post :
     - Can't create multiple objectifs for a client
+
+# What I would have done under other circumstances : 
+- Given more time : 
+    - Dynamically create the tasks for the planning 
+    - Create the filter for the clients list
+    - Create the Messagerie page
+    - Create the historique for the client profile
+
+- Given another go at the project : 
+    - More discussions with my designers, and especially making sure that certains functionnalities were not green lighted
+    - Would have started the project with fake static data, worked on the front, and then worked on the back to make the data dynamic.
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH
 
