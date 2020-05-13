@@ -1,33 +1,23 @@
-import React, {createContext} from 'react';
+import React, {createContext, useState} from 'react';
 
 export const ClientDisplayContext = createContext();
 
-class ClientDisplayContextProvider extends React.Component {
+function ClientDisplayContextProvider({children}) {
 
-    componentDidMount() {
-        this.setState({
-            theme: "Infos"
-        })
+    const [theme, setTheme] = useState("Infos")
+
+    const toggleDisplay = () => {
+        theme === "Infos" ? setTheme("Stats") : setTheme("Infos");
     }
 
-    applyDisplay = (display) => {
-        return this.setState({
-            theme: display
-        })
-    }
-
-    toggleDisplay = () => {
-        const {theme} = this.state
-        theme === "Infos" ? this.applyDisplay("Stats") : this.applyDisplay("Infos");
-    }
-
-    render() {
-        return(
-            <ClientDisplayContext.Provider value={{...this.state, toggleDisplay: this.toggleDisplay}}>
-                {this.props.children}
-            </ClientDisplayContext.Provider>
-        )
-    }
+    return(
+        <ClientDisplayContext.Provider value={{
+            theme: theme, 
+            toggleDisplay: toggleDisplay
+        }}>
+            {children}
+        </ClientDisplayContext.Provider>
+    )
 }
 
 export default ClientDisplayContextProvider
