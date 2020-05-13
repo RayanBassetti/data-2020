@@ -98,7 +98,7 @@ Feel free to change them if needed.
     - Do something about the column with date type, the front translates them as such, giving long dates and not just DD-MM-YYYY
 
 - Objectif post :
-    - Can't create multiple objectifs for a client
+    - Seems to work at first glance, but glitches sometimes, no idea why
 
 - Create a planning table with data inside
 
