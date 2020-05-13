@@ -74,6 +74,10 @@ Feel free to change them if needed.
 
 ## Known issues / bugs / missings parts 
 
+### What might happen on another computer (which worked on mine, I know, basic excuse): 
+- UUID module not found for the two POST routes
+- Alerte status switch not working on the first click, have to do the procedure twice to record it and update the alerte
+
 ### Front
 
 - Shortcuts : 
