@@ -76,6 +76,9 @@ Feel free to change them if needed.
 
 ### Front
 
+- Shortcuts : 
+    - Can only save clients links
+
 - For the clients list : 
     - Plan was to change the toolbar of the material-table, and to be able to change the clients lists by modifying the row/body components depending on the user input.
       For now, it's only a change between 3 components.

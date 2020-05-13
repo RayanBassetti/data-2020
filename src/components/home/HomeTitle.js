@@ -1,8 +1,17 @@
 import React from 'react'
 
-const HomeTitle = ({text, size, textStyle}) => {
+const HomeTitle = ({text, size}) => {
     return (
-        <p className="card_content_text card_title_text" style={{width: '100%', textTransform: 'uppercase', fontSize: size, textOverflow: 'ellipsis'}}>{text}</p>
+        <p className="card_content_text card_title_text" 
+            style={{
+                width: '100%', 
+                textTransform: 'uppercase', 
+                fontSize: size, 
+                textOverflow: 'ellipsis'
+            }}
+        >
+            {text}
+        </p>
     )
 }
 
