@@ -1,6 +1,6 @@
 import React from 'react';
 import Chart from "react-apexcharts";
-
+// for the sake of not wasting your time, don't go down further. 
 function RadialChart({text}) {
 
     const options = {

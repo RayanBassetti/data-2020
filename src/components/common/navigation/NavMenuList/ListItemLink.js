@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useMemo, forwardRef} from 'react'
 import { Link as RouterLink } from 'react-router-dom';
 
 // list components
@@ -9,8 +9,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 function ListItemLink(props) {
     const { handleListItemClick, selected, icon, primary, to } = props;
 
-    const renderLink = React.useMemo(
-      () => React.forwardRef((itemProps, ref) => <RouterLink to={to} ref={ref} {...itemProps} />),
+    const renderLink = useMemo(
+      () => forwardRef((itemProps, ref) => <RouterLink to={to} ref={ref} {...itemProps} />),
       [to],
     );
   

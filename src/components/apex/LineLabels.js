@@ -21,7 +21,7 @@ function LineLabels({userId}) {
                 }) 
                 setLoading(false)
             })
-    }, [userId])
+    }, [])
 
     const options = {
         chart: {

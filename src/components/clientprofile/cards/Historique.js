@@ -20,10 +20,6 @@ const tabsMenu = {
     color: '#686868'
 }
 
-// const singleTab = {
-//     width: '30px'
-// }
-
 function a11yProps(index) {
     return {
         id: `simple-tab-${index}`,
@@ -31,21 +27,12 @@ function a11yProps(index) {
     };
 }
 
-
 function Historique({user}) {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
-
-    // const handleDisplay = (value, index) => {
-    //     if(value === index) {
-    //         return {display: 'show'}
-    //     } else {
-    //         return {display: 'none'}
-    //     }
-    // }
 
     return(
         <Card className="card_bottom" style={cardSpecs}>

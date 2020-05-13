@@ -36,7 +36,7 @@ try:
 
     # createClient = "INSERT INTO fake_clients_clone VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     refresh = "DELETE FROM fake_clients"
-    createClient = "INSERT INTO fake_clients VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    createClient = "INSERT INTO fake_clients VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     
     # empties the table
     cur.execute(refresh)
@@ -55,8 +55,8 @@ try:
         last_activity = fake.date_between(start_date='-6d', end_date='today'),
         time_activity = scoringActivityApp()
         profil = randomIntRange(1, 4) # "Économe", "Autonome", "Écologie"
-        famille = randomIntRange(1, 8) # "IFaP", "IFoP", "IFaN", "IFoN", "PFaP", "PFoP", "PFaN", "PFoN"
-        feeling = randomIntRange(3, 5) # "Curieux", "Harmonieux", "Heureux"
+        famille = randomIntRange(1, 9) # "IFaP", "IFoP", "IFaN", "IFoN", "PFaP", "PFoP", "PFaN", "PFoN"
+        feeling = randomIntRange(3, 6) # "Curieux", "Harmonieux", "Heureux"
         satisfaction = randomIntRange(20, 100)
         relation = randomIntRange(1, 100)
         advice = randomIntRange(1, 100)
@@ -70,7 +70,8 @@ try:
         construction = str(fake.date_of_birth(None, 10, 60)) # the date_between method didn't work here, created conflicts with multiple clients
         last_maintenance = str(fake.date_between(start_date=et, end_date='today'))
         facture = name + '_Devis.pdf'
-        updated = date.today()
+        updated = date.today(),
+        devices = "Fronius"
 
         # executes the request
         cur.execute(createClient, (
@@ -101,7 +102,8 @@ try:
             construction,
             last_maintenance,
             facture,
-            updated
+            updated,
+            devices
         ))
 
         # commit the requests to the database

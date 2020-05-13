@@ -1,28 +1,22 @@
-import React, {createContext} from 'react';
+import React, {createContext, useState} from 'react';
 
 export const ListDisplayContext = createContext();
 
-class ListDisplayContextProvider extends React.Component {
+function ListDisplayContextProvider({children}) {
+    const [theme, setTheme] = useState("List")
 
-    componentDidMount() {
-        this.setState({
-            theme: "List"
-        })
+    const toggleDisplay = (display) => {
+        setTheme(display)
     }
 
-    toggleDisplay = (display) => {
-        return this.setState({
-            theme: display
-        })
-    }
-
-    render() {
-        return(
-            <ListDisplayContext.Provider value={{...this.state, toggleDisplay: this.toggleDisplay}}>
-                {this.props.children}
-            </ListDisplayContext.Provider>
-        )
-    }
+    return (
+        <ListDisplayContext.Provider value={{
+            theme: theme, 
+            toggleDisplay: toggleDisplay
+        }}>
+            {children}
+        </ListDisplayContext.Provider>
+    )
 }
 
 export default ListDisplayContextProvider

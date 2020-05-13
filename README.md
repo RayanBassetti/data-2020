@@ -6,7 +6,7 @@ https://www.figma.com/file/PSmFUG7tMkzrDvhKBj5OdN/CRM-ENGIE?node-id=207%3A1
 
 ## Stack :
 
-# Front-end : 
+### Front-end : 
 - Base : 
     - React (and React Hooks)
     - React Router
@@ -21,7 +21,7 @@ https://www.figma.com/file/PSmFUG7tMkzrDvhKBj5OdN/CRM-ENGIE?node-id=207%3A1
 - Dataviz : 
     - ApexCharts
 
-# Back-end : 
+### Back-end : 
 - Base :
     - Node
 - Framework :
@@ -35,7 +35,7 @@ https://www.figma.com/file/PSmFUG7tMkzrDvhKBj5OdN/CRM-ENGIE?node-id=207%3A1
 - Lexicon : 
     - https://docs.google.com/spreadsheets/d/17zEY9pYN28mQ3iuS1iuc9ESDDr4OYT7D--nUVsgAO0E/edit?usp=sharing
 
-# Scripts : 
+### Scripts : 
 - Base : 
     - Python 
 - External librairies : 
@@ -74,6 +74,11 @@ Feel free to change them if needed.
 
 ## Known issues / bugs / missings parts 
 
+### Front
+
+- Shortcuts : 
+    - Can only save clients links
+
 - For the clients list : 
     - Plan was to change the toolbar of the material-table, and to be able to change the clients lists by modifying the row/body components depending on the user input.
       For now, it's only a change between 3 components.
@@ -84,20 +89,23 @@ Feel free to change them if needed.
 - Sass : 
     - Organize files
 
-- Clients table : 
-    - Do something about the column with date type, the front translates them as such, giving long dates and not just DD-MM-YYYY
-
-- Alertes : 
-    - A better handle of the number of queries/filters to apply to call the alertes
-    - Refresh the list when an alert status changes
-    
 - React Hooks : 
     - UseEffect/UseMemo, still struggling to properly understand how they work
 
-- Objectif post :
-    - Can't create multiple objectifs for a client
+- Alertes : 
+    - A better handle of the number of queries/filters to apply to call the alertes
 
-# What I would have done under other circumstances : 
+### Back
+
+- Clients table : 
+    - Do something about the column with date type, the front translates them as such, giving long dates and not just DD-MM-YYYY
+
+- Objectif post :
+    - Seems to work at first glance, but glitches sometimes, no idea why
+
+- Create a planning table with data inside
+
+## What I would have done under other circumstances : 
 - Given more time : 
     - Dynamically create the tasks for the planning 
     - Create the filter for the clients list
@@ -105,7 +113,7 @@ Feel free to change them if needed.
     - Create the historique for the client profile
 
 - Given another go at the project : 
-    - More discussions with my designers, and especially making sure that certains functionnalities were not green lighted
+    - More discussions with my designers, and especially making sure that some functionnalities were not green lighted
     - Would have started the project with fake static data, worked on the front, and then worked on the back to make the data dynamic.
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH

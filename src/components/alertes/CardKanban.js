@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
-import { Card, CardContent, Button } from '@material-ui/core'
+import { Card, CardContent } from '@material-ui/core'
 import CardNormalText from '../clientprofile/cards/components/CardNormalText'
 import { AlertesContext } from '../contexts/AlertesContext'
 
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 
 import {ReactLoader} from '../common/components/ReactLoader'
@@ -18,7 +17,6 @@ function CardKanban({data}) {
 
 
     const handleChange = (event) => {
-        console.log("current status" + status, "new status" + event.target.value)
         updateAlerte(alerte_id, event.target.value)
         setUpdated(true)
     }
@@ -46,7 +44,6 @@ function CardKanban({data}) {
                     {status !== 4 &&
                         <>
                             <FormControl>
-                                <InputLabel id="demo-simple-select-label">Change status</InputLabel>
                                 <Select
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
