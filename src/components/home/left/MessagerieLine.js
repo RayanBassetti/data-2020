@@ -10,10 +10,14 @@ function MessagerieLine({icon, text}) {
         borderLeft: '8px solid #3B86FF'
     }
 
+    const textStyle = {
+        textOverflow: 'ellipsis'
+    }
+
     return (
         <div className="flexed-row" style={style}>
             <img alt={icon}/>
-            <HomeTitle text={text} size="12px" />
+            <HomeTitle text={text} size="12px" style={textStyle}/>
         </div>
     )
 }

@@ -12,26 +12,30 @@ try:
     # requests and reception of the data
     # all the requests are done on views, not tables
     request = "SELECT * FROM single_client"
+    request2 = "SELECT * FROM cons_prod_clients"
+    consProd = pd.read_sql(request2, connection)
     singleClient = pd.read_sql(request, connection)
 
     # Calculs à faire (table daily): 
     # Total de la consommation : from_gen + from_grid
     # Consommation réelle : Total - (from_gen - from grid)
-    # Revente hebdomadaire : from_gen_to_grid / 1000 * 0.10
+    # Revente quotidienne : from_gen_to_grid / 1000 * 0.10
     # Electricité non consommée : Consommation réelle - from_gen_to_grid / 1000
-    # Economies faites sur une semaine : Total / 1000 * 0.175 / 12 / 4 / 7
-    singleClient["from_gen_to_grid"] = singleClient["from_gen_to_grid"] / 1000
-    singleClient["from_gen_to_consumer"] = singleClient["from_gen_to_consumer"] / 1000
-    singleClient["from_grid_to_consumer"] = singleClient["from_grid_to_consumer"] / 1000
+    # Economies faites sur une semaine : Total / 1000 * 0.175 / 12 / 4 
+
+    # singleClient["from_gen_to_grid"] = singleClient["from_gen_to_grid"] / 1000
+    # singleClient["from_gen_to_consumer"] = singleClient["from_gen_to_consumer"] / 1000
+    # singleClient["from_grid_to_consumer"] = singleClient["from_grid_to_consumer"] / 1000
 
     
-    singleClient["total"] = singleClient["from_gen_to_consumer"] + singleClient["from_grid_to_consumer"]
-    singleClient["conso_réelle"] = - (singleClient["from_gen_to_consumer"] - singleClient["from_grid_to_consumer"])
-    singleClient["revente_daily"] = singleClient["from_gen_to_grid"]  * 0.10
-    singleClient["elec_non_cons"] = singleClient["conso_réelle"] - singleClient["from_gen_to_grid"]
-    singleClient["economie_hedbomadaire"] = (((singleClient["total"] * 0.175) / 12) / 4 / 7) 
-    ## transform the result into a permanent excel file
-    singleClient.to_excel('single_client.xlsx', sheet_name='single', index=False)
+    # singleClient["total"] = singleClient["from_gen_to_consumer"] + singleClient["from_grid_to_consumer"]
+    # singleClient["conso_réelle"] = - (singleClient["from_gen_to_consumer"] - singleClient["from_grid_to_consumer"])
+    # singleClient["revente_daily"] = singleClient["from_gen_to_grid"]  * 0.10
+    # singleClient["elec_non_cons"] = singleClient["conso_réelle"] - singleClient["from_gen_to_grid"]
+    # singleClient["economie_hedbomadaire"] = (((singleClient["total"] * 0.175) / 12) / 4 / 7) 
+    # ## transform the result into a permanent excel file
+    # singleClient.to_excel('single_client.xlsx', sheet_name='single', index=False)
+
     # singleClient = pd.read_excel('single_client.xlsx', sheet_name='single')
 
     # close the communication with the PostgreSQL

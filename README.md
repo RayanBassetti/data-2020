@@ -33,6 +33,7 @@
 - Base : 
     - Python 
 - Librairies : 
+    - Virtual-Env
     - Faker
     - Shortuuid
     - Pandas
@@ -94,6 +95,16 @@ Feel free to change them if needed.
 
 - Objectif post :
     - Can't create multiple objectifs for a client
+
+# What I would have done under other circumstances : 
+- Given more time : 
+    - Dynamically created the tasks for the planning 
+    - Created the filter for the clients list
+    - Created the Messagerie page
+
+- Given another go at the project : 
+    - More discussions with my designers, and especially making sure that certains functionnalities were not green lighted
+    - Would have started the project with fake static data, worked on the front, and then worked on the back to make the data dynamic.
 
 ### GROUPE 14 : BASSETTI - COLLIGNON - BOUSSAID - MISBACH
 

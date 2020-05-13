@@ -49,7 +49,7 @@ function Header() {
             </div>
             <div className="badge">
                 <IconButton aria-label="avatar">
-                    <Avatar alt="avatar_user" src="https://www.europeanceo.com/wp-content/uploads/2016/11/E03-Kocher.jpg" variant="rounded" className={classes.large}/>
+                    <Avatar alt="avatar_user" src="https://i.ibb.co/yNsw8zc/cat.png" variant="rounded" className={classes.large}/>
                 </IconButton>
             </div>
         </div>
