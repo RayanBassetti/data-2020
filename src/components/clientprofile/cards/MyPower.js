@@ -12,7 +12,7 @@ const cardSpecs = {
 }
 
 function MyPower({user}) {
-    const {engie_time, nb_panneaux, gender, devices, last_maintenance, facture} = user
+    const {engie_time, nb_panneaux, devices, last_maintenance, facture} = user
     
     return(
         <Card className="card_bottom" style={cardSpecs}>

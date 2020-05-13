@@ -24,10 +24,10 @@ function Shortcuts(props) {
             <div style={{display: 'flex', flexDirection: 'column', marginBottom: '3%'}}>
               {links.map(item => {
                   if(item.name) {
-                    return <a href={item.path}>{item.name}</a>
+                    return <a href={item.path} key={item.path}>{item.name}</a>
                   } else {
                     return (
-                      <a href={item}>{item}</a>
+                      <a href={item} key={item.path}>{item}</a>
                     )
                   }
               })}
