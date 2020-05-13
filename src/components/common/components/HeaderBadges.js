@@ -3,7 +3,7 @@ import Badge from '@material-ui/core/Badge';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined'
-import ChatBubbleOutlineOutlinedIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
+// import ChatBubbleOutlineOutlinedIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
 import Avatar from '@material-ui/core/Avatar';
 import {AlertesContext} from '../../contexts/AlertesContext'
 
@@ -39,12 +39,16 @@ function Header() {
 
     useEffect(() => {
       handleAlertes()
-      console.log(alertesLength)
-
-    }, [])
+    }, [alertes])
 
     const handleAlertes = () => {
-      console.log(alertes)
+      let count = 0
+      alertes.forEach(item => {
+        if(item.status !== 4) {
+          count += 1;
+        }
+      })
+      setAlertesLength(count)
     }
 
     return (
@@ -65,7 +69,7 @@ function Header() {
             </div>
             <div className="badge">
                 <IconButton aria-label="avatar">
-                    <Avatar alt="avatar_user" src="https://i.ibb.co/yNsw8zc/cat.png" variant="rounded" className={classes.large}/>
+                    <Avatar alt="avatar_user" src="https://blog.hubspot.fr/hubfs/Photo%20Profile%202%20Jules%20Perignon.png" variant="rounded" className={classes.large}/>
                 </IconButton>
             </div>
         </div>

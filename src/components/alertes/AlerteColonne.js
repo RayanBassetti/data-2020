@@ -9,7 +9,7 @@ function AlerteColonne({title, titleStyle, data}) {
           return <>
           {
             data.map(item => {
-                return <CardKanban data={item} key={item.id} />
+                return <CardKanban data={item} key={item.alerte_id} />
             })
           }
           </>

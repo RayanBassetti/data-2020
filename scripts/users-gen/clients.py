@@ -36,7 +36,7 @@ try:
 
     # createClient = "INSERT INTO fake_clients_clone VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     refresh = "DELETE FROM fake_clients"
-    createClient = "INSERT INTO fake_clients VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    createClient = "INSERT INTO fake_clients VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     
     # empties the table
     cur.execute(refresh)
@@ -70,7 +70,8 @@ try:
         construction = str(fake.date_of_birth(None, 10, 60)) # the date_between method didn't work here, created conflicts with multiple clients
         last_maintenance = str(fake.date_between(start_date=et, end_date='today'))
         facture = name + '_Devis.pdf'
-        updated = date.today()
+        updated = date.today(),
+        devices = "Fronius"
 
         # executes the request
         cur.execute(createClient, (
@@ -101,7 +102,8 @@ try:
             construction,
             last_maintenance,
             facture,
-            updated
+            updated,
+            devices
         ))
 
         # commit the requests to the database
