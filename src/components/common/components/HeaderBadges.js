@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Badge from '@material-ui/core/Badge';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined'
 import ChatBubbleOutlineOutlinedIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
 import Avatar from '@material-ui/core/Avatar';
+import {AlertesContext} from '../../contexts/AlertesContext'
 
 const StyledBadge = withStyles((theme) => ({
   badge: {
@@ -30,19 +31,34 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 function Header() {
+
+    const {alertes} = useContext(AlertesContext)
+    const [alertesLength, setAlertesLength] = useState(0)
+
     const classes = useStyles();
+
+    useEffect(() => {
+      handleAlertes()
+      console.log(alertesLength)
+
+    }, [])
+
+    const handleAlertes = () => {
+      console.log(alertes)
+    }
+
     return (
-        <div className="badges flexed-row-space">
-            <div className="badge b_chat">
+        <div className="badges flexed-row-around">
+            {/* <div className="badge b_chat">
                 <IconButton aria-label="messages">
                     <StyledBadge badgeContent={3} max={9} color="secondary">
                         <ChatBubbleOutlineOutlinedIcon fontSize="large"/>
                     </StyledBadge>
                 </IconButton>
-            </div>
+            </div> */}
             <div className="badge">
                 <IconButton aria-label="notif">
-                    <StyledBadge badgeContent={15} max={9} color="secondary">
+                    <StyledBadge badgeContent={alertesLength} max={9} color="secondary">
                         <NotificationsNoneOutlinedIcon fontSize="large"/>
                     </StyledBadge>
                 </IconButton>

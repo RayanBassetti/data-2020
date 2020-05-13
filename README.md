@@ -32,6 +32,8 @@ https://www.figma.com/file/PSmFUG7tMkzrDvhKBj5OdN/CRM-ENGIE?node-id=207%3A1
     - Nodemon
 - Others :
     - Hapi-Swagger
+- Lexicon : 
+    - https://docs.google.com/spreadsheets/d/17zEY9pYN28mQ3iuS1iuc9ESDDr4OYT7D--nUVsgAO0E/edit?usp=sharing
 
 # Scripts : 
 - Base : 

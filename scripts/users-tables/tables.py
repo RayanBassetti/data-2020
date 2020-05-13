@@ -1,6 +1,7 @@
 # script to connect to the database 
 
 import database_ids
+from datetime import date
 import pandas as pd
 import psycopg2
 import datetime
@@ -21,17 +22,17 @@ try:
     cur = connection.cursor()
     # requests and reception of the data
     fake_clients = "SELECT * FROM fake_clients"
-    refreshC = "DELETE FROM cons_prod_clients"
-    refreshA = "DELETE FROM list_alertes"
+    refreshConsProd = "DELETE FROM cons_prod_clients"
+    refreshAlertes = "DELETE FROM list_alertes"
 
-    updateClientMood = "UPDATE fake_clients SET feeling = %s, satisfaction = %s WHERE id = %s"
+    updateClientMood = "UPDATE fake_clients SET feeling = %s, satisfaction = %s, updated = %s WHERE id = %s"
     consProdClient = "INSERT INTO cons_prod_clients VALUES(%s, %s, %s, %s)"
     alerte = "INSERT INTO list_alertes VALUES(%s, %s, %s, %s, %s, %s, %s, %s)"
 
     fakeClients = pd.read_sql(fake_clients, connection)
 
-    cur.execute(refreshC)
-    cur.execute(refreshA)
+    cur.execute(refreshConsProd)
+    cur.execute(refreshAlertes)
 
     for _, row in fakeClients.iterrows() : 
         count = 0
@@ -40,12 +41,12 @@ try:
             fromGenToConsumer = randomRange(10, 30)
             if fromGenToConsumer < 10.5 : 
                 # update du sentiment utilisateur 
-                cur.execute(updateClientMood, (2, randomRange(10, 30), row["id"]))
+                cur.execute(updateClientMood, (2, randomRange(10, 30), date.today(), row["id"]))
             if fromGenToConsumer < 10.5 and count == 28 : 
                 # création d'une alerte
                 cur.execute(alerte, (shortuuid.uuid(), row["id"], row["name"], str(date), "Production des panneaux trop faible", 2, "Marketing", 1))
                 # update du sentiment utilisateur 
-                cur.execute(updateClientMood, (1, randomRange(0, 20), row["id"]))
+                cur.execute(updateClientMood, (1, randomRange(0, 20), date.today(), row["id"]))
             # création d'une ligne cons/prod pour une semaine pour un client    
             cur.execute(consProdClient, (row["id"], str(date), fromGenToConsumer, randomRange(100, 200)))
             count = count + 7
