@@ -61,7 +61,7 @@ https://www.figma.com/file/PSmFUG7tMkzrDvhKBj5OdN/CRM-ENGIE?node-id=207%3A1
 - npm i /npm install
 
 5) Add the credidentials you want to use to connect to the database neeeded at the root of the server folder
-- touch .env
+- touch .env / create a file named ".env"
 - Variables needed : DB_H (host), DB_USER (username), DB_PASS (password)
 
 6) Once everything is installed and properly setup, start the back-end
